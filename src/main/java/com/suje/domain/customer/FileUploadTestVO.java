@@ -27,7 +27,7 @@ public class FileUploadTestVO {
 	
 	private MultipartFile file;
 	
-	@Setter(value = AccessLevel.NONE) private String saveDir = "C:/workspaces/SujeWebProject/src/main/webapp/resources/DB/";
+	@Setter(value = AccessLevel.NONE) private String saveDir = "C:/workspaces/SujeStore/src/main/webapp/resources/DB/";
 	
 	public MultipartFile getFile() {
 		return file;

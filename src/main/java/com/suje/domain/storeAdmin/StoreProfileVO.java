@@ -27,7 +27,7 @@ public class StoreProfileVO {
     private long s_back_psize;
     private MultipartFile profileImage;
     private MultipartFile backgroundImage;
-    private final String saveDir = "C:/workspaces/SujeWebProject/src/main/webapp/resources/img/DBServer/";
+    private final String saveDir = "C:/workspaces/SujeStore/src/main/webapp/resources/img/DBServer/";
 
     public void setProfileImage(MultipartFile profileImage) {
         this.profileImage = profileImage;
