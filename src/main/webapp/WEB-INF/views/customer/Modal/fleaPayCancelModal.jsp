@@ -20,16 +20,16 @@
 </head>
 <body>
 	<div class="payCancleModal">
-	<form id="formSubmit" action="insertFleaPayCancel.do" method="post">
+	<form  action="insertFleaPayCancel.do" method="post">
 		<div class="payCancleBody">
 			<!-- 상단 제목 부분 -->
 			<div class="payCancleTitle">
 				<div>
 					<img width=62px height=20px src="./resources/img/sujeLogo.png" />
 				</div>
-				<div>결제 취소 요청</div>
+				<div> 플리마켓 결제 취소 요청</div>
 				<div>
-					결제번호 <input class="payNO" type="text" name="fp_code"/>
+					결제번호 <input class="fleaPayNO" type="text" name="fp_code"/>
 				</div>
 			</div>
 
@@ -57,7 +57,7 @@
 
 			<div class="payCancleinsertbtn">
 				<div>
-					<input class="demandPayCancel" type="submit" value="요청하기" form="formSubmit"/>
+					<input class="demandPayCancel" type="submit" value="요청하기" />
 				</div>
 				<div>
 						<input class="viewCancel" type="button" value="취소">

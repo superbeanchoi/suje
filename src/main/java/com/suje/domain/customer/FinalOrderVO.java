@@ -15,4 +15,7 @@ public class FinalOrderVO {
    // 결제 정보 관련 변수
    String m_acc_bank,card_company,m_id,card_num, m_acc_num;
    long p_code;
+   
+   // 프로필 사진 관련
+   String s_spname;
 }

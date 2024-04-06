@@ -62,7 +62,7 @@
 				<table class="List">
 					<tr class="orderListTitle">
 						<td>결제 번호</td>
-						<td>최종주문번호</td>
+						<td>주문번호</td><!-- 최종 주문 번호 -->
 						<td>주문 일자</td>
 						<td>결제 일자</td>
 						<td>결제 금액</td>
@@ -182,11 +182,26 @@
 						<td>${vo.fp_count}</td>
 						<td>${vo.fp_date}</td>
 						<td>${vo.fp_sum}</td>
-						<td>${vo.fp_ck}</td>
-						<td>${vo.fp_ckdate}</td>
+						
 						<td>
-							<input class="demand" type="button" value="요청">
+							<c:if test="${vo.fp_ck eq 'Y'}">확정</c:if>
+							<c:if test="${vo.fp_ck eq 'N'}"><input class="fleaPayConfirmBtn" type="button" value="확정"></c:if>
 						</td>
+						
+						<td>${vo.fp_ckdate}</td>
+						
+						<td><!-- 결제취소 부분 -->
+							<c:if test="${vo.fp_ck eq 'N'}">
+								<c:if test="${vo.pc_code eq 0}">
+									<input class="demand" type="button" value="요청">
+								</c:if>
+								<c:if test="${vo.pc_code ne 0}">
+									<c:if test="${vo.pc_state eq null}">요청중</c:if>
+									<c:if test="${vo.pc_state eq 'Y'}">승인완료</c:if>
+									<c:if test="${vo.pc_state eq 'N'}">요청취소</c:if>
+								</c:if>
+							</c:if>
+						</td><!-- 결제취소 부분 -->
 					</tr>
 				</c:forEach>
 			</c:if>
@@ -206,8 +221,9 @@
 			<div class="myPageLine"></div>
 			<table class="List">
 				<tr class="orderListTitle">
+					<td>구분</td>
 					<td>결제취소번호</td>
-					<td>최종주문번호</td>
+					<td>주문번호</td>
 					<td>취소 일자</td>
 					<td>취소 사유</td>
 					<td>취소 상태</td>
@@ -215,10 +231,11 @@
 				<c:if test="${ResultList.cancleList ne null}">
 					<c:forEach items="${ResultList.cancleList}" var="vo">
 					<tr>
-						<td>${vo.can_code}</td>
-						<td>${vo.fo_code}</td>
-						<td>${vo.can_date}</td>
-						<td>${vo.can_why}</td>
+						<td>${vo.title}</td>
+						<td>${vo.code}</td>
+						<td>${vo.order_code}</td>
+						<td>${vo.rdate}</td>
+						<td>${vo.why}</td>
 						<td>
 							<c:if test="${vo.can_state eq null}"> 승인대기 </c:if>
 							<c:if test="${vo.can_state eq 'Y'}"> 승인 </c:if>
@@ -286,9 +303,14 @@
 			<jsp:include page="Modal/orderInfoModal.jsp"></jsp:include>
 		</div>
 		
-		<!-- 결제취소 부분 -->
+		<!-- 주문 제작 결제취소 부분 -->
 		<div class="payCancelModalView">
 			<jsp:include page="Modal/orderPayCancelModal.jsp"></jsp:include>
+		</div>
+		
+		<!-- 플리마켓 결제취소 부분 -->
+		<div class="fleaPayCancelModalView">
+			<jsp:include page="Modal/fleaPayCancelModal.jsp"></jsp:include>
 		</div>
 		
 		<!-- 반품요청 부분 -->
@@ -307,7 +329,8 @@
 		$(".purchConfirm").click(purchConfirmEvent); // 구매확정 버튼 이벤트 등록
 		$(".payCancelBtn").click(payCancelBtnEvent); // 결제취소 버튼 이벤트 등록
 		$(".returnCall").click(returnCallBtnEvent); // 결제취소 버튼 이벤트 등록
-		
+		$('.demand').click(demandBtnEvent); // 플리마켓 결제취소 버튼 이벤트 등록
+		$('.fleaPayConfirmBtn').click(fleaPayConfirmBtnEvent); // 플리마켓 구매확정 버튼 이벤트 등록
 		
 		// Modal 취소 이벤트 등록
 		$(".viewCancel").click(viewCancelEvent);
@@ -324,8 +347,8 @@
 	    var returnState = $(this).parent().siblings().eq(9).text(); 
 	    
 	    if(cancelState != null || returnState !=null){
-			alert("결제취소 또는 반품요청\n상태가 요청중 또는 승인일 경우 확정이 불가능 합니다.");
-	    }else if(cancelState == null || returnState ==null || cancelState == '거절' || returnState == '거절')){
+			alert("결제취소 또는 반품요청 상태가\n'요청중' 또는 '승인' 일 경우\n구매 확정이 불가능 합니다.");
+	    }else if(cancelState == null || returnState ==null || cancelState.trim() == '거절' || returnState.trim() == '거절'){
 		    if(confirm("구매 확정 하시겠습니까?\n구매 확정 이후 취소,반품요청이 불가능 합니다!")){
 			    location.href = "purchConfirm.do?id=" + customerID + "&payNO=" + payNO;
 		    }else{
@@ -364,6 +387,41 @@
 		
 	    $(".orderPayNo").val(returnNo);
 		
+	}
+	
+	// 플리마켓 결제취소 버튼 이벤트
+	function demandBtnEvent(){
+	    
+	    console.log("플리마켓 결제취소 이벤트 호출");
+	    
+	    resetTagFild(); // 필드 초기화 함수 호출
+	    
+	    var returnNo = $(this).parent().siblings().eq(0).text();  // 결제번호
+	    
+		$(".orderListWrap").fadeIn(200);
+		$(".fleaPayCancelModalView").slideDown(200);
+	    
+		$(".fleaPayNO").val(returnNo);
+	}
+	
+	// 플리마켓 구매확정 이벤트
+	function fleaPayConfirmBtnEvent(){
+	    
+	    console.log("플리마켓 구매확정 이벤트 호출");
+	    
+	    resetTagFild(); // 필드 초기화 함수 호출
+	    
+	    var customerID = $(".customerID").val();	    // 아이디값
+	    var returnNo = $(this).parent().siblings().eq(0).text();  // 결제번호
+	    var cancelState = $(this).parent().siblings().eq(7).text();  // 취소상태
+	    
+		if(cancelState.trim() == '요청중' || cancelState.trim() == '승인'){
+		    alert("결제 취소 상태가\n'요청중' 또는 '승인' 일 때\n구매 확정 처리가 불가능 합니다.");
+		}else{
+		    if(confirm("구매 확정 하시겠습니까?\n구매 확정 이후 취소가 불가능 합니다!")){
+		        location.href = "updateFleaConfirm.do?id=" + customerID + "&payNO=" + returnNo;
+		    }
+		}
 	}
 	
 	

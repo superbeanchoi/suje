@@ -17,7 +17,7 @@ import lombok.ToString;
 public class EtcVO {
 	
 	private int etc_code, o_code, etc_type_code;
-	private String etc_spname, etc_ppath, etc_pname, etc_psize,etc_content, etc_date, o_content; 
+	private String etc_spname, etc_ppath, etc_pname, etc_psize,etc_content, etc_date, o_content,s_spname; 
 	private String s_id,m_id,s_name,m_name;
 	
 	// 요청사항 출력용

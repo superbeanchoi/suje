@@ -104,7 +104,7 @@ public class CustomerPayController {
 	}
 	
 	
-	// 구매확정 처리
+	// 주문 제작 구매확정 처리
 	@RequestMapping(value = "purchConfirm")
 	public String purchConfirm(
 			@RequestParam("id") String id,
@@ -121,6 +121,15 @@ public class CustomerPayController {
 		return "redirect:getPayList.do?id=" + id + "&orderPage=1&fleaPage=1&cancelPage=1&returnPage=1";
 	}
 	
+	// 플리마켓 구매확정 처리
+	@RequestMapping(value = "updateFleaConfirm")
+	public String updateFleaConfirm(@RequestParam("id") String id, @RequestParam("payNO") int payNO) {
+		logger.info("updateFleaConfirm Controller 실행");
+		
+		int state = service.updateFleaConfirm(id, payNO);
+		
+		return "redirect:getPayList.do?id=" + id + "&orderPage=1&fleaPage=1&cancelPage=1&returnPage=1"; 
+	}
 	
 	
 	// 플리마켓 결제내역 결제취소 요청하기 (insert = 신규 글 저장 처리 요청)

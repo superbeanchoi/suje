@@ -10,7 +10,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>주문제작내역 결제취소 요청</title>
+<title>주문 제작 내역 결제취소 요청</title>
 
 <!-- css 파일 연결 -->
 <link rel="stylesheet" href="./resources/css/resetStyle.css" />
