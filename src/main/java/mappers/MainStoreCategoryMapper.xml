@@ -110,13 +110,13 @@
 		<property name="catemm_name" value="#{catemm_name}"/>
 	</include>
 	
-	select r_num, s_id, s_name, s_pname, catem_name, countRvCode, avgRvStar 
+	select r_num, s_id, s_name, s_spname, s_text, catem_name, countRvCode, avgRvStar 
 	from(
-	select rownum as r_num, s_id, s_name, s_pname, catem_name, countRvCode, avgRvStar 
+	select rownum as r_num, s_id, s_name, s_spname, s_text, catem_name, countRvCode, avgRvStar 
 	from (
 	<!-- 전체 -->
 	<if test="catem_name == null and catemm_name == null">
-		select s.s_id, s.s_name, s.s_pname, cateList.catem_name, review.reviewCount as countRvCode, review.starSum as avgRvStar 
+		select s.s_id, s.s_name, s.s_spname, s.s_text, cateList.catem_name, review.reviewCount as countRvCode, review.starSum as avgRvStar 
 		from store s, cateStoreList  cateList, reviewStoreList review 
 		where  s.s_id = review.s_id and s.s_id = cateList.s_id 
 		<if test="orderBy == 1">
@@ -131,7 +131,7 @@
 	</if>
 	<!-- 대분류 기준 -->
 	<if test="catem_name != null and catemm_name == null">
-		select s.s_id, s.s_name, s.s_pname, cateList.catem_name, review.reviewCount as countRvCode, review.starSum as avgRvStar 
+		select s.s_id, s.s_name, s.s_spname, s.s_text, cateList.catem_name, review.reviewCount as countRvCode, review.starSum as avgRvStar 
 		from store s, cateStoreList  cateList, reviewStoreList review 
 		where  s.s_id = review.s_id and s.s_id = cateList.s_id 
 		<if test="orderBy == 1">
@@ -146,7 +146,7 @@
 	</if>
 	<!-- 중분류 기준 -->
 	<if test="catem_name != null and catemm_name != null">
-		select s.s_id, s.s_name, s.s_pname, cateList.catem_name,cateList.catemm_name, review.reviewCount as countRvCode, review.starSum as avgRvStar 
+		select s.s_id, s.s_name, s.s_spname, s.s_text, cateList.catem_name,cateList.catemm_name, review.reviewCount as countRvCode, review.starSum as avgRvStar 
 		from store s, cateStoreList  cateList, reviewStoreList review 
 		where  s.s_id = review.s_id and s.s_id = cateList.s_id 
 		<if test="orderBy == 1">

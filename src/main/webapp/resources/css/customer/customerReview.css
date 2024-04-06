@@ -106,6 +106,11 @@ table input {
 	background-color: #ADEFD1;
 	border: 2px solid #ADEFD1;
 	border-radius: 5px;
+	transition: background-color 0.2s ease;
+	cursor: pointer;
+}
+table input:hover {
+	background-color: #fff;
 }
 
 .List {
@@ -132,14 +137,14 @@ table input {
 
 /* Modal css */
 /* Modal 기본 css*/
-.reviewInsertModal {
+/* .reviewInsertModal {
 	position: absolute;
 	top: 0;
 	left: 0;
 	width: 100%;
 	height: 100%;
 	background-color: rgba(0, 0, 0, 0.4);
-	/* display: none; */
+	display: none;
 	text-align: center;
 }
 
@@ -161,6 +166,24 @@ table input {
 	box-shadow: 0 2px 3px 0 rgba(34, 36, 38, 0.15);
 	transform: translateX(-50%) translateY(-50%);
 	position: absolute;
+} */
+.modalWrap {
+	width: 100%;
+	height: 100%;
+	background-color: rgba(50,50,50,.5);
+	position: fixed; top: 0; left: 0; z-index: 999;
+	display: none;
+}
+.reviewModalView {
+	width: 700px;
+	height:400px;
+    background-color: #fff;
+    border-radius: 20px;
+    padding: 40px 43px 0 43px;
+    position: absolute; top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 999; 
+	display: none;
 }
 
 .reviewInsertTitle {
@@ -169,7 +192,8 @@ table input {
 	align-items: center;
 }
 
-.modalWrap {
+
+/* .modalWrap {
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -178,7 +202,7 @@ table input {
 	background-color: rgba(0, 0, 0, 0.4);
 	display: none;
 	text-align: center;
-}
+} */
 
 .reviewModalView{
 	display: none;
@@ -230,6 +254,11 @@ table input {
 	justify-content: flex-start;
 	flex-direction: column;
 }
+.ContentLefit img {
+	width: 20px;
+	height: 20px;
+	margin: 0 20px;
+}
 
 .ContentLefit>div:nth-child(1), .ContentLefit>div:nth-child(2),
 	.ContentLefit>div:nth-child(3) {
@@ -246,7 +275,7 @@ table input {
 
 .ContentRight {
 	width: auto;
-	margin-left: 40px;
+	margin-left: 28px;
 }
 
 .ContentRight div {
@@ -346,6 +375,12 @@ table input {
 	background-color: #ADEFD1;
 	border: 2px solid #ADEFD1;
 	border-radius: 5px;
+	cursor: pointer;
+	transition: box-shadow 0.2s ease;
+	text-align: center;
+}
+.insertbtn div:nth-child(1)>input:hover {
+	box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.25);
 }
 
 .insertbtn div:nth-child(2)>input {
@@ -355,6 +390,11 @@ table input {
 	border: 2px solid #ADEFD1;
 	border-radius: 5px;
 	margin-left: 20px;
+	cursor: pointer;
+	transition: box-shadow 0.2s ease;
+}
+.insertbtn div:nth-child(2)>input:hover {
+	box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.25);
 }
 
 /* review 이미지 업로드 */
@@ -372,9 +412,19 @@ table input {
 	height: 30px;
 	font-size: 15px;
 	background-color: #ADEFD1;
+	border: 1px solid #ADEFD1;
 	border-radius: 5px;
+	line-height: 30px;
+	text-align: center;
+	font-size: 12px;
+	cursor: pointer;
+	transition: background-color 0.2s ease;
 }
 
+.filebox label:hover{
+	background-color: #fff;
+	
+}
 textarea {
 	resize: none;
 }

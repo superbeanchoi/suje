@@ -50,7 +50,10 @@
 		</div>
 	</div>
 	
-	<div class="subtitle">결제정보</div>
+	<div class="subtitle">
+		결제정보
+		<a href="customerCard.do?id=<%=(String)session.getAttribute("mainId")%>" class="payModiBtn">결제정보 수정하기</a>
+	</div>
 	<hr/>
 	<!-- MainContent 부분(2) -->
 	<div class="modalMainContent2">
@@ -64,7 +67,8 @@
 			<!-- Content 1번째 라인 -->
 			<div>
 				<select name="pt_code">
-					<option selected="selected" value="1">카드</option>
+					<option selected="selected">== 선택 ==</option>
+					<option value="1">카드</option>
 					<option value="2">계좌이체</option>
 				</select>
 				<div><input type="text" readonly="readonly"/><!-- 결제 은행 --></div>
