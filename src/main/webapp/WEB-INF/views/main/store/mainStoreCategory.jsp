@@ -138,7 +138,14 @@ $(function() {
 					<table class="EachStore">
 						<tr>
 							<td class="storeNameTd">${storeCate.s_name}</td>
-							<td rowspan="3" class="storeImgTd"><img src="././resources/img/DBServer/${storeCate.s_spname}" class="storeImg"/></td>
+							<td rowspan="3" class="storeImgTd">
+								<c:if test="${storeCate.s_spname eq null}">
+									<img src="././resources/img/basicProfileIconBig.png" class="storeImg"/>
+								</c:if>
+								<c:if test="${storeCate.s_spname ne null}">
+									<img src="././resources/img/DBServer/${storeCate.s_spname}" class="storeImg"/>
+								</c:if>
+							</td>
 						</tr>
 						<tr>
 							<td class="storeStarTd">

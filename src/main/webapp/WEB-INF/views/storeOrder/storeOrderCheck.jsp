@@ -74,7 +74,14 @@ $(function() {
 							</td>
 							<td><button class="check">조회</button></td>
 							<td>${orderCheck.deli_type}</td>
-							<td><button class="check-delivery">조회</button></td>
+							<td>
+								<c:if test="${orderCheck.deli_type == '배송'}">
+									<button class="check-delivery">조회</button>
+								</c:if>
+								<c:if test="${orderCheck.deli_type == '픽업'}">
+									-
+								</c:if>
+							</td>
 						</tr>
 						</c:forEach>
 						<!-- 추가적인 공지사항 행을 필요한 만큼 추가할 수 있습니다 -->

@@ -497,7 +497,7 @@ textarea {
 	height:400px;
     background-color: #fff;
     border-radius: 20px;
-    padding: 30px 30px 0 30px;
+    padding: 40px 40px 0 40px;
     position: absolute; top: 50%; left: 50%;
     transform: translate(-50%, -50%);
     z-index: 999; 
@@ -508,7 +508,7 @@ textarea {
 	height: 915px;
     background-color: #fff;
     border-radius: 20px;
-    padding: 40px 20px 40px 40px;
+    padding: 30px 40px;
     position: absolute; top: 50%; left: 50%;
     transform: translate(-50%, -50%);
     z-index: 999; 

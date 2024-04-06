@@ -76,8 +76,9 @@ public class CustomerReviewController {
 	 
 		model.addAttribute("reviewMain",state.get("reviewMainState"));
 		model.addAttribute("reviewSub",state.get("reviewSubState"));
+		model.addAttribute("complete", "후기가 등록되었습니다.");
 			
-		return "redirect:getCustomerReview.do?id=" + reviewVO.getM_id() +"&page=1";
+		return "forward:getCustomerReview.do?id=" + reviewVO.getM_id() +"&page=1";
 	}
 
 	// 전체 페이지의 수를 반환하는 메소드

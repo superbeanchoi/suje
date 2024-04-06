@@ -184,6 +184,7 @@ hr {
 .ContentRight2 select {
 	cursor: pointer;
 	margin-right: 20px;
+	text-align: center;
 }
 
 .ContentRight2>div {
@@ -250,6 +251,27 @@ hr {
 .ContentRight2>div:nth-child(2) {
 	display: flex;
 	font-size: 12px;
+}
+
+.payModiBtn {
+	display: block;
+	float: right;
+	width: 120px;
+	height: 20px;
+	border: 1px solid #00203F;
+	font-weight: bold;
+	border-radius: 5px;
+	background-color: #00203F;
+	color: #fff;
+	font-size: 12px;
+	line-height: 20px;
+	text-align: center;
+	transition: background-color 0.2s ease;
+	
+}
+.payModiBtn:hover {
+	background-color: #fff;
+	color: #222;
 }
 
 /*Modal Main Content CSS* (3)/
