@@ -19,9 +19,9 @@ public class MainRealTimeReviewDaoImpl implements MainRealTimeReviewDao {
     private SqlSession sqlSession;
 
     @Override
-    public List<MainRealTimeReviewVO> getreviewList(MainRealTimeReviewVO vo) {
+    public List<MainRealTimeReviewVO> getReviewList(MainRealTimeReviewVO vo) {
         logger.info("실시간후기 목록 가져오기 - sqlSession");
-        return sqlSession.selectList("getreviewList", vo);
+        return sqlSession.selectList("getReviewList", vo);
     }
 
     @Override

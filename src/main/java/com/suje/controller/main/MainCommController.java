@@ -188,7 +188,7 @@ public class MainCommController {
 				String ext = FilenameUtils.getExtension(file.getOriginalFilename()); //파일의 확장자
 				UUID uuid = UUID.randomUUID(); //파일의 새로운 닉네임
 				fileName = uuid+"."+ext; //파일의 실제 이름+랜덤값+파일의 확장자 >> 새로운 파일명 지정
-				file.transferTo(new File("C:\\workspaces\\SujeWebProject\\src\\main\\webapp\\resources\\img\\DBServer\\"+fileName));
+				file.transferTo(new File("C:\\workspaces\\SujeStore\\src\\main\\webapp\\resources\\img\\DBServer\\"+fileName));
 				
 				vo.setCpp_pname(originalFileName);
 				vo.setCpp_spname(fileName);

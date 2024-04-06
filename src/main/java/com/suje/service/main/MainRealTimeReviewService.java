@@ -7,7 +7,7 @@ import com.suje.domain.main.MainRealTimeReviewVO;
 public interface MainRealTimeReviewService {
 	
 	
-	List<MainRealTimeReviewVO> getreviewList(MainRealTimeReviewVO vo);
+	List<MainRealTimeReviewVO> getReviewList(MainRealTimeReviewVO vo);
     int getTotalCountPage();
     void updateLikeCount(int reviewId);
     int getUpdatedLikes(int reviewId);

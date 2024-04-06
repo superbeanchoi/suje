@@ -19,9 +19,9 @@ public class MainRealTimeReviewServiceImpl implements MainRealTimeReviewService 
     private MainRealTimeReviewDao mainRealTimeReviewDao; 
     
     @Override
-    public List<MainRealTimeReviewVO> getreviewList(MainRealTimeReviewVO vo) {
+    public List<MainRealTimeReviewVO> getReviewList(MainRealTimeReviewVO vo) {
         logger.info("실시간 후기 view 실행 서비스임플");
-        return mainRealTimeReviewDao.getreviewList(vo); 
+        return mainRealTimeReviewDao.getReviewList(vo); 
     }
     
     @Override
