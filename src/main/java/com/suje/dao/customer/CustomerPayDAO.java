@@ -7,16 +7,15 @@ import com.suje.domain.customer.PayVO;
 
 public interface CustomerPayDAO {
 	
-	public int getCountPageTotal(String id);
-	
-	public int getFleaCountPageTotal(String id);
+	public Map<String,Integer> getCountPageTotal(String id); // 페이지 전체 행수 반환
 	
 	public Map<String,Object> getPayList(Map<String,Object> resultMap);
 	
 	public void insertFleaPayCancel(PayVO vo);
 	
-	public void insertOrderPayReturn(PayVO vo);
+	public int insertOrderPayReturn(PayVO vo); // 주문 제작 반품 요청
 	
-	public void insertOrderPayCancel(PayVO vo);
+	public int insertOrderPayCancel(PayVO vo);  // 결제 취소 등록
 	
+	public int insertPurchConfirm(String id, int payNo); // 구매 확정 입력
 }

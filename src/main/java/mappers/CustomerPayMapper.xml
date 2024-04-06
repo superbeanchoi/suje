@@ -4,79 +4,76 @@
 
 <mapper namespace="CustomerOrderListDAO">
 
+
 <!-- 주문제작 결제내역 전체 페이지 수 계산 -->
-<select id="getCountPageTotal" parameterType="String" resultType="Integer">	
-select count(*) as total_count
-from pay p
-join final_order fo on p.fo_code = fo.fo_code
-join orderinfo o on fo.o_code = o.o_code
-join member m on o.m_id = m.m_id
-where m.m_id = #{m_id}		
+
+<sql id="pageCountQuery">
+	with 
+	orderPurchPageCount as ( 
+		select count(*) as orderPurchCount 
+		from orderinfo oi, final_order fo, pay p 
+		where oi.o_code = fo.o_code 
+			and fo.fo_code = p.fo_code
+			and m_id = ${memberIDRe}),
+	fleaPurchPageCount as (
+		select count(*) as fleaPurchCount 
+		from flea_pay 
+		where m_id = ${memberIDRe}),
+	cancelPageCount as (
+		select count(*) as cancelCount 
+		from cancel can, pay p, final_order fo, orderinfo oi 
+		where can.p_code = p.p_code 
+			and p.fo_code = fo.fo_code 
+			and fo.o_code = oi.o_code 
+			and oi.m_id = ${memberIDRe}),
+	returnPageCount as (
+		select count(*) as returnCount 
+		from return rt, pay p, final_order fo, orderinfo oi 
+		where rt.p_code = p.p_code 
+			and p.fo_code = fo.fo_code 
+			and fo.o_code = oi.o_code 
+			and oi.m_id = ${memberIDRe})
+</sql>
+<select id="getCountPageTotal" parameterType="String" resultMap="pageCountget">
+
+	<include refid="pageCountQuery">
+		<property name="memberIDRe" value="#{memberID}"/>
+	</include>
+	
+	select orderPurchCount , fleaPurchCount , cancelCount, returnCount 
+	from orderPurchPageCount, fleaPurchPageCount, cancelPageCount, returnPageCount
+	
 </select>
+
+<resultMap type="hashmap" id="pageCountget">
+	<result column="orderPurchCount" property="orderPurchCount"/>
+	<result column="fleaPurchCount" property="fleaPurchCount"/>
+	<result column="cancelCount" property="cancelCount"/>
+	<result column="returnCount" property="returnCount"/>
+</resultMap><!-- 주문제작 결제내역 전체 페이지 수 계산 -->
+
+
 
 <!-- 주문제작 결제내역 페이지에 해당 하는 데이터 추출-->
 <select id="getPayList" parameterType="hashmap" resultType="customerPay">
 
 <![CDATA[	  
-select
-    p_code,
-    fo_code,
-    fo_date,
-    p_date,
-    p_sum,
-    p_ck,
-    p_ck_date
+select p_code, fo_code, fo_date, p_date, p_sum, p_ck, p_ck_date, can_code, can_state, rt_code, rt_state
 from
-    (
-        select
-            rownum as r_num,
-            p_code,
-            fo_code,
-            fo_date,
-            p_date,
-            p_sum,
-            p_ck,
-            p_ck_date
-        from
-            (
-                select
-                    rownum,
-                    p.p_code,
-                    p.fo_code,
-                    fo.fo_date,
-                    p.p_date,
-                    p.p_sum,
-                    p.p_ck,
-                    p.p_ck_date
-                from
-                    pay p
-                join
-                    final_order fo on p.fo_code = fo.fo_code
-                join
-                    orderinfo o on fo.o_code = o.o_code
-                join
-                    member m on o.m_id = m.m_id
-                where
-                    m.m_id = #{id}
-                order by
-                    p.p_code desc
-            )
-    )
-where
-    r_num >= #{orderFirstNum} and r_num <= #{orderEndNum}
-order by
-    p_code desc
+	(select rownum as r_num, p_code, fo_code, fo_date, p_date, p_sum, p_ck, p_ck_date, can_code, can_state, rt_code, rt_state
+	from 
+		(select p.p_code, p.fo_code, fo.fo_date, p.p_date, p.p_sum, p.p_ck, p.p_ck_date, can.can_code, can.can_state, rt.rt_code, rt.rt_state
+		from orderinfo oi, final_order fo, pay p, cancel can, return rt 
+		where 
+			oi.o_code = fo.o_code
+			and fo.fo_code = p.fo_code
+			and p.p_code = can.p_code(+)
+			and p.p_code = rt.rt_code(+)
+			and oi.m_id = #{id}
+			order by p_date desc))
+where r_num >= #{orderFirstNum} and r_num <= #{orderEndNum}
+order by p_code desc
 ]]>
-</select>
-
-<!-- 플리마켓 결제내역 전체 페이지 수 계산 -->
-<select id="getFleaCountPageTotal" parameterType="String" resultType="Integer">	
-select count(*) as total_count
-from flea_pay fp
-join flea f on fp.f_code = f.f_code
-join store s on s.s_id = f.s_id
-join cate_sub c on c.cates_code = f.cates_code
-where fp.m_id = #{m_id}		
 </select>
 
 <!-- 플리마켓 결제내역 페이지에 해당 하는 데이터 추출-->
@@ -136,11 +133,60 @@ order by
     fp_code desc
 ]]>
 </select>
-	
+
+<!-- 결제취소 내역 -->
+<select id="getCancelPayList" parameterType="hashmap" resultType="customerPay">
+
+	select can_code,  fo_code, can_date, can_why, can_state
+		from
+			(select rownum as r_num, can_code,  fo_code, can_date, can_why, can_state
+			from 
+				(select  can.can_code, fo.fo_code, can.can_date,can.can_why,can.can_state  
+				from cancel can, pay p, final_order fo, orderinfo oi 
+				where can.p_code = p.p_code 
+				and p.fo_code = fo.fo_code 
+				and fo.o_code = oi.o_code 
+				and oi.m_id = #{id} 
+				order by can_date))
+<![CDATA[	  
+	where r_num >= #{cancelFirstNum} and r_num <= #{cancelEndNum}
+]]>
+</select>
+
+<!-- 반품 내역 -->
+<select id="getReturnList" parameterType="hashmap"	resultType="customerPay">
+
+select rt_code,  fo_code, rt_date, rt_why, rt_state
+	from 
+	(select rownum as r_num, rt_code,  fo_code, rt_date, rt_why, rt_state
+		from
+		(select rt.rt_code, fo.fo_code, rt.rt_date, rt.rt_why, rt.rt_state
+		from return rt, pay p, final_order fo, orderinfo oi
+		where rt.p_code = p.p_code 
+		and p.fo_code = fo.fo_code 
+		and fo.o_code = oi.o_code 
+		and oi.m_id = #{id} 
+		order by rt_date))
+<![CDATA[	  
+	where r_num >= #{returnFirstNum} and r_num <= #{returnEndNum}
+]]>
+</select>
+
+
+<!-- 구매확정 정보 입력 -->
+<update id="insertPurchConfirm">
+
+	update pay 
+	set p_ck = 'Y',p_ck_date = to_date(to_char(sysdate,'YYYY-MM-DD HH24:MI:SS'),'YYYY-MM-DD HH24:MI:SS') 
+	where p_code = #{payNo}
+
+</update>
+
 <!-- 플리마켓 결제내역 결제취소 요청하기 insert -->
-<insert id="insertFleaPayCancel" parameterType="customerPay">
+<insert id="insertFleaPayCancel" parameterType="String">
 	insert into pay_cancel(fp_code, pc_code, pc_date, pc_why) values (#{fp_code}, pc_code_sqn.nextval, sysdate, #{pc_why})
 </insert>
+
 
 <!-- 주문제작 결제내역 반품 요청하기 insert -->
 <insert id="insertOrderPayReturn" parameterType="customerPay">
