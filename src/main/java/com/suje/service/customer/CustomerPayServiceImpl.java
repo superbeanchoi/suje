@@ -33,7 +33,7 @@ public class CustomerPayServiceImpl implements CustomerPayService {
 	
 	@Override
 	public void insertFleaPayCancel(PayVO vo) {
-		System.out.println("=> flea결제취소요청 Service 실행");
+		logger.info("=> flea결제취소요청 Service 실행");
 		dao.insertFleaPayCancel(vo);
 	}
 	
@@ -51,12 +51,16 @@ public class CustomerPayServiceImpl implements CustomerPayService {
 		
 	}
 	
-	// 구매 확정 입력
+	// 주문 제작 구매 확정 입력
 	@Override
 	public int insertPurchConfirm(String id, int payNo) {
 		logger.info("insertPurchConfirm // Service");
 		return dao.insertPurchConfirm(id,payNo);
 	}
-
+	// 플리마켓 구매 확정 입력 
 	
+	@Override
+	public int updateFleaConfirm(String id, int payNo) {
+		return dao.updateFleaConfirm(id,payNo);
+	}
 }

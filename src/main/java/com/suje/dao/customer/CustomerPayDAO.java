@@ -17,5 +17,7 @@ public interface CustomerPayDAO {
 	
 	public int insertOrderPayCancel(PayVO vo);  // 결제 취소 등록
 	
-	public int insertPurchConfirm(String id, int payNo); // 구매 확정 입력
+	public int insertPurchConfirm(String id, int payNo); // 주문 제작 구매 확정 입력
+	
+	public int updateFleaConfirm(String id, int payNo); // 플리마켓 구매 확정 입력 
 }

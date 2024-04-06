@@ -52,7 +52,8 @@
 	o.m_id,
 	o.O_CONTENT,
 	o.o_date,
-	st.s_name
+	st.s_name,
+	st.s_spname
 	from orderinfo o, etc et, store st
 	where o.o_code = et.o_code(+)
 	and o.s_id = st.s_id  

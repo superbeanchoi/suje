@@ -88,32 +88,38 @@ select
     fp_date,
     fp_sum,
     fp_ck,
-    fp_ckdate
+    fp_ckdate,
+	pc_code,
+	pc_state 
 from
     (
-        select
-         	rownum as r_num,
-    		fp_code,
-    		s_name,
-    		cates_name,
-    		fp_count,
-    		fp_date,
-   		 	fp_sum,
-    		fp_ck,
-    		fp_ckdate
-        from
+		select
+			rownum as r_num,
+			fp_code,
+			s_name,
+			cates_name,
+			fp_count,
+			fp_date,
+			fp_sum,
+			fp_ck,
+			fp_ckdate,
+			pc_code,
+			pc_state 
+		from
             (
-                select
-                    rownum,
-                    fp.fp_code,
-                    s.s_name,
-                    c.cates_name,
-                    fp.fp_count,
-                    fp.fp_date,
-                   	fp.fp_sum,
-                    fp.fp_ck,
-                    fp.fp_ckdate
-                    from 
+				select
+					rownum,
+					fp.fp_code,
+					s.s_name,
+					c.cates_name,
+					fp.fp_count,
+					fp.fp_date,
+					fp.fp_sum,
+					fp.fp_ck,
+					fp.fp_ckdate,
+					pc.pc_code,
+					pc.pc_state 
+				from 
                     	flea_pay fp
 					join
 						 flea f on fp.f_code = f.f_code
@@ -121,12 +127,12 @@ from
 						store s on s.s_id = f.s_id
 					join 
 						cate_sub c on c.cates_code = f.cates_code
+					left outer join
+						pay_cancel pc on pc.fp_code = fp.fp_code
 					where 
-						fp.m_id = #{id}	                 
+						fp.m_id = #{id}          
                		order by
-                    	fp.fp_code desc
-            )
-    )
+                    	fp.fp_code desc)) 
 where
     r_num >= #{fleaFirstNum} and r_num <= #{fleaEndNum}
 order by
@@ -137,19 +143,40 @@ order by
 <!-- 결제취소 내역 -->
 <select id="getCancelPayList" parameterType="hashmap" resultType="customerPay">
 
-	select can_code,  fo_code, can_date, can_why, can_state
-		from
-			(select rownum as r_num, can_code,  fo_code, can_date, can_why, can_state
-			from 
-				(select  can.can_code, fo.fo_code, can.can_date,can.can_why,can.can_state  
-				from cancel can, pay p, final_order fo, orderinfo oi 
-				where can.p_code = p.p_code 
-				and p.fo_code = fo.fo_code 
-				and fo.o_code = oi.o_code 
-				and oi.m_id = #{id} 
-				order by can_date))
-<![CDATA[	  
-	where r_num >= #{cancelFirstNum} and r_num <= #{cancelEndNum}
+select title, code, order_code, rdate, why, state 
+from 
+	(select rownum as r_num, title, code, order_code, rdate, why, state 
+	from 
+		(select 
+			'주문제작' title,
+			can.can_code code, 
+			fo.fo_code order_code, 
+			can.can_date rdate, 
+			can.can_why why, 
+			can.can_state state 
+		from cancel can, pay p, final_order fo, orderinfo oi, member me 
+		where 
+			me.m_id = oi.m_id 
+			and oi.o_code = fo.o_code 
+			and fo.fo_code = p.fo_code 
+			and p.p_code = can.p_code 
+			and me.m_id = #{id}
+		union all 
+		select 
+			'플리마켓' title,
+			pc.pc_code code,
+			fp.fp_code order_code,
+			pc.pc_date rdate,
+			pc.pc_why why,
+			pc.pc_state state  
+		from pay_cancel pc, flea_pay fp, member m 
+		where 
+			m.m_id = fp.m_id 
+			and fp.fp_code = pc.fp_code 
+			and m.m_id = #{id} 
+		order by rdate desc)) 
+<![CDATA[
+where  r_num >= #{fleaFirstNum} and r_num <= #{fleaEndNum}
 ]]>
 </select>
 
@@ -173,7 +200,7 @@ select rt_code,  fo_code, rt_date, rt_why, rt_state
 </select>
 
 
-<!-- 구매확정 정보 입력 -->
+<!-- 주문 제작 구매확정 정보 입력 -->
 <update id="insertPurchConfirm">
 
 	update pay 
@@ -182,8 +209,18 @@ select rt_code,  fo_code, rt_date, rt_why, rt_state
 
 </update>
 
+<!-- 플리마켓 구매확정 정보 입력 -->
+<update id="updateFleaConfirm">
+
+	update flea_pay
+	set fp_ck = 'Y', fp_ckdate = to_date(to_char(sysdate,'YYYY-MM-DD HH24:MI:SS'),'YYYY-MM-DD HH24:MI:SS') 
+	where fp_code = #{payNo}
+
+</update>
+
+
 <!-- 플리마켓 결제내역 결제취소 요청하기 insert -->
-<insert id="insertFleaPayCancel" parameterType="String">
+<insert id="insertFleaPayCancel" parameterType="customerPay">
 	insert into pay_cancel(fp_code, pc_code, pc_date, pc_why) values (#{fp_code}, pc_code_sqn.nextval, sysdate, #{pc_why})
 </insert>
 

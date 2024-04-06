@@ -18,7 +18,7 @@ public class PayVO {
 	
 	// 플리마켓 결제취소 VO
 	int pc_code;
-	String pc_date, pc_why;
+	String pc_date, pc_why,pc_state;
 	
 	// 주문제작 결제내역 반품 VO
 	int rt_code;
@@ -28,4 +28,7 @@ public class PayVO {
 	int can_code;
 	String can_date, can_why,can_state;
 	
+	// 결제취소 내역 추가 변수
+	String title, rdate, why, state; 
+	int code, order_code;
 }

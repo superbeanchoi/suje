@@ -59,8 +59,8 @@
 
 /* 제작주문번호 입력부분*/
 .payCancleTitle div:nth-child(3) {
-	margin-left: 140px;
-	font-size: 12px;
+    margin-left: 78px;
+    font-size: 12px;
 }
 
 .payCancleTitle div:nth-child(3) input {

@@ -43,7 +43,7 @@
 					}); 
 			    	/*최종 주문서 출력*/
 			    	if(data['finalVO'] !=null){
-				    	finalOrder(data['finalVO'],data['etcList'][0].s_name);
+				    	finalOrder(data['finalVO'],data['etcList'][0].s_name,data['etcList'][0].s_spname);
 			    	}
 				},
 				error : function(status) {
@@ -96,7 +96,7 @@
 							}); 
 					    	/*최종 주문서 출력*/
 					    	if(data['finalVO'] !=null){
-						    	finalOrder(data['finalVO'],data['etcList'][0].s_name);
+						    	finalOrder(data['finalVO'],data['etcList'][0].s_name,data['etcList'][0].s_spname);
 					    	}
 							
 							// 초기화
@@ -182,9 +182,13 @@ function mainContent(item){
     	mainDetailDiv.append(chatDetail);
     	
     	// 대화 사용자 사진
-    	if(item.etc_type_code == 77001){
-    		chatDetail.append("	<div><img alt='' src='./resources/img/sujetalkstoreimg.png'></div>");   
-    	}else{
+    	if(item.etc_type_code == 77001){ // 사업자
+    		if(item.s_spname != null){
+    			chatDetail.append("	<div><img alt='' src='./resources/img/DBServer/" + item.s_spname + "'></div>");
+    		}else{
+    			chatDetail.append("	<div><img alt='' src='./resources/img/sujetalkstoreimg.png'></div>");
+    		}
+    	}else{ // 고객
     		chatDetail.append("	<div><img src='./resources/img/custmerLogo.png'></div>");
     	}
     	
@@ -208,8 +212,10 @@ function mainContent(item){
 	}
 
 // 최종 주문서 확인버튼 + 최종 주문서 정보 불러오는 함수	 
-function finalOrder(data,storeID){
+function finalOrder(data,storeID,spname){
 	    
+	    console.log(data);
+	    console.log(spname);
  	    var mainDiv = $(".orderMainContentInner");
 	    var mainDetailDiv = $("<div class=orderMainDetail></div>");
     
@@ -218,7 +224,11 @@ function finalOrder(data,storeID){
     	mainDiv.append(mainDetailDiv);
     	mainDetailDiv.append(chatDetail);
     	
-    	chatDetail.append("	<div><img alt='' src='./resources/img/sujetalkstoreimg.png'></div>"); 
+    	if(spname != null){
+    			chatDetail.append("	<div><img alt='' src='./resources/img/DBServer/" + spname + "'></div>");
+    	}else{
+    			chatDetail.append("	<div><img alt='' src='./resources/img/sujetalkstoreimg.png'></div>");
+    	}
     	
     	chatDetail.append("<div>" + storeID + "</div>");    
     	

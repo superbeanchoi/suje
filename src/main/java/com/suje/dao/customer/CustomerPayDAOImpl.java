@@ -54,12 +54,12 @@ public class CustomerPayDAOImpl implements CustomerPayDAO {
 	@Override
 	public void insertFleaPayCancel(PayVO vo) {
 		System.out.println("=> flea결제취소요청 Repository");
-		mybatis.insert("CustomerOrderListDAO", vo);
+		mybatis.insert("CustomerOrderListDAO.insertFleaPayCancel", vo);
 		System.out.println("insertFleaPayCancel vo : " + vo);
 	}
 
-	
-	// 구매 확정 입력
+	 
+	// 주문 제작 구매 확정 입력
 	@Override
 	public int insertPurchConfirm(String id, int payNo) {
 		logger.info("insertPurchConfirm Repository = {}", id);
@@ -81,6 +81,12 @@ public class CustomerPayDAOImpl implements CustomerPayDAO {
 	@Override
 	public int insertOrderPayCancel(PayVO vo) {
 		return mybatis.update("CustomerOrderListDAO.insertOrderPayCancel", vo);
+	}
+	
+	// 플리마켓 구매 확정 입력 
+	@Override
+	public int updateFleaConfirm(String id, int payNo) {
+		return mybatis.update("CustomerOrderListDAO.updateFleaConfirm", payNo);
 	}
 	
 }
