@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace= "StoreNotiInfoDAO">
+
+<insert id="insertStoreNotiInfo" parameterType="storeNotiInfo">
+
+	  INSERT INTO noti_info(NOTI_CODE, NOTI_CONTENT, NOTIR_DATE,NOTIT_CODE,S_ID)
+        VALUES (noti_info_sqn.nextval, #{noti_content}, sysdate, #{notit_code}, #{s_id})
+
+</insert>
+
+
+</mapper>

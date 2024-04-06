@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="FleaOrderCheckDAO">
+	<select id="getFleaOrderCheck" parameterType="String" resultType="fleaOrderCheck">
+		select f.f_content, fp.fp_code, fp.fp_sum, fp.fp_count, fp.fp_date, fp.fp_ck, fp.fp_ckdate
+		from flea f, flea_pay fp
+		where f.s_id =#{s_id}
+		and f.f_code=fp.f_code
+	</select>
+
+	<select id="getFleaDelivery" parameterType="Integer" resultType="fleaDelivery">
+	select fp.fp_code,fd.fd_code, fd.fd_name, fd.fd_tel, fd.fd_addr, fd.fd_memo, fd.fd_date, fd.fd_state
+	from flea_pay fp, flea_delivery fd, flea f
+	where fd.fp_code=#{fp_code}
+	and f.f_code=fp.f_code
+	and fp.fp_code=fd.fp_code
+	</select>
+
+	<update id="fleadeliverycomplete" parameterType="Integer">
+		update flea_delivery
+		set fd_state='발송완료', fd_date=sysdate
+		where fp_code=#{fp_code}
+	</update>
+
+</mapper>

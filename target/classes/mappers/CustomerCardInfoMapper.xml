@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="CustomerCardDAO">
+
+<select id="getCard" parameterType="String" resultType="customerCard">	
+		select 
+		card_code,
+		m_id,
+		card_company,
+		card_num,
+		card_adate,
+		card_cvc,
+		card_pass
+		from card where m_id = #{m_id}
+</select>
+
+<update id="updateCard" parameterType="customerCard" >  
+		 update card set 
+		 card_company=#{card_company},
+		 card_num = #{card_num},
+		 card_adate = #{card_adate},
+		 card_cvc = #{card_cvc},
+		 card_pass = #{card_pass}
+		 where m_id = #{m_id}	 
+</update>
+	
+<insert id="insertCard" parameterType="customerCard">
+		insert  into card
+		(card_code, card_company, card_num, card_adate, card_cvc, card_pass, m_id) 
+		values 
+		(card_code_sqn.nextval, #{card_company}, #{card_num}, #{card_adate}, #{card_cvc}, #{card_pass}, #{m_id})
+</insert>
+ 
+</mapper>
+

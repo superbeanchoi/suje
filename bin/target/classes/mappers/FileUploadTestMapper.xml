@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="FilUploadDAO">
+
+
+<update id="uploadTest" parameterType="String">
+<![CDATA[
+	update photo_review_test set rvp_ppath = #{uploadFile} where rv_code = 10
+]]>	
+</update>
+
+<select id="getFileName" parameterType="Integer" resultType="fileTestUpload">
+
+	select RVP_PPATH from photo_review_test where rv_code = #{no}
+
+</select>
+</mapper>

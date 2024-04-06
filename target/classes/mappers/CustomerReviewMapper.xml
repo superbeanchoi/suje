@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="CustomerReviewDAO">
+
+<!-- 후기 페이지 전체 행수 계산하는 쿼리 -->
+<select id="getTotalPageCount" parameterType="String" resultType="Integer">
+
+	select count(*) 
+	from member m, orderinfo oi, final_order fo, pay p, review re 
+	where 
+	m.m_id = oi.m_id 
+	and oi.o_code = fo.o_code 
+	and fo.fo_code = p.fo_code 
+	and p.p_code = re.p_code 
+	and m.m_id = #{id}
+
+</select>
+
+
+<!-- 페이징 조건에 맞는 행 반환 쿼리 -->
+<select id="getCustomerReview" parameterType="hashmap" resultType="customerReview">
+<![CDATA[
+select p.p_code, fo.fo_code, oi.o_date, 
+p.p_date, p.p_sum, p.p_ck, p.p_ck_date, re.rv_code, re.rv_date
+from member m, orderinfo oi, final_order fo, pay p, review re 
+where 
+	m.m_id = oi.m_id(+)  
+	and oi.o_code = fo.o_code(+)  
+	and fo.fo_code = p.fo_code(+) 
+	and p.p_code = re.p_code(+) 
+	and p.p_code in (
+		select p_code from (
+			select rownum as rNum, p_code from(
+				select p.p_code, re.rv_date  
+				from member m, orderinfo oi, final_order fo, pay p, review re 
+				where 
+				m.m_id = oi.m_id(+)  
+				and oi.o_code = fo.o_code(+)  
+				and fo.fo_code = p.fo_code(+)  
+				and p.p_code = re.p_code(+) 
+				and m.m_id = 'seung567'
+				order by rv_date))
+		where rNum >= 1 and rNum <= 5)
+]]> 
+</select>
+
+<!-- 리뷰 등록 쿼리 -->
+<insert id="reviewInsertMain" parameterType="customerReview">
+
+	insert into review(
+		rv_code,
+		p_code,
+		rv_content,
+		rv_date,
+		rv_star,
+		rv_like
+	) values (
+		rv_code_sqn.nextval,
+		#{p_code},
+		#{rv_content},
+		to_date(to_char(sysdate,'YYYY-MM-DD HH24:MI:SS'),'YYYY-MM-DD HH24:MI:SS'),
+		#{rv_star},
+		#{rv_like}
+	)
+
+</insert>
+
+<insert id="reviewInsertSub" parameterType="customerReview">
+	
+	insert into review_photo(
+		rvp_code,
+		rv_code,
+		rvp_pname,
+		rvp_spname,
+		rvp_ppath,
+		rvp_psize
+	) values(
+		rvp_code_sqn.nextval,
+		(select rv_code from (select rv_code,max(rv_date) from review where p_code = #{p_code} group by rv_code)),
+		#{rvp_pname},
+		#{rvp_spname},
+		#{rvp_ppath},
+		#{rvp_psize}
+	)
+
+</insert>
+</mapper>
