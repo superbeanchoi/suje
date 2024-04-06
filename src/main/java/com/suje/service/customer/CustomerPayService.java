@@ -6,7 +6,7 @@ import java.util.Map;
 import com.suje.domain.customer.PayVO;
 
 public interface CustomerPayService {
-	
+
 	public Map<String,Integer> getCountPageTotal(String id);
 	
 	public Map<String,Object> getPayList(Map<String,Object> resultMap);

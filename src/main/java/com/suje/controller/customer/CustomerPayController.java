@@ -140,11 +140,6 @@ public class CustomerPayController {
 	// 주문제작 결제내역 반품 요청하기 (insert = 신규 글 저장 처리 요청)
 	@RequestMapping(value = "insertOrderPayReturn", method = RequestMethod.POST)
 	public String insertOrderPayReturn(@ModelAttribute("vo") PayVO vo, Model model) {
-		logger.info("insertOrderPayReturn 실행 = {}",vo.getM_id());
-		logger.info("insertOrderPayReturn 실행 = {}",vo.getP_code());
-		logger.info("insertOrderPayReturn 실행 = {}",vo.getRt_code());
-		logger.info("insertOrderPayReturn 실행 = {}",vo.getRt_date());
-		logger.info("insertOrderPayReturn 실행 = {}",vo.getRt_why());
 		
 		service.insertOrderPayReturn(vo);
 		model.addAttribute("vo", vo);

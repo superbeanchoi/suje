@@ -257,17 +257,12 @@
 						<td>${vo.rt_date}</td>
 						<td>${vo.rt_why}</td>
 						<td>
-							<c:if test="${vo.rt_state eq null}">
-								승인대기
-							</c:if>
-							<c:if test="${vo.rt_state ne null}">
+							<c:if test="${vo.rt_state eq null}">승인대기</c:if>
 							
-								<c:if test="${vo.rt_state eq 'Y'}">
-									승인
-								</c:if>
-								<c:if test="${vo.rt_state eq 'N'}">
-									거절
-								</c:if>
+							<c:if test="${vo.rt_state ne null}">		
+							
+								<c:if test="${vo.rt_state eq 'Y'}">승인</c:if>
+								<c:if test="${vo.rt_state eq 'N'}">거절</c:if>
 								
 							</c:if>
 						</td>
