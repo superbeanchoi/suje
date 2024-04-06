@@ -67,7 +67,7 @@ public class StoreGoodsInfoController {
 				String ext1 = FilenameUtils.getExtension(imgFiles.getOriginalFilename()); // 파일의 확장자 
 				UUID uuid1 = UUID.randomUUID(); // 파일의 새로운 닉네임 
 				fileName = uuid1+"."+ext1; //파일의 실제 이름+랜덤값+파일의 확장자 >> 새로운 파일명 지정
-				imgFiles.transferTo(new File("C:\\workspaces\\SujeWebProject\\src\\main\\webapp\\resources\\img\\DBServer\\" + fileName));
+				imgFiles.transferTo(new File("C:\\workspaces\\SujeStore\\src\\main\\webapp\\resources\\img\\DBServer\\" + fileName));
 
 				vo.setG_pname(originalFileName);
 				vo.setG_spname(fileName);
@@ -82,7 +82,7 @@ public class StoreGoodsInfoController {
 					String ext2 = FilenameUtils.getExtension(file.getOriginalFilename()); // 파일의 확장자 
 					UUID uuid2 = UUID.randomUUID(); // 파일의 새로운 닉네임 
 					fileName = uuid2+"."+ext2; //파일의 실제 이름+랜덤값+파일의 확장자 >> 새로운 파일명 지정
-					file.transferTo(new File("C:\\workspaces\\SujeWebProject\\src\\main\\webapp\\resources\\img\\DBServer\\" + fileName));
+					file.transferTo(new File("C:\\workspaces\\SujeStore\\src\\main\\webapp\\resources\\img\\DBServer\\" + fileName));
 
 					vo.setGs_pname(originalFileName);
 					vo.setGs_spname(fileName);

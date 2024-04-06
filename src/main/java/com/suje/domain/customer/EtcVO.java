@@ -26,7 +26,7 @@ public class EtcVO {
 	//컨트롤 이미지 정보 저장용
 	private MultipartFile uploadImgFile;
 	
-	@Setter(value = AccessLevel.NONE) private String saveDir = "C:/workspaces/SujeWebProject/src/main/webapp/resources/img/DBServer/";
+	@Setter(value = AccessLevel.NONE) private String saveDir = "C:/workspaces/SujeStore/src/main/webapp/resources/img/DBServer/";
 	
 	public void setUploadImgFile(MultipartFile uploadImgFile) {
 		

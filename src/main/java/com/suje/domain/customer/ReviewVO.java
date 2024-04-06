@@ -31,7 +31,7 @@ public class ReviewVO {
 	// 페이징 관련 메소드
 	private int totalPageCount, firstNum, endNum;
 	
-	@Setter(value = AccessLevel.NONE) private String saveDir = "C:/workspaces/SujeWebProject/src/main/webapp/resources/img/DBServer/";
+	@Setter(value = AccessLevel.NONE) private String saveDir = "C:/workspaces/SujeStore/src/main/webapp/resources/img/DBServer/";
 
 	public void setReviewImg(MultipartFile reviewImg) {
 		this.reviewImg = reviewImg;
