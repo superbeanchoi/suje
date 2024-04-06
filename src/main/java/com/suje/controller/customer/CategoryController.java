@@ -20,7 +20,7 @@ import com.suje.service.category.CategoryMainService;
 @Controller
 public class CategoryController {
 	
-	private static final Logger logger = LoggerFactory.getLogger(FleaGoodsInfoController.class);
+	private static final Logger logger = LoggerFactory.getLogger(CategoryController.class);
 	
     @Autowired
     CategoryMainService categoryService;
