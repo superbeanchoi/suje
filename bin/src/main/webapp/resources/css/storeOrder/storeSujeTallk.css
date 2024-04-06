@@ -1,0 +1,478 @@
+@charset "UTF-8";
+/* 스토어 메인 타이틀 */
+
+.storeTalkTitle{
+
+	font-size: 30px;
+	font-weight: bold;
+}
+
+.storeTalkTitle>div:first-child{
+		margin-left: 15px;
+	margin-top: 40px;
+	margin-bottom: 30px;
+}
+
+.myPageLine{
+	width: 100%;
+	height: 5px;
+	background-color: #D9D9D9;
+}
+
+/* 메인 Talk 공통CSS */
+.mainTalkContent {
+	/* border: 2px solid black; */
+	display: flex;
+	margin-top: 55px;
+	margin-left: 36px;
+}
+
+/* 스토어목록 - 타이틀 CSS */
+.TalkList {
+	/* border: 2px solid red; */
+	width: 280px;
+}
+
+.TalkListTitle>div:first-child>span:first-child {
+	font-size: 20px;
+}
+
+.TalkListTitle{
+	display: flex;
+	height: 30px;
+}
+
+.TalkListTitle div {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+/* 주문 요청 내역 - 타이틀 CSS */
+.activeTalk {
+	/* border: 2px solid blue; */
+	width: 720px;
+	margin-left: 30px;
+}
+
+/* .activeTalk input {
+	border: 2px solid #ADEFD1;
+	border-radius: 5px;
+} */
+
+.activeTalkTitle {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.activeTalkTitle>div:nth-child(2)>span:nth-child(1) {
+	font-size: 12pt;
+	margin-right: 30px;
+}
+
+.activeTalkTitle>div:nth-child(2)>span:nth-child(2) input {
+	width: 100px;
+	height: 30px;
+	text-align: center;
+}
+
+.activeTalkTitle>div:nth-child(2) input{
+	border: 2px solid #ADEFD1;
+	border-radius: 5px;
+}
+
+
+.activeTalkMain>form>div textarea{
+	border: 2px solid #ADEFD1;
+	border-radius: 5px;
+    padding: 15px 212px 15px 15px;
+	text-align: left;
+	width: 100%;
+	height: 100px;
+	border-radius: 0px 0px 10px 10px;
+}
+
+/* 스토어 목록 메인 */
+.TalkListMain {
+	margin-top: 55px;
+	/* border: 2px solid black; */
+	font-size: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+.TalkListMain .eachCustomer {
+	cursor: pointer;
+}
+.TalkListMain .eachCustomer:hover {
+	outline: 4px solid #eee;
+	border-radius: 5px;
+}
+
+.orderInsertBtn{
+    position: absolute;
+    top: 705px;
+    left: -19px;
+    width: 310px;
+    height: 60px;
+    background-color: #00203F;
+    font-size: 20px;
+    color: white;
+    border-radius: 5px;
+	transition: background-color 0.2s ease, border 0.2s ease;
+	cursor: pointer;
+}
+.orderInsertBtn:hover{
+	background-color: #fff;
+	border: 2px solid #00203F;
+	font-weight: bold;
+	color: #222;
+}
+
+.TalkListMain>div>div{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.customerInfoList{
+	display: flex;
+	align-items: center;
+}
+
+.customerInfoList div{
+	margin-left: 10px;
+}
+
+/* 주문 요청 내역 메인 */
+.activeTalkMain {
+	margin-top: 40px;
+	background-color:  #ADEFD1;
+	padding: 2px 2px 2px 2px;
+	border-radius: 10px 10px 10px 10px;
+}
+
+.listBar{
+	width: 280px;
+	height: 1px;
+	border: 2px solid  #ADEFD1;
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+
+.listBarOrder{
+    width: auto;
+    height: 1px;
+    border: 2px solid #D9D9D9;
+    margin-top: 15px;
+}
+
+.storeTopInfo{
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding-top: 15px;
+	padding-left: 15px;
+	padding-right: 15px;
+}
+
+.storeTopInfo>div:first-child>div:first-child{
+	margin-right: 10px;
+}
+
+.storeTopInfo>div:first-child {
+	display: flex;
+	align-items: center;
+	font-size: 15px;
+	font-weight: bold;
+	color: #00203F;
+}
+
+.storeTopInfo>div:last-child{
+	font-size: 15px;
+	color: #999999;
+}
+
+.activeTalkMain>div:nth-child(3) {
+	margin-top: 10px;
+	width: auto;
+	/* height: 560px; */
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+.activeTalkMain>div:nth-child(4) {
+	width: 100%;
+	height: 50px;
+	position: relative;
+	margin-top: 10px;
+}
+
+/* .activeTalkMain>div:nth-child(4) input{
+	width: 100%;
+	height: 50px;
+	border-radius: 0px;
+	border: 2px solid #ADEFD1;
+	border-radius: 5px;
+	
+}
+ */
+
+.filebox input[type='text']{
+	width: 716px;
+	height: 50px;
+	border: 2px solid #ADEFD1;
+	padding-left: 20px;
+	font-size: 20px;
+	color:#999999;
+}
+
+.activeTalkMain>div:nth-child(4) label {
+    width: 180px;
+    height: 30px;
+    border-radius: 10px;
+    position: absolute;
+    background-color: #00203F;
+    left: 517px;
+    top: 10px;
+    color: white;
+    padding-left: 17px;
+    padding-top: 7px;
+}
+
+.activeTalkMain>form>div {
+	width: 100%;
+	height: 100px;
+	position: relative;
+}
+
+
+
+.activeTalkMain>form>div input[type="submit"] {
+	width: 180px;
+	height: 80px;
+	border-radius: 10px;
+	position: absolute;
+	background-color: #00203F;
+	left: 517px;
+	top: 10px;
+	color: white;
+	font-size: 20px;
+	transition: background-color 0.2s ease, border 0.2s ease;
+	cursor: pointer;
+}
+.activeTalkMain>form>div input[type="submit"]:hover{
+	background-color: #fff;
+	border: 2px solid #00203F;
+	font-weight: bold;
+	color: #222;
+}
+
+.orderMainContent{
+	position: relative;
+	font-size: 15px;
+	width: 706px;
+	height: 650px;
+}
+
+.orderMainContentInner{
+  	max-height: 580px;
+	position: absolute;
+	bottom: 0;
+}
+.orderMainContent div{
+	max-width: 465px;
+	margin-top: 10px;
+}
+
+.orderMainContentInner>div{
+	margin-top: 60px;
+}
+
+.orderMainContentInner>div:last-child{
+	margin-top: 60px;
+	margin-bottom: 30px;
+}
+
+
+.orderMainDetail {
+	position: relative;
+}
+
+.orderMainDetail>div {
+	position: absolute;
+	width: 430px;
+	height: 50px;
+	max-width: 430px;
+	max-height: 50px;
+	margin-top: 10px;
+	margin-left: 25px;
+}
+
+.orderMainDetail>div:last-child {
+	width : 200px;
+	margin-left: 480px;
+	margin-top: -21px;
+	font-size: 15px;
+	color: #999999;
+}
+
+.orderMainDetail>div:first-child {
+display: flex;
+    align-items: center;
+    margin-top: -53px;
+    margin-left: 18px;
+}
+
+.orderMainDetail input[type=button]{
+	width: 415px;
+	height: 50px;
+	background-color: #00203F;
+	font-size: 15px;
+	font-weight: bold;
+	color:white;
+	border: 0px;
+	border-radius: 5px;
+	cursor: pointer;
+	transition: background-color 0.2s ease, border 0.2s ease;
+}
+.orderMainDetail input[type=button]:hover{
+	background-color: #fff;
+	border: 2px solid #00203F;
+	font-weight: bold;
+	color: #222;
+}
+
+/* .orderMainDetail input[type=text]{
+	width: 410px;
+	height: 50px;
+	font-size: 15px;
+	font-weight: bold;
+	color:black;
+	border: 0px;
+	border-radius: 5px;
+} */
+
+ .orderMainDetail textarea{
+	width: 410px;
+	height: 50px;
+	font-size: 15px;
+	font-weight: bold;
+	color:black;
+	border: 0px;
+	border-radius: 5px;
+}
+
+.orderMainDetail>div:first-child>div:first-child {
+	margin-right: 10px;
+}
+
+/* 모달 작업 */
+
+.modalWrap {
+	width: 100%;
+	height: 100%;
+	background-color: rgba(50,50,50,.5);
+	position: fixed; top: 0; left: 0; z-index: 999;
+	display: none;
+}
+.storeOrderInsertModal {
+	width: 700px;
+	height:400px;
+    background-color: #fff;
+    border-radius: 20px;
+    padding: 30px 30px 0 30px;
+    position: absolute; top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 999; 
+	display: none;
+}
+
+/* Back-end 작업 이후 추가 CSS */
+
+/* #orderCheck{
+   max-width: 429px;
+    width: 429px;
+    height: auto;
+} */
+
+.orderInsertBtn{
+	display: none;
+}
+
+/* 파일 입력창 CSS 구성 */
+
+/* .filebox .upload-name {
+    display: inline-block;
+    height: 40px;
+    padding: 0 10px;
+    vertical-align: middle;
+    border: 1px solid #dddddd;
+    width: 78%;
+    color: #999999;
+} */
+
+/* .filebox label {
+    display: inline-block;
+    padding: 10px 20px;
+    color: #fff;
+    vertical-align: middle;
+    background-color: #999999;
+    cursor: pointer;
+    height: 40px;
+    margin-left: 10px;
+} */
+
+.filebox input[type="file"] {
+    position: absolute;
+    width: 0;
+    height: 0;
+    padding: 0;
+    overflow: hidden;
+    display: none;
+}
+
+.filebox{
+	display: none;
+}
+
+/* 요청사항 이미지 크기 제한 */
+.orderMainDetail img{
+	max-width: 450px;
+	max-height: 220px;
+}
+
+/* 요청사항 이미지 위치 조정 */
+.etcImg {
+    margin: 0px 0px 7px 38px;
+}
+
+.activeTalkMain>form>div:nth-child(2) input[type="submit"] {
+	width: 180px;
+	height: 80px;
+	border-radius: 10px;
+	position: absolute;
+	background-color: #00203F;
+	left: 517px;
+	top: 10px;
+	color: white;
+	font-size: 20px;
+}
+
+textarea {
+	resize: none;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+.updateBtn{
+	margin-left: 20px;
+	width: 120px;
+	height: 30px;
+	background-color: #00203F;
+	color:white;
+}

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="MainDao">
+
+<!-- 실시간 후기 -->
+<select id="getRecentRealTimeReview" resultType="mainVO">
+	select t.*, rownum
+	from ( select rp.rvp_spname, r.rv_content, r.rv_star, r.rv_like, oi.m_id
+		   from review r, review_photo rp, pay p, final_order fo, orderinfo oi
+		   where r.rv_code=rp.rv_code and r.p_code=p.p_code
+			 and p.fo_code=fo.fo_code and fo.o_code=oi.o_code
+		   order by rv_date desc ) t
+	<![CDATA[
+	where rownum<=6
+	]]>
+</select>
+
+<!-- 실시간 스토어 피드 -->
+<select id="getRecentStoreFeed" resultType="mainVO">
+	<![CDATA[
+	select g_spname
+	from (select t.*, rownum as rn
+		  from (select g_spname, g_date 
+		  		from goods 
+		  		order by g_date desc) t)
+	where rn<=6
+	]]>
+</select>
+
+</mapper>

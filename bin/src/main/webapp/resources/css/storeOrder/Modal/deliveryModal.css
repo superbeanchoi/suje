@@ -1,0 +1,227 @@
+@charset "UTF-8";
+/* Modal css */
+/* Modal 기본 css*/
+/* .deliveryModal {
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   background-color: rgba(0, 0, 0, 0.4);
+       display: none;
+   text-align: center;
+} */
+
+/* .deliveryModal.show {
+   display: block;
+} */
+
+/* .deliveryModalBody {
+   margin-top: 70px;
+   top: 50%;
+   left: 50%;
+   width: 700px;
+   height: 400px;
+   padding: 40px 20px 40px 40px;
+   text-align: center;
+   background-color: rgb(255, 255, 255);
+   border-radius: 10px;
+   box-shadow: 0 2px 3px 0 rgba(34, 36, 38, 0.15);
+   transform: translateX(-50%) translateY(-50%);
+   position: absolute;
+} */
+
+.deliveryModalTitle {
+   display: flex;
+   /*  width: 100px; */
+   height: 20px;
+   align-items: center;
+}
+
+/*Modal Main Title CSS*/
+/* SUJE 로고 CSS*/
+.deliverymodalTitle {
+   margin-left:30px;
+	margin-right:0px;
+   font-size: 20px;
+   font-weight: bold;
+   text-align:left;
+   width: 600px;
+   height: 20px;
+}
+
+.deliverymodalNo {
+   font-size: 15px;
+   font-weight: bold;
+   width: 150px;
+   height: 20px;
+   margin-left: 10px;
+   align-items: center;
+}
+
+/*Modal Main Content CSS*/
+.deliverymodalMainContent {
+   margin-top: 30px;
+   font-size: 12px;
+   
+}
+
+ .deliveryfirst{
+   width:700px;
+   height:30px;
+   margin-left: 40px;
+   display: flex;
+   align-items: center;
+   
+}
+
+.deliverysecound{
+   width:700px;
+   height:30px;
+   margin-top:20px;
+   margin-left:40px;
+   display: flex;
+   align-items: center;
+}
+.deliverythird{
+   width:700px;
+   height:30px;
+   margin-left: 40px;
+   margin-top:20px;
+   display: flex;
+   align-items: center;
+}
+
+.deliveryfourth{
+   width:800px;
+   height:30px;
+   margin-left: 40px;
+   margin-top:20px;
+   display: flex;   
+   align-items: center;
+}
+
+/* .modalMainContent input[type="text"] {
+    width: 100px;
+    height: 30px;
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #ADEFD1;
+    box-sizing: border-box;
+    margin-left: 30px; 상단 여백 추가
+    margin-top: 0px;
+    margin-right: 20px;
+    
+} */
+
+.textboxShort { 
+	width: 100px;
+    height: 30px;
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #ADEFD1;
+    box-sizing: border-box;
+    margin-left: 30px; /* 상단 여백 추가 */
+    margin-top: 0px;
+    margin-right: 20px;
+    text-align:center;
+	
+}
+
+.delcomBtn { 
+	width: 100px;
+    height: 30px;
+    border-radius: 5px;
+    box-sizing: border-box;
+    margin-right: 50px;
+    text-align:center;
+    background-color: #ADEFD1;
+    cursor: pointer;
+}
+.delcomBtn:hover {
+	background-color: #7BB5AF; /* 마우스를 올렸을 때의 배경색 */
+}
+
+.textboxMid {
+	width: 177px;
+    height: 30px;
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #ADEFD1;
+    box-sizing: border-box;
+    margin-left: 30px; /* 상단 여백 추가 */
+    margin-top: 0px;
+    margin-right: 20px;
+    text-align:center;
+	
+}
+
+.textboxMid1 {
+	width: 140px;
+    height: 30px;
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #ADEFD1;
+    box-sizing: border-box;
+    margin-left: 30px; /* 상단 여백 추가 */
+    margin-top: 0px;
+    margin-right: 20px;
+    text-align:center;
+	
+}
+
+.textboxLong {
+	width: 490px;
+	height: 30px;
+	padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #ADEFD1;
+    box-sizing: border-box;
+    margin-left: 30px; /* 상단 여백 추가 */
+    margin-top: 0px;
+    margin-right: 20px;
+}
+
+
+
+/* 텍스트 영역(텍스트 상자 아래) 스타일 */
+.modalMainContent textarea {
+    width: 400px;
+    height: 70px; 
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #ADEFD1;
+    box-sizing: border-box;
+    margin-top: 5px; 
+    margin-left: 20px;
+   
+}
+
+.categoryLabel, .orderCountLabel, .orderSizeLabel, .orderAmountLabel, .deliveryLabel, .requirementsLabel {
+    font-size: 12px; /* 원하는 크기로 조정하세요 */
+    width: 100px;
+    text-align: left;
+}
+
+.textbox{
+   width: 130px;
+   height: 30px;
+   border-radius: 5px;
+   border: 1px solid #ADEFD1;
+   box-sizing: border-box;
+   margin-left: 20px;
+   text-align: center;
+}
+
+.deliverymodalSubmitBtn {
+	background-color: #ADEFD1;
+	width: 200px;
+	height: 30px;
+	border-radius: 10px;
+	font-size: 15px;
+	margin-top: 50px;
+	cursor: pointer;
+}
+.deliverymodalSubmitBtn:hover {
+	background-color: #7BB5AF; /* 마우스를 올렸을 때의 배경색 */
+}

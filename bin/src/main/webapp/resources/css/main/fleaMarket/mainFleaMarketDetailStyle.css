@@ -1,0 +1,225 @@
+@charset "UTF-8";
+
+body {
+	background-color: #fff;
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+}
+
+.contentsWrap {
+	flex-grow: 1;
+	width: 1440px;
+	padding-top: 40px;
+	padding-bottom: 100px;
+	margin: 0 auto;
+	background-color: #fff;
+}
+.itemImageArea {
+	position: relative;
+	width: 500px;
+	height: 500px;
+	border-radius: 10px;
+	margin-left: 90px;
+	float: left;
+	overflow: hidden;
+}
+.itemImage {
+	width: 2000px;
+	height: 500px;
+}
+.itemImage li {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 500px;
+	height: 500px;
+	float: left;
+	border-radius: 10px;
+	background-color: #eee;
+	overflow: hidden;
+}
+.itemImage li img {
+	max-height: 100%;
+	width: auto;
+	height: auto;
+	display: block;
+	margin: auto;
+}
+
+.imgLeftMove {
+	position: absolute;
+	transform: translate(-1660%, 780%);
+}
+.imgRightMove {
+	position: absolute;
+	transform: rotate(180deg) translate(100%, -780%);
+}
+
+.itemInfoArea {
+	width: 720px;
+	margin-left: 40px;
+	float: left;
+}
+.itemCategory {
+	width: 720px;
+	height: 40px;
+}
+.allCategory {
+	width: 50px;
+	height: 40px;
+	font-size: 15px;
+	line-height: 40px;
+	float: left;
+}
+.itemCategory img {
+	width: 10px;
+	height: 10px;
+	display: block;
+	float: left;
+	transform: rotate(-90deg);
+	margin-top: 15px;
+	margin-right: 10px;
+}
+.category {
+	width: auto;
+	margin-right: 20px;
+	height: 40px;
+	font-size: 15px;
+	line-height: 40px;
+	float: left;
+}
+.itemStore {
+	width: 720px;
+	height: 30px;
+	color: #999;
+	font-weight: bold;
+	line-height: 30px;
+	margin-top: 40px;
+}
+.itemName {
+	display: flex;
+	flex-direction: column;
+	width: 720px;
+	height: auto;
+	font-size: 30px;
+	font-weight: bold;
+	line-height: 50px;
+	margin-top: 10px;
+}
+.itemPrice {
+	width: 200px;
+	height: 30px;
+	margin-top: 20px;
+}
+.itemPrice span {
+	width: 100px;
+	height: 30px;
+	display: block;
+	float: left;
+	font-weight: bold;
+}
+.itemCountArea {
+	width: 720px;
+	height: 50px;
+	border-top: 2px solid #eee;
+	border-bottom: 2px solid #eee;
+	padding: 10px;
+	margin-top: 116px;
+}
+.itemCountBox {
+	width: 160px;
+	height: 30px;
+	float: left;
+}
+.itemCountBox button {
+	width: 40px;
+	height: 30px;
+	font-size: 15px;
+	font-weight: bold;
+	border: 1px solid #ADEFD1;
+	float: left;
+	background-color: #fff;
+	transition: background-color 0.2s ease;
+}
+.itemCountBox button:hover {
+	background-color: #ADEFD1;
+}
+.itemCount {
+	background-color: #fff;
+	width: 80px;
+	height: 30px;
+	font-size: 15px;
+	font-weight: bold;
+	text-align: center;
+	line-height: 30px;
+	border: 1px solid #ADEFD1;
+	float: left;
+}
+.CountMinus {
+	border-radius: 10px 0 0 10px;
+}
+.CountPlus {
+	border-radius: 0 10px 10px 0;
+}
+.finalPrice {
+	width: 130px;
+	height: 30px;
+	float: right;
+}
+.finalPrice span {
+	display: block;
+	float: left;
+	font-size: 15px;
+	font-weight: bold;
+	line-height: 30px;
+}
+.finalPrice span:first-child {
+	width: 100px;
+	height: 30px;
+}
+.finalPrice span:last-child {
+	width: 30px;
+	height: 30px;
+}
+.buyBtn {
+	width: 720px;
+	height: 50px;
+	margin-top: 20px;
+	border-radius: 10px;
+	background-color: #ADEFD1;
+	transition: background-color 0.2s ease, border 0.2s ease;
+}
+.buyBtn:hover {
+	background-color: #fff;
+	border: 2px solid #ADEFD1;
+	font-weight: bold;
+}
+
+/*Footer*/
+footer {
+	width: 100%;
+	height: 200px;
+	background-color: #ADEFD1;
+}
+
+/* Modal */
+.customerOrderListModal {
+	width: 100%;
+	height: 100%;
+	background-color: rgba(50,50,50,.5);
+	position: fixed; top: 0; left: 0; z-index: 999;
+	display: none;
+}
+
+.customerOrderListModalBody {
+	width: 700px;
+	height: 785px;
+	text-align: center;
+	background-color: #fff;
+	border-radius: 20px;
+    position: absolute; top: 50%; left: 50%; z-index: 999;
+    transform: translate(-50%, -50%);
+    z-index: 999; 
+	display: none;
+}

@@ -1,0 +1,144 @@
+@charset "UTF-8";
+
+
+hr {
+    border-top: 5px solid #d9d9d9; /* 위쪽 테두리 설정 */
+    margin-top: 40px; /* 위쪽 여백 설정 */
+    margin-bottom: 20px; /* 아래쪽 여백 설정 */
+}
+
+
+.store_mainTitle {
+	font-size: 30px;
+	margin-top: 40px;
+	margin-left: 30px;
+	
+}
+
+.form-container {
+	margin-left: 4%; /* 왼쪽 여백을 화면 너비의 5%로 설정 */
+	width: 90%; /* 폼의 너비를 화면 너비의 90%로 설정 */
+}
+
+.form-container label {
+	width: 200px; /* 라벨의 고정 너비 */
+	display: inline-block; /* 라벨과 텍스트 박스를 옆으로 정렬하기 위해 */
+}
+
+.text-box {
+	border: 5px solid #adefd1;
+	background-color: white;
+	border-radius: 10px;
+	padding: 10px 10px;
+	font-size: 20px; /* 화면 너비에 대해 상대적인 크기 */
+	margin-bottom: 50px; /* 하단 여백을 화면 너비의 1%로 설정 */
+	margin-left: 150px;
+	width: 25%; /* 폼의 너비를 화면 너비의 90%로 설정 */
+	height: 50px;
+}
+
+.text-box2 {
+	border: 5px solid #adefd1;
+	background-color: white;
+	border-radius: 10px;
+	padding: 10px 10px;
+	font-size: 20px; /* 화면 너비에 대해 상대적인 크기 */
+	margin-top: 50px; /* 하단 여백을 화면 너비의 1%로 설정 */
+	margin-left: 150px;
+	width: 600px; /* 폼의 너비를 화면 너비의 90%로 설정 */
+	height: 50px;
+}
+
+.text-box:focus, .text-box2:focus {
+	outline: 2px solid #ADEFD1;
+	border: 1px solid #ADEFD1;
+	cursor: text;
+}
+
+.CatemSelecBox {
+	border: 5px solid #adefd1;
+	background-color: white;
+	border-radius: 10px;
+	padding: 10px 10px;
+	font-size: 20px; /* 화면 너비에 대해 상대적인 크기 */
+	margin-bottom: 50px; /* 하단 여백을 화면 너비의 1%로 설정 */
+	margin-left: 150px;
+	width: 25%; /* 폼의 너비를 화면 너비의 90%로 설정 */
+	height: 50px;
+}
+
+.CatemSelecBox:focus {
+	outline: 2px solid #ADEFD1;
+	border: 1px solid #ADEFD1;
+	cursor: pointer;
+}
+
+
+.image-container {
+	display: flex;
+    align-items: center;
+    margin-top: 10px; 
+}
+
+.image-container img, .image-container button {
+	margin-left: 150px; /* 이미지와 버튼 사이의 간격 설정 */
+}
+
+.image-container button {
+    background-color: #adefd1; /* 배경색 변경 */
+    border: none; /* 테두리 제거 */
+    border-radius: 5px; /* 반경 변경 */
+    color: black; /* 텍스트 색상 설정 */
+    cursor: pointer; /* 커서 모양 변경 */
+    font-size: 15px;
+    width: 100px;
+	height: 30px;
+}
+.fileInput {
+	margin-left: 50px;
+	font-size: 10px;
+    flex: 1; /* 남은 공간을 모두 차지하도록 설정 */
+    
+}
+
+
+
+.image-container button:hover{
+    background-color: #7cb8a5; /* 호버 상태 배경색 변경 */
+}
+/* 프로필 이미지 원 모양 */
+#profilePreview {
+    border-radius: 50%;
+    border: 5px solid #adefd1;
+    width: 100px; /* 프로필 이미지 너비 */
+    height: 100px; /* 프로필 이미지 높이 */
+    object-fit: cover; /* 이미지 비율 유지 및 이미지를 지정된 너비 및 높이로 자르기 */
+}
+
+/* 배경 이미지 크기 설정 */
+#backimgPreview {
+	border: 5px solid #adefd1;
+    width: 500px; /* 배경 이미지 너비 */
+    height: 120px; /* 배경 이미지 높이 */
+    object-fit: cover; /* 이미지 비율 유지 및 이미지를 지정된 너비 및 높이로 자르기 */
+     border-radius: 5px; /* 반경 변경 */
+}
+
+
+
+.button-container button {
+    background-color: #adefd1; /* 배경색 변경 */
+    border: none; /* 테두리 제거 */
+    border-radius: 5px; /* 반경 변경 */
+    padding: 10px 20px; /* 내부 여백 설정 */
+    color: black; /* 텍스트 색상 설정 */
+    cursor: pointer; /* 커서 모양 변경 */
+    width: 300px;
+    height: 50px;
+    margin-top:100px;
+}
+
+.button-container button:hover {
+    background-color: #7cb8a5; /* 호버 상태 배경색 변경 */
+}
+

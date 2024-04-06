@@ -1,0 +1,180 @@
+@charset "UTF-8";
+
+body {
+	width: 100%;
+}
+
+/* 기본 css 속성 */
+.main {
+	/* width: 1900px; */
+	width: auto;
+	height: auto;
+	display: flex;
+	margin: 0 auto;
+	margin-top: 40px;
+	margin-bottom: 40px;
+	justify-content: center;
+}
+
+.main>div {
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+
+.mainContentleft {
+	margin-right: 40px;
+	width: auto;
+	text-align: center;
+}`
+
+.mainContentleft div:nth-child(1) {
+	width: 120px;
+	height: 120px;
+	margin: 0 auto;
+	margin-bottom: 20px;
+	text-align: center;
+	line-height: 50px;
+}
+
+.mainContentleft div:nth-child(2) {
+	width: 300px;
+	height: 50px;
+	margin-bottom: 50px;
+	text-align: center;
+	line-height: 50px;
+	font-size: 30px;
+	font-weight: bold;
+}
+
+ .mainContentleft div:nth-child(3), .mainContentleft div:nth-child(4),
+	.mainContentleft div:nth-child(5), .mainContentleft div:nth-child(6),
+	.mainContentleft div:nth-child(7), .mainContentleft div:nth-child(8),
+	.mainContentleft div:nth-child(9) {
+	width: 300px;
+	height: 50px;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	line-height: 50px;
+} 
+
+.mainContentright {
+	width: 1020px;
+	height: auto;
+
+}
+
+.mainContentright div:nth-child(1) {
+	display : flex;
+}
+
+.mainContentright div:nth-child(2) input {
+	width : 200px;
+	height : 50px;
+	border-radius: 10px;
+	margin-left : 680px;
+	background-color: #ADEFD1;
+	cursor: pointer;
+	transition: background-color 0.2s ease, border 0.2s ease;
+}
+
+.mainContentright div:nth-child(2) input:hover {
+   border: 2px solid #ADEFD1;
+   background-color: #fff;
+}
+
+
+
+.subtitle, .subtitle2 {
+	font-weight: bold;
+	font-size: 30px;
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+
+.myPageLine {
+	width: 100%;
+	height: 5px;
+	background-color: #D9D9D9;
+}
+
+
+
+/* 기본 css 속성 end */
+
+/* 테이블 공통 속성 */
+table tr td {
+	font-size: 15px;
+}
+
+td {
+	width: auto;
+	height: 50px;
+}
+
+tr td {
+	width: auto;
+	border-bottom: 2px solid #ADEFD1;
+}
+
+tr:first-child>td {
+	height: 30px;
+	border-top: 2px solid #ADEFD1;
+}
+
+table input {
+	width: 100px;
+	height: 30px;
+	background-color: #ADEFD1;
+	border: 2px solid #ADEFD1;
+	border-radius: 5px;
+	cursor: pointer;
+	transition: background-color 0.2s ease, border 0.2s ease;
+}
+
+table input:hover {
+   border: 2px solid #ADEFD1;
+   background-color: #fff;
+}
+
+.List {
+	width: 1020px;
+	margin-top: 40px;
+	text-align: center;
+	vertical-align: middle;
+	word-break: break-all;
+	height: auto;
+}
+
+/* 테이블 공통 속성 end*/
+
+/*페이징 css*/
+ .paging {
+	width: auto;
+	margin-top: 40px;
+	text-align: center;
+}
+
+.subtitle2 {
+	margin-top: 70px;
+}
+
+/* Modal */
+.modalWrap {
+	width: 100%;
+	height: 100%;
+	background-color: rgba(50,50,50,.5);
+	position: fixed; top: 0; left: 0; z-index: 999;
+	display: none;
+}
+.qnaqModal, .qnaaModal {
+	width: 700px;
+	height:400px;
+    background-color: #fff;
+    border-radius: 20px;
+    padding: 40px 20px 40px 40px;
+    position: absolute; top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 999; 
+	display: none;
+}

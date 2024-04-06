@@ -1,0 +1,259 @@
+@charset "UTF-8";
+
+/*SUB MENU FORM*/
+body {
+	width: 100%;
+	background-color: #ccc;
+}
+.storeContentsWrap {
+	width: 1440px;
+	height: auto;
+	margin: 0 auto;
+}
+.storeSubMenuBox {
+	width: 250px;
+	height: 2000px;
+	background-color: #00203F;
+	float: left;
+}
+.storeContentsBox {
+	width: 1190px;
+	height: 2000px;
+	float: right;
+	background-color: #fff;
+}
+
+/*CATEGORY DESIGN*/
+.storeProfileBox, .storeProfileBox img {
+	display: block;
+	width: 100px;
+	height: 100px;
+	border-radius: 50px;
+	margin: 40px auto 20px;
+}
+.storeNameBox {
+	width: 200px;
+	height: 80px;
+	font-size: 30px;
+	color: #fff;
+	background-color: transparent;
+	text-align: center;
+	font-weight: bold;
+	margin: 0 25px 40px 25px;
+	resize: none;
+}
+.storeFirstCategoryBtn {
+	display: block;
+	width: 100%;
+	height: 70px;
+	line-height: 70px;
+	color: #fff;
+	font-weight: bold;
+	cursor: pointer;
+	transition: background-color 0.2s ease, color 0.2s ease;
+}
+.storeFirstCategoryBtn:hover {
+	background-color: #ADEFD1;
+	color: #00203F;
+}
+.storeSecondCategoryBtn, .storeSecondCategoryBtn a {
+	display: block;
+	width: 100%;
+	height: 50px;
+	line-height: 70px;
+	background-color: #eee;
+	color: #999;
+	font-size: 15px;
+	transition: background-color 0.2s ease, color 0.2s ease, border-bottom 0.2s ease;
+}
+.storeSecondCategoryBtn a {
+	padding: 10px 20px 0 20px;
+	cursor: pointer;
+	border-bottom: 2px solid transparent;
+}
+.storeSecondCategoryBtn a:hover {
+	font-weight: bold;
+	color: #00203F;
+	border-bottom: 2px solid #ADEFD1;
+}
+.storeSecondCategoryBtn span {
+	display: block;
+	width: 210px;
+	height: 30px;
+	line-height: 30px;
+	cursor: pointer;
+}
+
+/*선택상태 CLASS*/
+.checkedStateFirstCategory {
+	background-color: #ADEFD1;
+	color: #00203F;
+}
+.checkedStateSecondCategory a {
+	font-weight: bold;
+	color: #00203F;
+	border-bottom: 2px solid #ADEFD1;
+}
+
+hr {
+    border-top: 5px solid #d9d9d9; /* 위쪽 테두리 설정 */
+    margin-top: 40px; /* 위쪽 여백 설정 */
+    margin-bottom: 20px; /* 아래쪽 여백 설정 */
+}
+
+
+.store_mainTitle {
+	font-size: 30px;
+	margin-top: 40px;
+	margin-left: 30px;
+	
+}
+
+
+.subtitle {
+	font-size: 30px; /* 화면 너비에 대해 상대적인 크기 */
+	margin-left: 2%; /* 왼쪽 여백을 화면 너비의 5%로 설정 */
+	margin-top: 5%;
+}
+
+
+
+table {
+	width: 100%;
+	border-collapse: collapse;
+}
+
+th, td {
+	border: 1px solid #ADEFD1;
+	padding: 8px;
+	text-align: left;
+}
+
+th {
+	background-color: #ADEFD1;
+	text-align: center;
+}
+
+td {
+	text-align: center;
+}
+
+tr:nth-child(even) {
+	background-color: #ADEFD1;
+}
+
+tr:hover {
+	background-color: #ddd;
+}
+
+.table-wrapper {
+	margin-top: 50px; /* 원하는 만큼의 상단 여백을 설정합니다 */
+}
+
+.notice-header {
+	/* display: flex; */
+	justify-content: space-between;
+	font-weight: bold;
+	margin-bottom: 10px; /* 아래쪽 여백 조정 */
+	margin-top: 50px; /* 위쪽 여백 조정 */
+	padding: 0 20px; /* 헤더 좌우 padding 추가 */
+}
+
+.notice-header div {
+	flex: 1; /* 각 열의 너비를 동일하게 설정 */
+}
+
+.notice-container {
+	margin-top: 20px;
+	margin-left: 20px;
+}
+
+.notice-item {
+	align-items: center;
+	margin-bottom: 20px;
+}
+
+.notice-item div {
+	margin-right: 40px; /* 간격 조정을 위한 우측 여백 추가 */
+	margin-left: 10px;
+}
+
+.notice-item a {
+	color: #007bff;
+	text-decoration: none;
+}
+
+.store_mainInfo {
+	margin-top: 50px;
+}
+
+.store_subTitle {
+	font-size: 20px;
+	margin-right: 100px;
+	margin-left: 20px;
+}
+
+.notiInfo_selectBox {
+	font-size: 20px;
+	width: 300px;
+	height: 50px;
+	border: 5px solid #ADEFD1;
+	border-radius: 5px;
+	text-align:center;
+}
+
+.notiInfo_selectBox:focus {
+	outline: 2px solid #ADEFD1;
+	border: 1px solid #ADEFD1;
+	cursor: pointer;
+}
+
+
+.notiInfo_content {
+	border: 5px solid #ADEFD1;
+	width: 1130px; 
+	height: 200px;
+	margin-top: 10px;
+	margin-left: 20px;
+	font-size: 20px;
+	padding: 10px;
+}
+
+
+.notiInfo_content:focus {
+	outline: 2px solid #ADEFD1;
+	border: 1px solid #ADEFD1;
+}
+
+.store_subCategory {
+	margin-top: 50px;
+}
+
+.submitBtn {
+	float: left;
+	background-color: #ADEFD1;
+	width: 300px;
+	height: 50px;
+	border-radius: 5px;
+	margin-top: 30px;
+	margin-left: 20px;
+    border: none; /* 테두리 제거 */
+    padding: 10px 20px; /* 내부 여백 설정 */
+    color: black; /* 텍스트 색상 설정 */
+    cursor: pointer; /* 커서 모양 변경 */
+}
+
+
+.submitBtn:hover {
+    background-color: #7cb8a5; /* 호버 상태 배경색 변경 */
+}
+
+.noticeListDetail:hover {
+    cursor: pointer;
+}
+
+
+
+
+
+

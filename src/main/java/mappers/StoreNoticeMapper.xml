@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace= "StoreNoticeDAO">
+
+<!-- 전체 공지 리스트 조회 -->
+<select id="storeNoticeListAll" parameterType="storeNotice" resultType="storeNotice"> 
+<![CDATA[ SELECT * FROM (SELECT * FROM noti_info WHERE s_id = #{s_id} order by noti_code desc) WHERE rownum <=5 ]]>
+</select>
+
+
+<!-- 수정할 공지 리스트 조회 -->
+<select id="getNotiInfo"  parameterType="storeNotice" resultType="storeNotice"> 
+	select * from noti_info where noti_code = #{noti_code} 
+</select>
+
+
+<!-- 공지 수정 -->
+<update id="modifyNotiInfo" parameterType="storeNotice">
+	update noti_info set 
+		 notit_code = #{notit_code},
+		 noti_content = #{noti_content},
+		 notir_date = TO_DATE(#{notir_date},'YYYY-MM-DD HH24:mi:ss'),
+		 notim_date = sysdate
+	 where noti_code = #{noti_code}
+</update>
+
+<!-- 공지 삭제 -->
+<delete id="deleteNotiInfo" parameterType="storeNotice">
+    DELETE FROM noti_info WHERE noti_code = #{noti_code}
+</delete>
+
+
+
+</mapper> 

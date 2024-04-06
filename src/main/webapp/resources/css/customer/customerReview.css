@@ -1,0 +1,380 @@
+@charset "UTF-8";
+
+body {
+	width: 100%;
+}
+
+/* 기본 css 속성 */
+.main {
+	/* width: 1900px; */
+	width: auto;
+	height: auto;
+	display: flex;
+	margin: 0 auto;
+	margin-top: 40px;
+	margin-bottom: 40px;
+	justify-content: center;
+}
+
+.main>div {
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+
+.mainContentleft {
+	margin-right: 40px;
+	width: auto;
+	text-align: center;
+}
+
+.mainContentleft div:nth-child(1) {
+	width: 120px;
+	height: 120px;
+	margin: 0 auto;
+	margin-bottom: 20px;
+	text-align: center;
+	line-height: 50px;
+}
+
+.mainContentleft div:nth-child(2) {
+	width: 300px;
+	height: 50px;
+	margin-bottom: 50px;
+	text-align: center;
+	line-height: 50px;
+	font-size: 30px;
+	font-weight: bold;
+}
+
+.mainContentleft div:nth-child(3), .mainContentleft div:nth-child(4),
+	.mainContentleft div:nth-child(5), .mainContentleft div:nth-child(6),
+	.mainContentleft div:nth-child(7), .mainContentleft div:nth-child(8),
+	.mainContentleft div:nth-child(9) {
+	width: 300px;
+	height: 50px;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	line-height: 50px;
+}
+
+.mainContentright {
+	width: 1020px;
+	height: auto;
+}
+
+.subtitle, .subtitle2 {
+	font-weight: bold;
+	font-size: 30px;
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+
+.myPageLine {
+	width: 100%;
+	height: 5px;
+	background-color: #D9D9D9;
+}
+
+
+
+/* 기본 css 속성 end */
+
+/* 테이블 공통 속성 */
+table tr td {
+	font-size: 15px;
+}
+
+td {
+	width: auto;
+	height: 50px;
+}
+
+tr td {
+	width: auto;
+	border-bottom: 2px solid #ADEFD1;
+}
+
+tr:first-child>td {
+	height: 30px;
+	border-top: 2px solid #ADEFD1;
+}
+
+table input {
+	width: 100px;
+	height: 30px;
+	background-color: #ADEFD1;
+	border: 2px solid #ADEFD1;
+	border-radius: 5px;
+}
+
+.List {
+	width: 1020px;
+	margin-top: 40px;
+	text-align: center;
+	vertical-align: middle;
+	word-break: break-all;
+	height: auto;
+}
+
+/* 테이블 공통 속성 end*/
+
+/*페이징 css*/
+.pageing {
+	width: auto;
+	margin-top: 40px;
+	text-align: center;
+}
+
+.subtitle2 {
+	margin-top: 70px;
+}
+
+/* Modal css */
+/* Modal 기본 css*/
+.reviewInsertModal {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.4);
+	/* display: none; */
+	text-align: center;
+}
+
+.reviewInsertModal.show {
+	display: block;
+}
+
+.reviewInsertModalBody {
+	margin-top: 70px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 700px;
+	height: 400px;
+	padding: 40px 20px 40px 40px;
+	text-align: center;
+	background-color: rgb(255, 255, 255);
+	border-radius: 10px;
+	box-shadow: 0 2px 3px 0 rgba(34, 36, 38, 0.15);
+	transform: translateX(-50%) translateY(-50%);
+	position: absolute;
+}
+
+.reviewInsertTitle {
+	display: flex;
+	height: 20px;
+	align-items: center;
+}
+
+.modalWrap {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.4);
+	display: none;
+	text-align: center;
+}
+
+.reviewModalView{
+	display: none;
+}
+
+/*Modal Main Title CSS*/
+/* SUJE 로고 CSS*/
+.reviewInsertTitle div:nth-child(1) {
+	margin-right: 40px;
+	font-weight: bold;
+	font-size: 30px;
+}
+
+/* 주문제작후기 타이틀 CSS*/
+.reviewInsertTitle div:nth-child(2) {
+	height: auto;
+	margin-right: 90px;
+	font-size: 15px;
+	font-weight: bold;
+}
+
+/* 제작주문번호 입력부분*/
+.reviewInsertTitle div:nth-child(3) {
+	margin-left: 50px;
+	font-size: 12px;
+}
+
+.reviewInsertTitle div:nth-child(3) input {
+	text-align: center;
+}
+
+.reviewInsertTitle input {
+	border: 2px solid #ADEFD1;
+	width: 100px;
+	height: 30px;
+	margin-left: 30px;
+	border-radius: 5px;
+}
+
+/*Modal Main Content CSS*/
+.modalMainContent {
+	margin-top: 50px;
+	display: flex;
+}
+
+.ContentLefit {
+	display: flex;
+	align-items: flex-start;
+	justify-content: flex-start;
+	flex-direction: column;
+}
+
+.ContentLefit>div:nth-child(1), .ContentLefit>div:nth-child(2),
+	.ContentLefit>div:nth-child(3) {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	font-size: 12px;
+}
+
+.ContentLefit div {
+	margin-bottom: 30px;
+	height: 30px;
+}
+
+.ContentRight {
+	width: auto;
+	margin-left: 40px;
+}
+
+.ContentRight div {
+	margin-bottom: 30px;
+	height: 30px;
+	line-height: 30px;
+	font-size: 12px;
+}
+
+.ContentRight>div:first-child {
+	/* margin-top: 2px; */
+	display: flex;
+}
+
+.ContentRight div:nth-child(1) {
+	display: flex;
+}
+
+.ContentRight div:nth-child(1)>div:nth-child(2) {
+	margin-left: 20px;
+}
+
+.ContentRight div:nth-child(1)>div:nth-child(3) {
+	margin-left: 80px;
+}
+
+.ContentRight div:nth-child(1)>div:nth-child(4) {
+	margin-left: 30px;
+}
+
+.ContentRight div:nth-child(1)>div:nth-child(4) input {
+	width: 150px;
+	height: 30px;
+}
+
+.ContentRight div:nth-child(1)>select {
+	display: flex;
+	width: 100px;
+	height: 30px;
+	text-align: center;
+		border: 2px solid #ADEFD1;
+	border-radius: 5px;
+}
+
+.ContentRight div:nth-child(2) {
+	display: flex;
+}
+
+.ContentRight div:nth-child(2)>div:nth-child(1) input {
+	width: 200px;
+	height: 30px;
+}
+
+.ContentRight div:nth-child(2)>div:nth-child(2) {
+	margin-left: 20px;
+}
+
+.ContentRight div:nth-child(3) {
+	display: flex;
+}
+
+.ContentRight div:nth-child(3)>div>textarea {
+	width: 522px;
+	height: 70px;
+	border: 2px solid #ADEFD1;
+	border-radius: 5px;
+	padding: 5px 5px 5px 5px;
+	font-size: 15px;
+}
+
+.ContentRight input {
+	border: 2px solid #ADEFD1;
+	border-radius: 5px;
+	height: 30px;
+	text-align: center;
+}
+
+.ContentRight input[type=button] {
+	background-color: #ADEFD1;
+	width: 100px;
+	height: 30px;
+	font-size: 15px;
+	padding-left: 0px;
+}
+
+/* 등록하기 버튼 CSS */
+.insertbtn {
+	margin-top: 50px; 
+	display : flex;
+	justify-content: center;
+	display: flex;
+}
+
+.insertbtn div:nth-child(1)>input {
+	width: 200px;
+	height: 30px;
+	background-color: #ADEFD1;
+	border: 2px solid #ADEFD1;
+	border-radius: 5px;
+}
+
+.insertbtn div:nth-child(2)>input {
+	width: 200px;
+	height: 30px;
+	background-color: white;
+	border: 2px solid #ADEFD1;
+	border-radius: 5px;
+	margin-left: 20px;
+}
+
+/* review 이미지 업로드 */
+.filebox input[type="file"] {
+    position: absolute;
+    width: 0;
+    height: 0;
+    padding: 0;
+    overflow: hidden;
+    display: none;
+}
+
+.filebox label{
+	width: 100px;
+	height: 30px;
+	font-size: 15px;
+	background-color: #ADEFD1;
+	border-radius: 5px;
+}
+
+textarea {
+	resize: none;
+}

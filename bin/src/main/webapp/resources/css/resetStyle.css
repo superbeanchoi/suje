@@ -1,0 +1,206 @@
+
+@charset "UTF-8";
+
+/* 디자인 초기화 */
+
+body, div, p, ul, ol, li, dl, dt, dd, h1, h2, h3, h3, h4, h5, h6, /*html태그*/ 
+table, tr, th, hd, /*table태그*/ 
+form, fieldset, legend, input, label, select, textarea, button, /*form태그*/ 
+header, footer, nav, aside, section, article, main, /*css3태그*/ 
+a, span, strong, em, b, i, address /*inline태그*/ {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+body, h1, h2, h3, h4, h5, h6 {
+	font-size: 20px;
+	font-family: 'Inter', sans-serif;
+	color: #222;
+	line-height: 1;
+}
+a {
+	text-decoration: none;
+	color: #222;
+}
+ul, ol, li {
+	list-style: none;
+	cursor: default;
+}
+img, fieldset {
+	border: none;
+	vertical-align: middle;
+}
+strong, em, e, i, address {
+	font-weight: 400;
+	font-style: normal;
+}
+table, tr, td {
+	border: none;
+}
+button {
+	border: none;
+	background-color: transparent;
+	cursor: pointer;
+	font-size: 20px;
+	font-family: 'Inter', sans-serif;
+	letter-spacing: -2px;
+	color: #222;
+	line-height: 1;
+}
+input, textarea {
+	border: none;
+	font-family: 'Inter', sans-serif;
+}
+span {
+	vertical-align: middle;
+	cursor: default;
+}
+
+/* common */
+
+.hide {
+	display: none;
+}
+.blind {
+	position: absolute;
+	left: -9999px;
+	top: -9999px;
+}
+=======
+
+@charset "UTF-8";
+
+/* 디자인 초기화 */
+
+body, div, p, ul, ol, li, dl, dt, dd, h1, h2, h3, h3, h4, h5, h6, /*html태그*/ 
+table, tr, th, hd, /*table태그*/ 
+form, fieldset, legend, input, label, select, textarea, button, /*form태그*/ 
+header, footer, nav, aside, section, article, main, /*css3태그*/ 
+a, span, strong, em, b, i, address /*inline태그*/ {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+body, h1, h2, h3, h4, h5, h6 {
+	font-size: 20px;
+	font-family: 'Inter', sans-serif;
+	color: #222;
+	line-height: 1;
+}
+a {
+	text-decoration: none;
+	color: #222;
+}
+ul, ol, li {
+	list-style: none;
+	cursor: default;
+}
+img, fieldset {
+	border: none;
+	vertical-align: middle;
+}
+strong, em, e, i, address {
+	font-weight: 400;
+	font-style: normal;
+}
+table, tr, td {
+	border: none;
+}
+button {
+	border: none;
+	background-color: transparent;
+	cursor: pointer;
+	font-size: 20px;
+	font-family: 'Inter', sans-serif;
+	letter-spacing: -2px;
+	color: #222;
+	line-height: 1;
+}
+input, textarea {
+	border: none;
+	font-family: 'Inter', sans-serif;
+}
+span {
+	vertical-align: middle;
+	cursor: default;
+}
+
+/* common */
+
+.hide {
+	display: none;
+}
+.blind {
+	position: absolute;
+	left: -9999px;
+	top: -9999px;
+}
+=======
+@charset "UTF-8";
+
+/* 디자인 초기화 */
+
+body, div, p, ul, ol, li, dl, dt, dd, h1, h2, h3, h3, h4, h5, h6, /*html태그*/ 
+table, tr, th, hd, /*table태그*/ 
+form, fieldset, legend, input, label, select, textarea, button, /*form태그*/ 
+header, footer, nav, aside, section, article, main, /*css3태그*/ 
+a, span, strong, em, b, i, address /*inline태그*/ {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+body, h1, h2, h3, h4, h5, h6 {
+	font-size: 20px;
+	font-family: 'Inter', sans-serif;
+	color: #222;
+	line-height: 1;
+}
+a {
+	text-decoration: none;
+	color: #222;
+}
+ul, ol, li {
+	list-style: none;
+	cursor: default;
+}
+img, fieldset {
+	border: none;
+	vertical-align: middle;
+}
+strong, em, e, i, address {
+	font-weight: 400;
+	font-style: normal;
+}
+table, tr, td {
+	border: none;
+}
+button {
+	border: none;
+	background-color: transparent;
+	cursor: pointer;
+	font-size: 20px;
+	font-family: 'Inter', sans-serif;
+	letter-spacing: -2px;
+	color: #222;
+	line-height: 1;
+}
+input, textarea {
+	border: none;
+	font-family: 'Inter', sans-serif;
+}
+span {
+	vertical-align: middle;
+	cursor: default;
+}
+
+/* common */
+
+.hide {
+	display: none;
+}
+.blind {
+	position: absolute;
+	left: -9999px;
+	top: -9999px;
+}
+

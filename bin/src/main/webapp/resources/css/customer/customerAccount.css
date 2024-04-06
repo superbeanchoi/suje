@@ -1,0 +1,196 @@
+@charset "UTF-8";
+
+body {
+	width: 100%;
+}
+
+.main {
+	/* width: 1900px; */
+	width: auto;
+	height: auto;
+	display: flex;
+	margin: 0 auto;
+	margin-top: 40px;
+	margin-bottom: 40px;
+	justify-content: center;
+}
+
+.main>div {
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+
+.mainContentleft {
+	margin-right: 40px;
+	width: auto;
+	text-align: center;
+}
+
+.mainContentleft div:nth-child(1) {
+	width: 120px;
+	height: 120px;
+	margin: 0 auto;
+	margin-bottom: 20px;
+	text-align: center;
+	line-height: 50px;
+
+}
+
+.mainContentleft div:nth-child(2) {
+	width: 300px;
+	height: 50px;
+	margin-bottom: 50px;
+	text-align: center;
+	line-height: 50px;
+		font-size: 30px;
+	font-weight: bold;
+}
+
+.mainContentleft div:nth-child(3), .mainContentleft div:nth-child(4),
+	.mainContentleft div:nth-child(5), .mainContentleft div:nth-child(6),
+	.mainContentleft div:nth-child(7), .mainContentleft div:nth-child(8),
+	.mainContentleft div:nth-child(9) {
+	width: 300px;
+	height: 50px;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	line-height: 50px;
+}
+
+.mainContentright {
+	width: 1020px;
+	height: auto;
+}
+
+.subtitle {
+	font-weight: bold;
+	font-size: 30px;
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+
+.myPageLine {
+	width: 100%;
+	height: 5px;
+	background-color: #D9D9D9;
+	margin-top: 40px;
+}
+
+.myPageLine:last-child{
+	margin-top: 40px;
+	
+}
+.mainInputFormTitle {
+	display: flex;
+}
+
+.mainInputFormTitle div:first-child div:first-child {
+	margin-top: 60px;
+}
+
+.mainInputFormTitle div:first-child div {
+	width: 200px;
+	height: 50px;
+	margin-bottom: 20px;
+	text-align: left;
+	vertical-align: middle;
+	margin-left: 40px;
+	line-height: 50px;
+}
+
+.mainInputFormTitle input {
+	border: 2px solid #ADEFD1;
+	border-radius: 10px;
+	text-align: center;
+}
+
+.mainInputFormTitle div:nth-child(2)>div:first-child {
+	margin-top: 60px;
+}
+
+.mainInputFormTitle div:nth-child(2) input {
+	width: 300px;
+	height: 50px;
+	margin-bottom: 20px;
+}
+
+.mainInputFormTitle>div:nth-child(2)>div:nth-child(1)>select {
+	width: 200px;
+	height: 50px;
+	margin-bottom: 20px;
+	border: 2px solid #ADEFD1;
+	border-radius: 10px;
+	text-align: center;
+	font-size: 15pt;
+}
+
+.mainInputFormTitle>div:nth-child(2)>div:nth-child(5)>input {
+	width: 100px;
+	height: 50px;
+	
+}
+
+.mainInputFormTitle div:nth-child(2) input[type=radio] {
+	width: 10px;
+	height: 10px;
+	margin-right: 30px;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	line-height: 50px;
+}
+
+.mainInputFormTitle div:nth-child(2) input[type=radio]:nth-child(2) {
+	width: 10px;
+	height: 10px;
+	margin-left: 20px;
+	margin-right: 30px;
+}
+
+.customSex {
+	width: 300px;
+	height: 50px;
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+	line-height: 50px;
+	text-align: center;
+}
+
+.customSex div:last-child {
+	margin-right: 20px;
+}
+
+.customSex div:nth-child(3) {
+	margin-left: 70px;
+}
+
+.modifyBtn {
+	width: 300px;
+	height: 50px;
+	margin-left: 40px;
+	margin-top: 30px;
+
+}
+
+.modifyBtn input {
+	width: 300px;
+	height: 50px;
+	text-align: center;
+	font-size: 20px;
+	background-color: #ADEFD1;
+	border: 2px solid #ADEFD1;
+	border-radius: 10px;
+	cursor: pointer;
+   transition: background-color 0.2s ease, border 0.2s ease;
+}
+
+.modifyBtn input:hover {
+   border: 2px solid #ADEFD1;
+   background-color: #fff;
+}
+
+input {
+	font-size: 18px;
+}

@@ -1,0 +1,121 @@
+@charset "UTF-8";
+
+/*Modal*/
+
+.finalOrderModalLogo  {
+	width: 62px;
+	height: 20px;
+	display: block;
+	margin-right: 58px;
+	float: left;
+}
+.modalMainTitle {
+	width: 240px;
+	height: 20px;
+	font-size: 15px;
+	font-weight: bold;
+	line-height: 20px;
+	float: left;
+}
+.finalOrderCodeTitle {
+	width: 100px;
+	height: 30px;
+	display: block;
+	float: left;
+	line-height: 30px;
+	font-size: 12px;
+}
+.finalOrderCode {
+	width: 180px;
+	height: 30px;
+	font-size: 12px;
+	text-align: center;
+	border: 2px solid #ADEFD1;
+	border-radius: 5px;
+	background-color: #fff;
+}
+
+.modalContentsBox {
+	width: 600px;
+	height: 30px;
+	margin-top: 10px;
+	margin-left: 20px;
+}
+.modalContentsBigBox {
+	width: 600px;
+	height: 70px;
+	margin-top: 10px;
+	margin-left: 20px;
+}
+.marginmodalContentsBox {
+	margin-top: 40px;
+}
+.modalContentsTitle {
+	width: 100px;
+	height: 30px;
+	display: block;
+	float: left;
+	line-height: 30px;
+	font-size: 12px;
+}
+.modalCategory {
+	width: 150px;
+	height: 30px;
+	font-size: 12px;
+	text-align: center;
+	border: 2px solid #ADEFD1;
+	border-radius: 5px;
+	background-color: #fff;
+	color:222;
+	float: left;
+	margin-right: 20px;
+}
+.modalContentsInfo {
+	width: 100px;
+	height: 30px;
+	font-size: 12px;
+	text-align: center;
+	border: 2px solid #ADEFD1;
+	border-radius: 5px;
+	background-color: #fff;
+	color:222;
+	float: left;
+}
+.modalContentsLongInfo {
+	width: 500px;
+	height: 70px;
+	font-size: 12px;
+	border: 2px solid #ADEFD1;
+	text-align: left;
+	border-radius: 5px;
+	background-color: #fff;
+	color:222;
+	float: left;
+	padding: 5px;
+	resize: none;
+}
+.orderCount {
+	width: 30px;
+	height: 30px;
+	font-size: 12px;
+	line-height: 30px;
+	float: left;
+	margin: 0 80px 0 10px;
+}
+
+.modalCloseBtn {
+	width: 200px;
+	height: 30px;
+	margin: 40px 220px;
+	font-size: 15px;
+	border-radius: 5px;
+	background-color: #ADEFD1;
+	float: left;
+	cursor: pointer;
+	transition: box-shadow 0.2s ease;
+}
+.modalCloseBtn:hover {
+	box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.25);
+}
+
+

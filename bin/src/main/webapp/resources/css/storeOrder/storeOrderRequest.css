@@ -1,0 +1,77 @@
+@charset "UTF-8";
+.title {
+	font-size: 30px; /* 화면 너비에 대해 상대적인 크기 */
+	margin-left: 30px; /* 왼쪽 여백을 화면 너비의 5%로 설정 */
+	margin-top: 40px;
+}
+
+.subtitle {
+   font-size: 30px; /* 화면 너비에 대해 상대적인 크기 */
+   margin-left: 2%; /* 왼쪽 여백을 화면 너비의 5%로 설정 */
+   margin-top: 5%;
+}
+
+.hr {
+   border-top: 5px solid #d9d9d9; /* 위쪽 테두리 설정 */
+   margin-top: 30px; /* 위쪽 여백 설정 */
+   margin-bottom: 20px; /* 아래쪽 여백 설정 */
+}
+
+.hr2 {
+   border-top: 2px solid #ADEFD1; /* 위쪽 테두리 설정 */
+   margin-top: 20px; /* 위쪽 여백 설정 */
+   margin-bottom: 20px; /* 아래쪽 여백 설정 */
+}
+
+
+.orderList {
+    float: left;
+    width: 30%; /* 원하는 너비로 조정 */
+    margin-top: 50px;
+}
+
+.chatBox {
+    float: right;
+    width: 70%; /* 원하는 너비로 조정 */
+    margin-top: 50px;
+}
+#chatMessages {
+   width:830px;
+    height:650px;
+    background-color:#ADEFD1;
+    overflow-y: scroll;
+}
+/* 말풍선 스타일 */
+.chatMessage {
+    margin: 10px 0;
+    padding: 10px;
+    background-color: #ADEFD1;
+    border-radius: 10px;
+    max-width: 80%; /* 말풍선 최대 너비 */
+}
+
+/* 주문자의 말풍선 스타일 */
+.senderMessage {
+    float: right;
+    background-color: #DCF8C6; /* 주문자 말풍선 배경색 */
+}
+
+/* 상점의 말풍선 스타일 */
+.receiverMessage {
+    float: left;
+    background-color: #F7F7F7; /* 상점 말풍선 배경색 */
+}
+
+input[type="text"], button {
+    display: block;
+
+}
+
+
+
+
+
+
+
+
+

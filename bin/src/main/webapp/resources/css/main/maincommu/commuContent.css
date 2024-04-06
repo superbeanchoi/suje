@@ -1,0 +1,349 @@
+@charset "UTF-8";
+
+body {
+	background-color: #fff;
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+}
+
+.contentsWrap {
+	flex-grow: 1;
+	width: 1440px;
+	padding-top: 60px;
+	padding-bottom: 60px;
+	margin: 0 auto;
+	background-color: #fff;
+}
+
+.contents {
+/* 	background-color: #ccc; */
+	width: 1080px;
+	margin: 0 auto;
+	flex-grow: 1;
+	padding-bottom: 140px;
+}
+
+
+.postCategory {
+	width: 410px;
+	height: 40px;
+}
+
+.postCategory a, .postCategory img {
+	display: block;
+	float: left;
+	font-size: 20px;
+	font-weight: 700;
+	line-height: 40px;
+}
+
+.postCategory a:first-child{
+	width: 70px;
+	height: 40px;
+	color: #999;
+} 
+
+.postCategoryArrow {
+	width: 20px;
+	height: 20px;
+	margin: 10px 0;
+	margin-right: 10px;
+	transform: rotate(-90deg);
+}
+
+.postbar{
+ 	width: 1080px;
+	height: 5px;
+	background-color: #D9D9D9;
+	margin-top: 20px;
+	margin-bottom: 40px;
+}
+
+.postTitle {
+	width: 1080px;
+	height: auto;
+	display: flex;
+	flex-direction: column;
+	margin-top: 40px;
+	font-size: 40px;
+	font-weight: 700;
+	line-height: 50px;
+	background-color: #fff;
+	color: #222;
+}
+
+.postwriterArea {
+	width: 1080px;
+	height: 50px;
+	margin-top: 40px;
+	position: relative;
+}
+
+.postwriterProfile {
+	width: 40px;
+	height: 40px;
+	display: block;
+	float: left;
+	margin: 5px 20px 5px 10px;
+}
+
+.postwriterArea span {
+	width: 200px;
+	height: 50px;
+	display: block;
+	float: left;
+	font-size: 20px;
+	line-height: 50px;
+}
+
+.postwriterNickname {
+	font-weight: 700;
+}
+
+.postDate {
+	background-color: #fff;
+	color: #999;
+	font-size: 20px;
+	margin-left: 570px;
+}
+
+
+.postSubmenu, .postSubmenu img {
+	width: 40px;
+	height: 40px;
+	float: right;
+}
+
+
+/* commentDetailBtn */
+
+
+.postDetailBtn-container  {
+	position: absolute;
+	top: 50px;
+	right: 0;
+	border: 2px solid #ADEFD1;
+	background-color: #fff;
+	width: 200px;
+	height: 143px;
+	font-size: 20px;
+	display: none;
+}
+
+.postDetailBtn {
+	width: 100%;
+	height: 70px;
+	font-weight: 700;
+	background-color: #fff;
+	transition: background-color 0.2s ease;
+}
+.postDetailBtn:hover {
+	background-color: #ADEFD1;
+}
+
+.postMainImg {
+	width: 800px;
+	display: grid;
+	row-gap: 10px;
+	grid-template-columns: repeat(1, 1fr);
+	margin: 0 auto;
+}
+.postMainImg img {
+	width: 800px;
+	height: auto;
+	display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.postContent {
+	width: 1080px;
+	height: auto;
+	margin-top: 80px;
+	font-size: 22px;
+	line-height: 1.5;
+	padding: 0 10px 70px;
+}
+
+.postEtc {
+	width: 520px;
+	height: 40px;
+}
+
+.postEtc img, .postEtc button {
+	width: 40px;
+	height: 40px;
+	display: block;
+	float: left;
+}
+
+.postEtc span {
+	width: 100px;
+	height: 40px;
+	display: block;
+	float: left;
+	margin-left: 20px;
+	font-size: 22px;
+	font-weight: 700;
+	line-height: 40px;
+	color: #999;
+}
+
+
+/* 게시글 댓글 영역 */
+.myComment {
+	width: 1080px;
+	height: 150px;
+	border: 3px solid #D9D9D9;
+	border-radius: 10px;
+	padding: 20px;
+	margin-bottom: 40px;
+}
+.writerProfile {
+	width: 200px;
+	height: 40px;
+	float: left;
+}
+.writerProfile img:hover {
+	box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.25);
+}
+.writerProfile img {
+	width: 40px;
+	height: 40px;
+	border-radius:20px;
+	float: left;
+	transition: box-shadow 0.2s ease;
+}
+.myNickname {
+	width: 90px;
+	height: 40px;
+	float: left;
+	font-size: 20px;
+	font-weight: 700;
+	line-height: 40px;
+}
+
+.myCommentText {
+	width: 650px;
+	height: 110px;
+	font-size: 20px;
+	text-align: left;
+	vertical-align: top;
+	line-height: 1.5;
+	padding:5px;
+	resize: none;
+	margin-left: 40px;
+}
+.myCommentTextNotLogin {
+	width: 100%;
+	height: 110px;
+	font-size: 20px;
+	text-align: left;
+	vertical-align: top;
+	line-height: 1.5;
+	padding:5px;
+	resize: none;
+}
+.myCommentText:focus {
+	outline: 2px solid #ADEFD1;
+	cursor: text;
+}
+.myCommentBtn {
+	width: 100px;
+	height: 100px;
+	display: block;
+	float: right;
+	background-color: #00203F;
+	color: #fff;
+	font-weight: 700;
+	border-radius: 10px;
+	transition: background-color 0.2s ease, border 0.2s ease, color 0.2s ease;
+	
+}
+.myCommentBtn:hover {
+	border: 2px solid #ADEFD1;
+	background-color: #fff;
+	color: #222;
+}
+.postComment {
+	width: 1080px;
+	height: auto;
+	padding: 20px 0;
+	margin-top: 20px;
+	position: relative;
+}
+
+.commentDetailBtn {
+	position: absolute;
+	top: 70px;
+	right: 10px;
+	border: 2px solid #ADEFD1;
+	background-color: #fff;
+	width: 200px;
+	height: 80px;
+	font-weight: 700;
+	font-size: 20px;
+	display: none;
+	transition: background-color 0.2s ease;
+}
+.commentDetailBtn:hover {
+	background-color: #ADEFD1;
+}
+
+
+.commentWriterArea {
+	width: 1080px;
+	height: 40px;
+}
+
+.commentwriterProfile span, .commentwriterProfile img {
+	float: left;
+}
+
+.commentwriterNickname {
+	font-weight: 700;
+}
+
+.commentwriterProfile span{	
+	width: 470px;
+	height: 40px;
+	float: left;
+	font-size: 20px;
+	line-height: 40px;
+}
+
+.commentDate {
+
+	display: block;
+	float: left;
+	margin-left: 0px;
+	line-height: 40px;
+	color: #999;
+	text-align: right;
+}
+
+.commentsubmenu, .commentsubmenu img {
+	width: 40px;
+	height: 40px;
+	float: right;
+}
+
+.postCommentText {
+	width: 880px;
+	margin-top: 30px;
+	margin-left: 65px;
+	line-height: 1.5;
+}
+
+
+
+footer {
+	width: 100%;
+	height: 200px;
+	background-color: #ADEFD1;
+}
+
+
+
+

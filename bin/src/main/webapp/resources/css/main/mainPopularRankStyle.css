@@ -1,0 +1,176 @@
+@charset "UTF-8";
+
+body {
+	background-color: #fff;
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+}
+
+.contentsWrap {
+	flex-grow: 1;
+	width: 1440px;
+	padding-top: 40px;
+	padding-bottom: 50px;
+	margin: 0 auto;
+	background-color: #fff;
+}
+
+/*Title*/
+.contentsTitleArea {
+	width: 1260px;
+	height: 50px;
+	margin: 0 auto;
+}
+.contentsTitle {
+	width: 250px;
+	height: 50px;
+	float:left;
+	font-size: 30px;
+	font-weight: bold;
+	line-height: 50px;
+}
+.categoryFilter {
+	width: 150px;
+	height: 40px;
+	display: block;
+	float: right;
+	border-radius: 20px;
+	text-align: center;
+	border: 2px solid #999;
+	cursor: pointer;
+}
+.categoryFilter:focus {
+	outline: 1px solid #999;
+}
+.contentsLine {
+	width: 1260px;
+	height: 5px;
+	background-color: #eee;
+	margin: 10px auto;
+}
+
+.contentsRankArea {
+	width: 1260px;
+	height: auto;
+	margin: 40px auto;
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	row-gap: 40px;
+	column-gap: 120px;
+}
+.eachRankTable {
+	width: 570px;
+	height: 190px;
+	float: left;
+}
+.eachRankNumTd {
+	vertical-align: top;
+}
+.eachRankNumTd div {
+	width: 50px;
+	height: 50px;
+	text-align: center;
+	line-height: 50px;
+	font-size: 30px;
+	color: #999;
+}
+.eachRankStoreProfileTd img {
+	width: 50px;
+	height: 50px;
+	border-radius: 25px;
+	margin-right: 20px;
+	float: left;
+}
+.eachStoreInfoArea {
+	width: 170px;
+	height: 50px;
+	float: left;
+}
+.eachStoreCate {
+	width: 170px;
+	height: 20px;
+	font-size: 15px;
+	line-height: 20px;
+	color: #999;
+}
+.eachStoreName {
+	width: 170px;
+	height: 30px;
+	font-size: 20px;
+	line-height: 30px;
+}
+
+.eachRankStorePortfolioTr td div {
+	width: 120px;
+	height: 120px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-radius: 10px;
+	overflow: hidden;
+	background-color: #eee;
+}
+.eachRankStorePortfolioTr img {
+	max-height: 100%;
+	width: auto;
+	height: auto;
+	display: block;
+	margin: auto;
+}
+
+
+.eachRankStoreBtnTd a {
+	width: 150px;
+	height: 30px;
+	display: block;
+	float: right;
+	font-size: 15px;
+	font-weight: bold;
+	text-align: center;
+	line-height: 30px;
+	background-color: #ADEFD1;
+	border-radius: 10px;
+	transition: background-color 0.2s ease, border 0.2s ease;
+}
+.eachRankStoreBtnTd a:hover {
+	background-color: #fff;
+	border: 1px solid #ADEFD1;
+}
+.eachRankStorePortfolioTr {
+	margin: 0 auto;
+}
+
+.noneItemArea {
+	width: 1260px;
+	height: auto;
+	margin: 100px 0 100px 0;
+	font-size: 30px;
+	font-weight:bold;
+	text-align: center;
+}
+
+.moreStoreBtn {
+	width: 1000px;
+	height: 70px;
+	display: block;
+	font-size: 30px;
+	text-align: center;
+	line-height: 70px;
+	background-color: #ADEFD1;
+	border-radius: 20px;
+	transition: background-color 0.2s ease, border 0.2s ease;
+	margin: 40px auto 0;
+}
+.moreStoreBtn:hover {
+	background-color: #fff;
+	border: 2px solid #ADEFD1;
+	font-weight: bold;
+}
+
+/*Footer*/
+footer {
+	width: 100%;
+	height: 200px;
+	background-color: #ADEFD1;
+}

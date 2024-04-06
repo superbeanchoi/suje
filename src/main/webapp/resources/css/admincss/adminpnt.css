@@ -1,0 +1,311 @@
+/* ���� ���ڵ� �� �⺻ ��Ÿ�� ���� */
+@charset "UTF-8";
+
+.adminTitle {
+	margin: 30px 0 20px 30px
+}
+
+.adminSubtitle {
+	margin: 40px 0 0 30px;
+}
+
+.adminTitle, .adminSubTitle {
+	display: block;
+	width: 500px;
+	height: 50px;
+	font-size: 30px;
+	font-weight: bold;
+	line-height: 50px;
+}
+
+/* hr ��� ��Ÿ�ϸ� */
+.adminHr {
+	border: none;
+	width: 100%;
+	height: 5px;
+	background-color: #eee;
+	margin: 0;
+}
+
+/* ���� �ο� ���ǰ� ���� ���� ���� �� ���� ���� */
+.adminContentsBox>.adminSection, .adminContentsBox>.adminTable {
+	margin-bottom: 20px; /* �Ʒ��� ���� �߰� */
+}
+
+/* ���� �ο� ���� ��� �� ���� ���� */
+.adminContentsBox>.adminSection>* {
+	margin-bottom: 10px; /* �Ʒ��� ���� �߰� */
+}
+
+/* �ʵ�� ��� �� ���� ���� */
+.adminContentsBox fieldset {
+	margin-top: 30px;
+}
+
+/* ����ϱ� ��ư ��Ÿ�� ���� */
+.submitButton[type="submit"] {
+	margin-top: 35px; /* ���� ���� ���� */
+	transition: background-color 0.2s ease, border 0.2s ease;
+}
+
+/* �ʵ�� �� ��ҵ� �� ���� ���� ���� */
+.adminContentsBox fieldset>label, .adminContentsBox fieldset>input[type="text"],
+	.adminContentsBox fieldset>input[type="number"], .adminContentsBox fieldset>textarea,
+	.adminContentsBox fieldset>button {
+	margin-bottom: 50px; /* �� ��ҵ� ���� ���� ���� ���� */
+}
+
+/* ���̵� �˻�â ��Ÿ�� */
+.inputField#storeId {
+	width: 300px; /* �ʺ� 300px�� ���� */
+	height: 50px; /* ���� 50px�� ���� */
+	border: 2px solid #ADEFD1; /* �׵θ� �� �� �β� ���� */
+	border-radius: 5px; /* �׵θ� �𼭸� �ձ۰� ���� */
+	padding: 5px; /* ���� ���� ���� */
+	font-size: 15px;
+}
+
+/* �˻� ���â ��Ÿ�� */
+.searchResult#searchResults {
+	width: 600px; /* �ʺ� 600px�� ���� */
+	height: 50px; /* ���� 50px�� ���� */
+	border: 2px solid #ADEFD1; /* �׵θ� �� �� �β� ���� */
+	border-radius: 5px; /* �׵θ� �𼭸� �ձ۰� ���� */
+	padding: 5px; /* ���� ���� ���� */
+	text-align: center;
+}
+
+.inputField#storeId {
+	margin-right: 30px; /* �Է� â ���� ���� ���� */
+}
+
+.inputField#storeId, .searchResult#searchResults {
+	margin-left: 30px; /* ���� ���� ���� */
+}
+
+.pntPoints#pntPoints {
+	width: 100px; /* �ʺ� ���� */
+	height: 50px; /* ���� ���� */
+	border: 2px solid #ADEFD1; /* �׵θ� ���� */
+	margin-left: 120px;
+	padding: 0 10px;
+	text-align: center;
+	font-size: 15px;
+}
+/* ���� ���� �Է�ĭ ��Ÿ�� ���� */
+.pntReason#pntReason {
+	width: 1130px;
+	height: 100px;
+	border: 1px solid #ADEFD1; /* �׵θ� �� ���� */
+	margin: 0 auto; /* ��� ���� */
+	display: block; /* ��� ��ҷ� �����Ͽ� ������ ���� �����ϵ��� �� */
+	margin-top: 15px;
+	resize: none; /* �������� ��Ȱ��ȭ */
+	padding: 10px;
+	font-size: 15px;
+}
+/* ����ϱ� ��ư ��Ÿ�� ���� */
+.submitButton[type="submit"] {
+	width: 300px;
+	height: 50px;
+	background-color: #ADEFD1; /* ���� ���� */
+	border: none; /* �׵θ� ���� */
+	color: #000; /* ���ڻ� ���� */
+	border-radius: 10px; /* �ձ� �𼭸� ���� */
+	margin-left: 30px;
+}
+
+.submitButton[type="submit"]:hover {
+	background-color: #fff;
+	border: 2px solid #ADEFD1;
+	font-weight: bold;
+}
+
+/* ���̵� �˻�â ��Ÿ�� */
+.inputField#storeId, .searchResult#searchResults, .pntPoints#pntPoints,
+	.pntReason#pntReason {
+	border-radius: 10px; /* �ձ� �𼭸� ���� */
+}
+/* �����ο� ��Ʈ ��! */
+/* ���� ���� ��Ʈ ���� */
+/* ���̺� ���ʿ� ���� �߰� */
+.adminContentsBox table {
+	margin-top: 20px; /* ���� ���� ���� */
+	text-align: center;
+	border-bottom: 2px solid #ADEFD1; /* ���� ������ ��Ÿ�� ���� */
+	border-top: 2px solid #ADEFD1;
+}
+/* ���� ���� �� ũ�� ���� */
+#pntReasonCell {
+	width: 380px;
+}
+
+/* ���̺� ��� ��Ÿ�� ���� */
+.adminTable th {
+	background-color: #ADEFD1; /* ����� ������ ADEFD1�� ���� */
+	border-top: 2px solid #ffffff; /* ��� �׵θ� ���� */
+	border-bottom: 2px solid #ffffff; /* �ϴ� �׵θ� ���� */
+	padding: 10px; /* �� ���� ���� ���� */
+	font-size: 15px;
+}
+
+/* ���̺��� �� ���� �� ��Ÿ�� ���� */
+.adminTable thead tr:first-child th {
+	border-top: 2px solid #ADEFD1; /* �� �� �ٿ� ��� �׵θ� ���� */
+}
+
+/* ���̺��� �� �Ʒ��� �� ��Ÿ�� ���� */
+.adminTable tfoot tr:last-child td {
+	border-bottom: 2px solid #ADEFD1; /* �� �Ʒ� �ٿ� �ϴ� �׵θ� ���� */
+}
+
+/* ���̺� �� ���� �� ��Ÿ�� ���� */
+.adminTable tbody td {
+	padding: 10px; /* �� ���� ���� ���� ���� */
+	text-align: center; /* �ؽ�Ʈ ��� ���� */
+	font-size: 15px;
+}
+
+/* ���̺� ��� �� ���̿� ���� �ش��ϴ� �� ��Ÿ�� ���� */
+.adminTable thead tr th:not(:last-child) {
+	border-right: 2px solid #ffffff; /* �� �� ���̿� ������ �� ���� */
+}
+
+/* �߰� �� ���� */
+.adminTable tbody tr:not(:last-child) td {
+	border-bottom: none; /* �߰� �� ���� */
+}
+
+.pageingArea {
+	text-align: center; /* ���� ��ҵ��� ��� �����ϱ� ���� ���� */
+	width: auto;
+	margin: 40px auto 40px;
+	display: flex;
+	justify-content: center;
+	align-item: center;
+}
+
+.adminTable {
+	width: 100%; /* ���̺��� �ʺ� 100%�� �����Ͽ� �θ� ��ҿ� ���� */
+}
+
+.pageingArea a {
+	width: 20px;
+	height: 20px;
+	display: inline-block; /* �ζ��� ��� ��ҷ� �����Ͽ� ��� ���Ŀ� �����ϵ��� �� */
+	text-align: center; /* ���� �ؽ�Ʈ�� ��� �����ϱ� ���� ���� */
+	line-height: 20px;
+	color: #999999;
+	margin: 0 5px;
+}
+
+.pageingArea a img {
+	width: 20px;
+	height: 20px;
+}
+
+.pageingArea a:hover {
+	text-decoration: underline;
+}
+
+.searchBox {
+	position: relative;
+}
+
+.serchimg {
+	position: absolute;
+	left: 290px;
+	right: 50;
+	top: 16px;
+	bottom: 50;
+}
+
+.idflied {
+	display: flex;
+}
+
+.inputField#storeId {
+	position: relative; /* ��� ��ġ ���� */
+}
+
+.searchButton {
+	position: absolute; /* �˻� ��ư�� ���� ��ġ�� ���� */
+	top: 0;
+	left: 250px; /* �˻� â�� �������� �������� ����. */
+	width: 20px;
+	height: 20px;
+	background-color: transparent;
+	border: none;
+	cursor: pointer;
+	margin-left: -50px; /* �������� �̵��ϴ� ���� ���� */
+	z-index: 1; /* �ٸ� ��� ���� ���̵��� ���� */
+}
+
+.searchIcon {
+	/* �̹��� ��Ÿ�� ���� */
+	position: absolute; /* �̹����� ���� ��ġ�� ���� */
+	top: 15px;
+	left: 290px; /* �˻� â�� �������� �������� ����. */
+	width: 20px;
+	height: 20px;
+	z-index: 1; /* �ٸ� ��� ���� ���̵��� ���� */
+}
+
+/* �̵���ų ��ҿ� ���� �߰� ��Ÿ�ϸ� */
+.inputLabel, .pntPoints, .pntReason .submitButton {
+	margin-left: 30px; /* ���� ���� ���� */
+	margin-top: 14px;
+}
+
+.adminTable {
+	width: 100%; /* ���� ���� �Է�ĭ�� ���� ���̿� ���� */
+	text-align: center;
+	border-bottom: 2px solid #ADEFD1; /* ���� ������ ��Ÿ�� ���� */
+	border-collapse: collapse; /* ���̺� ��� ���� */
+	margin-bottom: 40px; /* ���̺� �Ʒ��� ���� ���� */
+	width: 1130px;
+	margin-left: 30px;
+}
+
+#storeId:focus {
+	outline: 2px solid #ADEFD1; /* ��Ŀ���� �׵θ� ���� ���� */
+}
+
+#pntPoints:focus {
+	outline: 2px solid #ADEFD1; /* ��Ŀ���� �׵θ� ���� ���� */
+}
+
+#pntReason:focus {
+	outline: 2px solid #ADEFD1; /* ��Ŀ���� �׵θ� ���� ���� */
+}
+#searchResults:focus {
+	outline: 2px solid #ADEFD1 !important; /* ��Ŀ���� �׵θ� ���� ���� */
+}
+
+/* �˻�â ������ */
+.searchItem {
+	width: 300px;
+	padding: 10px 0;
+	display: grid;
+	grid-template-columns: repeat(1, 1fr);
+	row-gap: 10px;
+	background-color: #ccc;
+	position: absolute;
+	top: 40px;
+	right: 35px;
+	background-color: #fff;
+	display: none;
+	border: 1px solid #ADEFD1;
+}
+.searchItemGroup {
+	width: 298px;
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	background-color: #fff;
+}
+.searchItemGroup input {
+	display: block;
+	font-size: 20px;
+	cursor: pointer;
+	background-color: #fff;
+}

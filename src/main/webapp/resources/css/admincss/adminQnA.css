@@ -1,0 +1,133 @@
+@charset "UTF-8";
+
+.adminQnaMainTitle, .adminQnaSubTitle {
+	display: block;
+	width: 500px;
+	height: 50px;
+	font-size: 30px;
+	font-weight: bold;
+	line-height: 50px;
+}
+.adminQnaMainTitle {
+	margin: 30px 0 20px 30px;
+}
+.adminQnaSubTitle {
+	margin: 40px 0 0 30px;
+}
+.adminLine {
+	border: none; /* 기본 테두리 제거 */
+	width: 100%; /* 수평선의 너비 설정 */
+	height: 5px; /* 수평선의 높이 설정 */
+	background-color: #eee; /* 수평선의 배경색 설정 */
+	margin: 0;
+}
+
+.qnaTable {
+	width: 1130px;
+	margin: 40px auto;
+	border-top: 2px solid #ADEFD1;
+	border-bottom: 2px solid #ADEFD1;
+}
+.qnaTable thead {
+	background-color: #ADEFD1;
+}
+.qnaTableRow {
+	font-size: 15px;
+	height: 30px;
+	line-height: 30px;
+	text-align: center;
+}
+.qnaTableRow td{
+	padding: 5px 0;
+	cursor: pointer;
+}
+.qnaTableRow:hover {
+    background-color: #eee;
+}
+.qnaTableRowNumber {
+	text-decoration: underline;	
+}
+
+.pageingArea {
+	width: auto;
+	height: 20px;
+	margin: 0 auto 40px;
+	display: flex;
+	justify-content: center;
+	align-item: center;
+}
+.pageingArea a {
+	width: 20px;
+	height: 20px;
+	display: block;
+	float: left;
+	text-align: center;
+	line-height: 20px;
+	color: #999999;
+	margin: 0 5px;
+}
+.pageingArea a img {
+	width: 20px;
+	height: 20px;
+}
+
+.form-group {
+	margin: 40px 0 0 30px;
+}
+.formInfoTitle {
+	display: block;
+	float: left;
+	width: 200px;
+	height: 50px;
+	line-height: 50px;
+}
+.formQnaNum {
+	width: 200px;
+	height: 50px;
+	border: 2px solid #ADEFD1;
+	font-size: 20px;
+	color: #999999;
+	background-color: #eee;
+	border-radius: 10px;
+	text-align: center;
+}
+.formQnaTitle {
+	width: 930px;
+	height: 50px;
+	border: 2px solid #ADEFD1;
+	font-size: 20px;
+	color: #999999;
+	background-color: #fff;
+	border-radius: 10px;
+	text-align: center;
+}
+.formQnaTextArea {
+	width: 1130px;
+	height: 100px;
+	border: 2px solid #ADEFD1;
+	font-size: 20px;
+	color: #999999;
+	background-color: #fff;
+	border-radius: 10px;
+	resize: none;
+}
+.formQnaAnswer {
+	color: #222;
+}
+.formQnaAnswer:focus {
+	outline: 2px solid #ADEFD1;
+}
+
+.edit-button {
+	width: 300px;
+	height: 50px;
+	border-radius: 10px;
+	background-color: #ADEFD1;
+	margin: 40px 0 0 30px;
+	transition: background-color 0.2s ease, border 0.2s ease;
+}
+.edit-button:hover {
+	background-color: #fff;
+	border: 2px solid #ADEFD1;
+	font-weight: bold;
+}

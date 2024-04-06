@@ -1,0 +1,247 @@
+@charset "UTF-8";
+
+/* body ��� ��Ÿ�� */
+body {
+	background-color: #fff; /* ���� ���� */
+	min-height: 100vh; /* �ּ� ���� ���� */
+	display: flex; /* ������ �ڽ� �� ��� */
+	flex-direction: column; /* �������� ���� �������� ��ġ */
+}
+
+/* ������ �� ��� ��Ÿ�� */
+.contentsWrap {
+	flex-grow: 1;
+	width: 1440px;
+	padding-top: 50px;
+	padding-bottom: 50px;
+	margin: 0 auto;
+	background-color: #fff;
+}
+
+/* Ǫ�� ��� ��Ÿ�� */
+footer {
+	width: 100%; /* �ʺ� 100% ���� */
+	height: 200px; /* ���� 200px ���� */
+	background-color: #ADEFD1; /* ���� ���� */
+}
+
+/* �� ���� ��Ÿ�� */
+.writeTitle {
+	font-size: 30px; /* ���� ũ�� ���� */
+	font-weight: bold; /* ���� �۾�ü ���� */
+	margin-left: 176px; /* ���� ���� ���� */
+	margin-bottom: 30px; /* �Ʒ��� ���� ���� */
+}
+
+/* ���� ���м� ��Ÿ�� */
+.writeHr {
+	width: 1080px; /* �ʺ� ���� */
+	height: 5px; /* ���� ���� */
+	background-color: #EEEEEE; /* ���� ���� */
+	border: none; /* �׵θ� ���� */
+}
+/* ������ �ؽ�Ʈ�� ���� ũ�� */
+body:not(.writeTitle) {
+	font-size: 20px; /* ���� ũ�� ���� */
+}
+
+.inputGroup {
+	margin-top: 30px;
+	margin-left: 160px;
+}
+/* �� ��Ÿ�� */
+label[for="category"] {
+	width: 200px; /* �ʺ� ���� */
+	height: 50px; /* ���� ���� */
+	display: inline-block; /* �ζ��� ��� ��ҷ� �����Ͽ� ���� �ٿ� ��ġ */
+	padding-left: 20px;
+}
+
+/* ����Ʈ �ڽ� ��Ÿ�� */
+#category.selectBox {
+	width: 430px; /* �ʺ� ���� */
+	height: 50px; /* ���� ���� */
+	display: inline-block; /* �ζ��� ��� ��ҷ� �����Ͽ� ���� �ٿ� ��ġ */
+	text-align: center; /* �ؽ�Ʈ�� �������� ��� ���� */
+	cursor: pointer;
+}
+
+.selectBox {
+	font-size: 20px; /* ���� ũ�� ���� */
+	border-radius: 10px; /* �ձ� �𼭸� ���� */
+	border: 2px solid #ADEFD1; /* �׵θ� �� �� �β� ���� */
+	align-items: center; /* ���� ���� ���� */
+}
+
+.selectBox:focus {
+	outline: 2px solid #ADEFD1; /* ��Ŀ���� �׵θ� ���� ���� */
+}
+/* �� ��Ÿ�� */
+label[for="title"] {
+	width: 200px; /* �ʺ� ���� */
+	height: 50px; /* ���� ���� */
+	display: inline-block; /* �ζ��� ��� ��ҷ� �����Ͽ� ���� �ٿ� ��ġ */
+	font-size: 20px; /* ���� ũ�� ���� */
+	margin-top: 30px; /* ���� ���� ���� */
+	margin-left: 20px; /* ���� ���� ���� */
+}
+
+/* �Է� �ʵ� ��Ÿ�� */
+#title.inputField {
+	width: 880px; /* �ʺ� ���� */
+	height: 50px; /* ���� ���� */
+	margin-top: 30px; /* ���� ���� ���� */
+	margin-left: -22px; /* ���� ���� ���� */
+	padding: 12px 20px; /* ���� ���� ���� */
+	font-size: 20px; /* ���� ũ�� ���� */
+	border-radius: 10px; /* �ձ� �𼭸� ���� */
+	border: 2px solid #ADEFD1; /* �׵θ� �� �� �β� ���� */
+	box-sizing: border-box; /* �ʺ�� ���̿� padding�� border ���� */
+}
+
+.inputField:focus {
+	outline: 2px solid #ADEFD1; /* ��Ŀ���� �׵θ� ���� ���� */
+}
+/* �̹��� �����̳� ��Ÿ�� */
+.imageContainer {
+	width: 1080px;
+	display: block;
+	height: 100%;
+	margin-top: 30px;
+	margin-left: 20px;
+}
+.inputBox {
+	display: flex;
+	width: 880px;
+	height: auto;
+	margin-bottom: 20px;
+}
+.inputBox img {
+	float: left;
+	width: 150px;
+	margin-right: 20px;
+}
+.inputBox input, .inputBox button {
+	margin: auto 0;
+}
+
+.nonebox {
+	width: 100%;
+	height: 30px;
+}
+
+.imageNameContainer {
+	width: 180px;
+	height: 100%;
+	float: left;
+	display: flex; /* ������ �ڽ� �� ��� */
+}
+
+.imgname {
+	width: 100px;
+	height: 100%;
+	line-height: 30px;
+}
+
+/* �̹��� ��Ÿ�� */
+.imgPreview {
+	float: right;
+	width: 900px;
+	float: left;
+}
+.imgPreview img {
+	width: 120px; /* �̹��� �ʺ� ���� */
+	height: 120px; /* �̹��� ���� �ڵ� ���� */
+	margin-right: 40px;
+	margin-bottom: 20px;
+	border-radius: 10px;
+	border: 1px solid #ADEFD1;
+}
+.comOpenArea {
+	float: right;
+	width: 900px;
+}
+
+/* �̹��� �ε� ��ư ��Ÿ�� */
+.loadButton {
+	display: block;
+	float:left;
+	margin-bottom: 10px; /* ���� ���� ���� */
+	width: auto;
+	height: auto;
+	color: #000; /* ���ڻ� ���� */
+	font-size: 15px;
+}
+
+.imgPlusBtn, .imgMinusBtn {
+	width: 30px;
+	height: 30px;
+	display: block;
+	float: left;
+	background-color: #ADEFD1;
+	font-size: 15px;
+	margin-right: 50px;
+	border-radius: 15px;
+	transition: background-color 0.2s ease, border 0.2s ease;
+}
+.imgPlusBtn:hover, .imgMinusBtn:hover {
+	background-color: #fff;
+	border: 2px solid #ADEFD1;
+	font-weight: bold; 
+}
+
+/* �ؽ�Ʈ ����� �� ��Ÿ�� */
+label[for="content"] {
+	display: inline-block; /* �ζ��� ��� ��ҷ� �����Ͽ� ���� �ٿ� ��ġ */
+	font-size: 20px; /* ���� ũ�� ���� */
+	margin-top: 30px; /* ���� ���� ���� */
+	margin-left: 20px; /* ���� ���� ���� */
+	width: 200px;
+	height: 50px;
+	float: left;
+	padding-top: 160px;
+}
+
+/* �ؽ�Ʈ ����� ��Ÿ�� */
+#content.textField {
+	width: 880px; /* �ʺ� ���� */
+	height: 400px; /* ���� ���� */
+	margin-top: 30px; /* ���� ���� ���� */
+	margin-left: -14px; /* ���� ���� ���� */
+	padding: 12px 20px; /* ���� ���� ���� */
+	font-size: 20px; /* ���� ũ�� ���� */
+	border-radius: 10px; /* �ձ� �𼭸� ���� */
+	border: 2px solid #ADEFD1; /* �׵θ� �� �� �β� ���� */
+	box-sizing: border-box; /* �ʺ�� ���̿� padding�� border ���� */
+	vertical-align: top; /* ���� â�� ���� ���� ��ܿ� ���� */
+	resize: none; /* ũ�� ���� ��Ȱ��ȭ */
+}
+
+/* �ؽ�Ʈ ����� ��Ŀ�� ��Ÿ�� */
+.textField:focus {
+	outline: 2px solid #ADEFD1; /* ��Ŀ���� �׵θ� ���� ���� */
+}
+
+.submitButton {
+	width: 300px; /* �ʺ� ���� */
+	height: 50px; /* ���� ���� */
+	background-color: #ADEFD1; /* ���� ���� */
+	border: none; /* �׵θ� ���� */
+	color: #000; /* ���ڻ� ���� */
+	font-size: 20px; /* ���� ũ�� ���� */
+	border-radius: 10px; /* �ձ� �𼭸� ���� */
+	text-align: center; /* �ؽ�Ʈ ��� ���� */
+	display: block; /* ��� ��ҷ� �����Ͽ� �߾� ������ ���� */
+	margin: auto; /* ���� �߾� ���� */
+	margin-top: 30px; /* ���� ���� ���� */
+	cursor: pointer; /* Ŀ�� ��� ���� */
+	transition: background-color 0.2s ease, border 0.2s ease;
+	/* ���� �� �׵θ� ��ȯ ȿ�� �߰� */
+	margin-bottom: 30px;
+}
+
+.submitButton:hover {
+	background-color: #fff;
+	border: 2px solid #ADEFD1;
+	font-weight: bold;; /* ȣ�� �� ���� ���� */
+}

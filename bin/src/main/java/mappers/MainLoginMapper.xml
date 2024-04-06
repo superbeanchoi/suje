@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="MainLoginDao">
+
+<!-- 회원 로그인 -->
+<select id="getMemberLogin" parameterType="mainLoginVO" resultType="mainLoginVO">
+	SELECT * FROM member WHERE m_id=#{m_id} AND m_pass=#{m_pass}
+</select>
+<!-- 스토어 로그인 -->
+<select id="getStoreLogin" parameterType="mainLoginVO" resultType="mainLoginVO">
+	SELECT s_id, s_pass, sa_ck, s_spname 
+	FROM (SELECT s.s_id, s.s_pass, s.s_spname, a.sa_ck, a.sa_date FROM store s, store_avail a
+		WHERE s.s_id=a.s_id AND s.s_id=#{s_id} AND s.s_pass=#{s_pass}
+		ORDER BY sa_date DESC)
+	WHERE rownum=1
+</select>
+<!-- 관리자 로그인 -->
+<select id="getAdminLogin" parameterType="mainLoginVO" resultType="mainLoginVO">
+	SELECT * FROM manager WHERE ma_id=#{ma_id} AND ma_pass=#{ma_pass}
+</select>
+
+<!-- 멤버 회원가입 -->
+<insert id="getMemberSignup" parameterType="mainLoginVO" >
+	INSERT INTO member(m_id, m_pass, m_name, m_tel, m_email, m_birth, m_sex, m_date) 
+	VALUES (#{m_id}, #{m_pass}, #{m_name}, #{m_tel}, #{m_email}, #{m_birth}, #{m_sex}, sysdate)
+</insert>
+<!-- 멤버 아이디 중복 체크 -->
+<select id="getMemberIdCheck" parameterType="mainLoginVO" resultType="mainLoginVO">
+	SELECT * FROM member WHERE m_id=#{m_id}
+</select>
+<!-- 스토어 회원가입 -->
+<insert id="getStoreSignup" parameterType="mainLoginVO" >
+	INSERT INTO store(s_id, s_pass, catem_code, s_name, s_bnum, s_email, s_tel, s_addr, s_acc, s_bank) 
+	VALUES (#{s_id}, #{s_pass}, #{catem_code}, #{s_name}, #{s_bnum}, #{s_email}, #{s_tel}, #{s_addr}, #{s_acc}, #{s_bank})
+</insert>
+<!-- 스토어 입점여부 -->
+<insert id="getStoreAvailInsert" parameterType="mainLoginVO" >
+	INSERT INTO store_avail(sa_code, s_id, sa_ck, sa_date) 
+	VALUES (sa_code_sqn.nextval, #{s_id}, '대기', sysdate)
+</insert>
+<!-- 스토어 아이디 중복 체크 -->
+<select id="getStoreIdCheck" parameterType="mainLoginVO" resultType="mainLoginVO">
+	SELECT * FROM store WHERE s_id=#{s_id}
+</select>
+
+</mapper>

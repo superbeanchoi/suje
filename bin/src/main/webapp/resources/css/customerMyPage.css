@@ -1,0 +1,128 @@
+@charset "UTF-8";
+
+body{
+	width: 100%;
+}
+.main {
+	/* width: 1900px; */
+	width: auto;
+	height: auto;
+	display : flex;
+	border: 2px solid black;
+	margin: 0 auto;
+	margin-top: 30px;
+	align-items: center;
+	justify-content: center;
+}
+
+.main>div {
+	border: 2px solid black;
+	
+	margin-top: 20px;
+	margin-bottom: 20px;
+	align-items: center;
+	justify-content: center;
+}
+
+.mainContentleft{
+	display: block;
+	
+	margin-right: 40px;
+	width: auto;
+	height: auto;
+
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	
+}
+
+.mainContentleft div:nth-child(1){
+	width: 120px;
+	height: 120px;
+	margin: 0 auto;
+	margin-top: 50px;
+	margin-bottom: 20px;
+	text-align: center;
+	line-height: 50px;
+}
+
+.mainContentleft div:nth-child(2){
+	width: 300px;
+	height: 50px;
+	margin-bottom: 50px;
+	text-align: center;
+	line-height: 50px;
+}
+
+.mainContentleft div:nth-child(3),.mainContentleft div:nth-child(4),
+.mainContentleft div:nth-child(5),.mainContentleft div:nth-child(6),
+.mainContentleft div:nth-child(7),.mainContentleft div:nth-child(8),
+.mainContentleft div:nth-child(9){
+	width: 300px;
+	height: 50px;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	line-height: 50px;
+}
+
+.mainContentright{
+
+	width: 1020px;
+	
+}
+
+.subtitle{
+	font-weight: bold;
+	font-size: 30pt;
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+
+.mainContentright ~ hr{
+	margin-bottom: 30px;
+	border: 0;
+	height: 5px;
+}
+
+.mainInputFormTitle{
+	display: flex;
+
+}
+.mainInputFormTitle div:first-child div:first-child{
+	margin-top: 40px;
+}
+
+.mainInputFormTitle div:first-child div{
+	width: 200px;
+	height: 50px;
+	margin-bottom: 20px;
+	text-align: left;
+
+	vertical-align: middle;
+	margin-left: 40px;
+}
+
+.mainInputFormTitle input{
+	border: 2px solid black;
+}
+
+.mainInputFormTitle div:nth-child(2)>div:first-child{
+	margin-top: 40px;
+}
+
+.mainInputFormTitle div:nth-child(2) input{
+	width: 300px;
+	height: 50px;
+	margin-bottom: 20px;
+}
+
+.mainInputFormTitle div:nth-child(2) input[type=radio]{
+	width: 10px;
+	height: 10px;
+}
+
+.customSex{
+	display: flex;
+}

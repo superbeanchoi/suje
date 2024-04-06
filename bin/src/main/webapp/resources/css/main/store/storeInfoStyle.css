@@ -1,0 +1,259 @@
+@charset "UTF-8";
+
+body {
+	background-color: #fff;
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+}
+ 
+.contentsWrap {
+	flex-grow: 1;
+	width: 1440px;
+	padding-top: 40px;
+	padding-bottom: 100px;
+	margin: 0 auto;
+	background-color: #fff;
+}
+
+.storeCategory {
+	width: 1040px;
+	height: 40px;
+	margin: 0 200px;
+}
+.allCategory {
+	width: 50px;
+	height: 40px;
+	font-size: 15px;
+	line-height: 40px;
+	float: left;
+}
+.storeCategory img {
+	width: 10px;
+	height: 10px;
+	display: block;
+	float: left;
+	transform: rotate(-90deg);
+	margin-top: 15px;
+	margin-right: 10px;
+}
+.category {
+	width: 150px;
+	height: 40px;
+	font-size: 15px;
+	line-height: 40px;
+	float: left;
+}
+
+.storeTitle {
+	width: 300px;
+	height: 50px;
+	font-weight: bold;
+	line-height: 50px;
+	margin-top: 20px;
+	margin-left: 200px;
+}
+.titleLine {
+	width: 1040px;
+	height: 5px;
+	background-color: #eee;
+	margin-left: 200px;
+}
+
+.reviewArea {
+	display: grid;
+	grid-template-columns: repeat(5, 1fr);
+	width: 1040px;
+	margin-top: 20px;
+	margin-left: 200px;
+	column-gap: 10px;
+}
+.eachReview {
+	width: 190px;
+	height: auto;
+	border: 1px solid #999;
+}
+.reviewImgArea {
+	width: 190px;
+	height: 190px;
+	overflow: hidden;
+}
+.reviewImgArea img {
+	height: 100%;
+}
+.reviewContentsTd {
+	width: 100%;
+	text-align: center;
+	font-size: 12px;
+	padding: 10px 5px;
+	line-height: 1.5;
+}
+.reviewWriterTd {
+	width: 200px;
+	text-align: center;
+	font-size: 12px;
+	padding: 10px 5px;
+	line-height: 1.5;
+}
+.reviewScoreTr td {
+	width: 50%;
+	padding: 0 10px 10px 10px;
+}
+.reviewScoreTr td:first-child img {
+	width: 15px;
+	height: 15px;
+	float: right;
+	margin-right: 5px;
+}
+.reviewScoreTr td:first-child span {
+	float: right;
+}
+.reviewScoreTr td:last-child img, .thumbsUpBtn {
+	width: 15px;
+	height: 15px;
+	float: left;
+	margin-right: 5px;
+}
+.reviewScoreTr td:last-child span {
+	float: left;
+}
+.reviewScoreTr span {
+	display: block;
+	width: 30px;
+	height: 15px;
+	line-height: 15px;
+	font-size: 12px;
+}
+
+.noneItemArea {
+	width: 1040px;
+	height: auto;
+	margin: 100px 0 100px 0;
+	font-size: 30px;
+	font-weight:bold;
+	text-align: center;
+}
+
+.pageingArea {
+	margin: 60px auto 40px;
+	width: auto;
+	height: 20px;
+	display: flex;
+	justify-content: center;
+	align-item: center;
+}
+.pageingArea a {
+	width: 20px;
+	height: 20px;
+	display: block;
+	float: left;
+	text-align: center;
+	line-height: 20px;
+	color: #999999;
+	margin: 0 5px;
+}
+.pageingArea a img {
+	width: 20px;
+	height: 20px;
+}
+
+.storeInfoWrap {
+	display: flex;
+	flex-grow: 1;
+	width: 1040px;
+	height: auto;
+	margin: 40px 200px 0 200px;
+}
+.mapArea {
+	width: 450px;
+	height: auto;
+	float: left;
+	border-radius: 20px;
+	background-color: #ccc;
+	margin-right: 40px;
+}
+.storeInfoArea {
+	width: 550px;
+	height: auto;
+}
+.storeTotalScoreArea {
+	width: 550px;
+	height: 20px;
+}
+.storeTotalScoreArea img {
+	width: 20px;
+	height: 20px;
+	float: left;
+	margin-right: 10px;
+}
+.storeTotalScoreArea span {
+	width: 50px;
+	height: 20px;
+	display: block;
+	float: left;
+	line-height: 20px;
+	margin-right: 40px;
+}
+.storeName {
+	width: 320px;
+	height: 40px;
+	font-size: 30px;
+	line-height: 40px;
+	font-weight: bold;
+	margin: 20px 20px 0 0;
+	float: left;
+}
+.storePageBtn {
+	width: 200px;
+	height: 30px;
+	display: block;
+	float: right; 
+	font-size: 15px;
+	background-color: #ADEFD1;
+	text-align: center;
+	line-height: 30px;
+	border-radius: 10px;
+	margin-top: 25px;
+	transition: background-color 0.2s ease, border 0.2s ease;
+}
+.storePageBtn:hover{
+	background-color: #fff;
+	border: 1px solid #ADEFD1;
+	font-weight: bold;
+}
+.storeInfo {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	height: auto;
+	padding: 20px 0;
+	line-height: 1.5;
+	border-bottom: 2px solid #eee;
+	margin-bottom: 10px;
+}
+.storeDetailInfoTitle {
+	width: 100px;
+	height: 20px;
+	font-size: 15px;
+	font-weight: bold;
+	margin-top: 10px;
+	float: left;
+}
+.storeDetailInfo {
+	width: 450px;
+	height: 20px;
+	font-size: 15px;
+	line-height: 20px;
+	margin-top: 10px;
+	float: left;
+	color: #999;
+	
+}
+
+
+/*Footer*/
+footer {
+	width: 100%;
+	height: 200px;
+	background-color: #ADEFD1;
+}

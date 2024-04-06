@@ -1,0 +1,195 @@
+@charset "UTF-8";
+
+/* Modal Order Join css*/
+
+/* Modal payCancleModal css*/
+.returnModal {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.4);
+/* 	display: none; */
+	text-align: center;
+}
+
+.returnModal.show {
+	display: block;
+}
+
+.returnBody {
+	margin-top: 70px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 700px;
+	height: 400px;
+	padding: 20px 20px 40px 40px;
+	text-align: center;
+	background-color: rgb(255, 255, 255);
+	border-radius: 10px;
+	box-shadow: 0 2px 3px 0 rgba(34, 36, 38, 0.15);
+	transform: translateX(-50%) translateY(-50%);
+	position: absolute;
+}
+
+.returnTitle {
+	display: flex;
+	height: 20px;
+	align-items: baseline;
+		margin-bottom: 50px;
+}
+
+/*Modal Main Title CSS*/
+/* SUJE 로고 CSS*/
+.returnTitle div:nth-child(1) {
+	margin-right: 40px;
+	font-weight: bold;
+	font-size: 30px;
+}
+
+/* 주문제작후기 타이틀 CSS*/
+.returnTitle div:nth-child(2) {
+	height: auto;
+	margin-right: 90px;
+	font-size: 15px;
+	font-weight: bold;
+}
+
+/* 제작주문번호 입력부분*/
+.returnTitle div:nth-child(3) {
+	margin-left: 120px;
+	font-size: 12px;
+}
+
+.returnTitle div:nth-child(3) input {
+	text-align: center;
+}
+
+.returnTitle input {
+	border: 2px solid #ADEFD1;
+	width: 100px;
+	height: 30px;
+	margin-left: 43px;
+	border-radius: 5px;
+}
+
+/*Modal Main Content CSS*/
+/* contetntLeft*/
+.modalMainContent {
+	margin-top: 30px;
+	display: flex;
+}
+
+.returnContentLefit {
+	width: 100px;
+	display: flex;
+	align-items: flex-start;
+	justify-content: flex-start;
+	flex-direction: column;
+	display: flex;
+}
+
+.returnContentLefit>div:nth-child(1), .returnContentLefit>div:nth-child(2),
+	.returnContentLefit>div:nth-child(3), .returnContentLefit>div:nth-child(4) {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	font-size: 12px;
+}
+
+.returnContentLefit div {
+	margin-bottom: 20px;
+	height: 30px;
+	font-size: 12px;
+}
+
+/* contetntRight*/
+.returnContentRight {
+	margin-left: 20px;
+}
+
+.returnContentRight>div {
+	margin-bottom: 20px;
+}
+
+.returnContentRight input {
+	border: 2px solid #ADEFD1;
+	border-radius: 5px;
+}
+
+/* 첫번째 라인*/
+.payCancleContentRight>div:nth-child(1) {
+	display: flex;
+}
+
+.returnContentRight>div:nth-child(1)>div:nth-child(1) {
+	margin-right: 40px;
+	width: 100px;
+	height: 30px;
+}
+
+.returnContentRight>div:nth-child(1)>div:nth-child(1) input {
+	margin-right: 40px;
+	width: 450px;
+	height: 200px;
+	text-align: center;
+	border: 2px solid #ADEFD1;
+	border-radius: 5px;
+}
+
+.returnContentRight>div:nth-child(1)>div:nth-child(2) {
+	width: 150px;
+	height: 30px;
+}
+
+.returnContentRight>div:nth-child(1)>div:nth-child(2) select {
+	margin-right: 40px;
+	width: 150px;
+	height: 30px;
+	text-align: center;
+	border: 2px solid #ADEFD1;
+	border-radius: 5px;
+}
+
+/* 두번째 라인*/
+.returnContentRight>div:nth-child(2) {
+	display: flex;
+	font-size: 12px;
+	margin-left: 0;
+	vertical-align: middle;
+	align-items: center;
+}
+
+.returnContentRight>div:nth-child(2)>div:nth-child(1) input {
+	width: 500px;
+	height: 70px;
+}
+
+
+/* 등록하기 버튼 CSS */
+.returninsertbtn {
+	margin-top: 180px; 
+	justify-content: center;
+	display: flex;
+	font-weight: bold;
+}
+
+.returninsertbtn div:nth-child(1)>input {
+	width: 200px;
+	height: 30px;
+	background-color: #ADEFD1;
+	border: 2px solid #ADEFD1;
+	border-radius: 5px;
+}
+
+.returninsertbtn div:nth-child(2)>input {
+	width: 200px;
+	height: 30px;
+	background-color: white;
+	border: 2px solid #ADEFD1;
+	border-radius: 5px;
+	margin-left: 20px;
+}
+

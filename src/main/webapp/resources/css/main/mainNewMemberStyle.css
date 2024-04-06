@@ -1,0 +1,129 @@
+@charset "UTF-8";
+
+body {
+	background-color: #fff;
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+}
+
+.contentsWrap {
+	flex-grow: 1;
+	width: 1440px;
+	padding-top: 40px;
+	padding-bottom: 80px;
+	margin: 0 auto;
+	background-color: #fff;
+}
+
+.newMemberTitle {
+	width: 500px;
+	height: 50px;
+	font-size: 30px;
+	font-weight: bold;
+	line-height: 30px;
+	text-align: center;
+	margin: 0 auto 20px;
+}
+.mainLine {
+	width: 1190px;
+	height: 5px;
+	background-color: #EEEEEE;
+	margin: 0 auto;
+}
+.newMemberArea {
+	width: 680px;
+	margin: 0 auto;
+	margin-top: 30px;
+}
+.newMemberItemTitle {
+	width: 200px;
+	height: 50px;
+	display: block;
+	line-height: 50px;
+	float: left;
+}
+.newMemberInfoInput {
+	width: 300px;
+	height: 50px;
+	float: left;
+	border-radius: 10px;
+	border: 2px solid #ADEFD1;
+	margin-right: 20px;
+	font-size: 20px;
+	padding: 0 10px;
+}
+.newMemberInfoInput:focus {
+	outline: 2px solid #ADEFD1;
+	border: 1px solid #ADEFD1;
+	cursor: text;
+}
+.idCheckBtn {
+	width: 150px;
+	height: 50px;
+	font-weight: bold;
+	border-radius: 10px;
+	background-color: #ADEFD1;
+	transition: background-color 0.2s ease, border 0.2s ease;
+}
+.idCheckBtn:hover {
+	background-color: #fff;
+	border: 2px solid #ADEFD1;
+}
+.formArea {
+	width: 680px;
+	height: 50px;
+	display: flex;
+	margin-bottom: 30px;
+	align-items: center;
+}
+/*
+#datepicker {
+	width: 30px;
+	height: 30px;
+	background-color: #ddd;
+	display: block;
+	float: left;
+	margin: 40px 0 0 20px;
+}
+*/
+.newMemberSexArea {
+	width: 340px;
+	height: 50px;
+	float: left;
+}
+.newMemberSexTitle {
+	width: 100px;
+	height: 50px;
+	line-height: 50px;
+	margin-right: 40px;
+	float: left;
+}
+.newMemberSexInput {
+	width: 15px;
+	height: 15px;
+	margin-top: 17px;
+	margin-right: 10px;
+	float: left;
+}
+.newMemberSubmitBtn {
+	width: 440px;
+	height: 70px;
+	font-size: 30px;
+	font-weight: bold;
+	border-radius: 20px;
+	background-color: #ADEFD1;
+	margin: 40px 120px;
+	cursor: pointer;
+	transition: background-color 0.2s ease, border 0.2s ease;
+}
+.newMemberSubmitBtn:hover {
+	background-color: #fff;
+	border: 2px solid #ADEFD1;
+}
+
+footer {
+	width: 100%;
+	height: 200px;
+	background-color: #ADEFD1;
+}

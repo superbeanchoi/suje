@@ -1,0 +1,225 @@
+@charset "UTF-8";
+
+hr {
+	border-top: 5px solid #ddd; /* 위쪽 테두리 설정 */
+	margin-top: 30px; /* 위쪽 여백 설정 */
+	margin-bottom: 20px; /* 아래쪽 여백 설정 */
+}
+
+.store_mainFistTitle {
+	font-size: 30px !important;
+	margin-top: 40px !important;
+	margin-left: 30px !important;
+}
+.storeContentsBox .store_maintitle {
+	font-size: 30px !important;
+	margin-top: 40px !important;
+	margin-left: 30px !important;
+}
+
+.store_mainInfo {
+	margin-top: 50px;
+}
+
+.store_subCategory .store_subTitle, .store_TextBox .store_subTitle {
+	display: block;
+	float: left;
+	line-height: 50px;
+	font-size: 20px;
+	margin-left: 20px;
+	width: 200px;
+	height: 50px; 
+}
+.store_Box .store_subTitle {
+	display: block;
+	float: left;
+	line-height: 150px;
+	font-size: 20px;
+	margin-left: 20px;
+	width: 200px;
+	height: 150px; 
+}
+
+.subImgTitle {
+	display: block;
+	float: left;
+	line-height: 150px;
+	font-size: 20px;
+	margin-left: 20px;
+	width: 200px;
+	height: 150px; 
+	
+}
+
+.goodsInfo_selectBox_First {
+	font-size: 20px;
+	width: 200px;
+	height: 50px;
+	border: 5px solid #ADEFD1;
+	border-radius: 5px;
+	text-align: center;
+	margin-left: 100px;
+}
+.goodsInfo_selectBox_Secound {
+	font-size: 20px;
+	width: 200px;
+	height: 50px;
+	border: 5px solid #ADEFD1;
+	border-radius: 5px;
+	text-align: center;
+	margin-left: 100px;
+}
+.goodsInfo_selectBox_Third {
+	font-size: 20px;
+	width: 200px;
+	height: 50px;
+	border: 5px solid #ADEFD1;
+	border-radius: 5px;
+	text-align: center;
+	margin-left: 100px;
+}
+
+
+.goodsInfo_selectBox_First:focus, .goodsInfo_selectBox_Secound:focus, .goodsInfo_selectBox_Third:focus {
+	outline: 2px solid #ADEFD1;
+	border: 1px solid #ADEFD1;
+	cursor: pointer;
+}
+
+.goodsInfo_content {
+	border: 5px solid #ADEFD1;
+	width: 1130px;
+	height: 200px;
+	margin-top: 10px;
+	margin-left: 20px;
+	font-size: 20px;
+	padding: 10px;
+}
+
+.goodsInfo_content:focus {
+	outline: 2px solid #ADEFD1;
+	border: 1px solid #ADEFD1;
+}
+
+
+.store_subCategory {
+	margin-top: 50px;
+	width: 100%;
+	height: 50px;
+}
+
+.store_Box {
+	margin-top: 50px;
+	width: 100%;
+	height: 150px;
+}
+.store_TextBox {
+	margin-top: 50px;
+	width: 100%;
+	height: 250px;
+	
+}
+
+.submitBtn {
+	float: left;
+	background-color: #ADEFD1;
+	width: 300px;
+	height: 50px;
+	border-radius: 10px;
+	margin-top: 30px;
+	margin-left: 20px;
+	padding: 10px 20px; /* 내부 여백 설정 */
+    color: black; /* 텍스트 색상 설정 */
+    cursor: pointer; /* 커서 모양 변경 */
+}
+
+.submitBtn:hover {
+    background-color: #7cb8a5; /* 호버 상태 배경색 변경 */
+}
+
+.store_Box>div:nth-child(2) {
+	margin-left: 100px;
+}
+
+.goodsImg {
+	float: left;
+	width: 150px;
+	height: 150px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-right: 10px;
+}
+.goodsImg img {
+	max-height: 100%;
+	width: 100%;
+	height: auto;
+	display: block;
+	margin: auto;
+}
+/* 
+.goodsSubImg {
+	margin-left: 100px;
+	margin-bottom: 20px;
+	width: 120px;
+	height: 120px;
+}
+ */
+
+.text-box {
+	border: 5px solid #ADEFD1;
+	background-color: white;
+	border-radius: 10px;
+	padding: 10px 10px;
+	font-size: 20px; /* 화면 너비에 대해 상대적인 크기 */
+	margin-bottom: 50px; /* 하단 여백을 화면 너비의 1%로 설정 */
+	margin-left: 100px;
+	width: 200px; /* 폼의 너비를 화면 너비의 90%로 설정 */
+	height: 50px;
+}
+
+.text-box:focus {
+	outline: 2px solid #ADEFD1;
+	border: 1px solid #ADEFD1;
+	cursor: text;
+}
+
+
+/*  *****테이블***** */
+
+table {
+   width: 100%;
+   border-collapse: collapse;
+}
+
+th, td {
+   border: 1px solid #ADEFD1;
+   padding: 8px;
+   text-align: left;
+}
+
+th {
+   background-color: #ADEFD1;
+   text-align: center;
+}
+
+td {
+   text-align: center;
+}
+
+tr:nth-child(even) {
+   background-color: #ADEFD1;
+}
+
+tr:hover {
+   background-color: #ddd;
+}
+
+.table-wrapper {
+   margin-top: 50px; /* 원하는 만큼의 상단 여백을 설정합니다 */
+}
+
+.goodsListDetail:hover {
+    cursor: pointer;
+}
+

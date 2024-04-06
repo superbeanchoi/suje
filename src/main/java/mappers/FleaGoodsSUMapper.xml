@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace = "FleaGoodsSUDAO">
+
+	<!-- 전체 리스트 조회 -->
+	<select id="fleaGoodsListAll" parameterType="fleaGoodsSU" resultType="fleaGoodsSU">
+	
+		SELECT
+		    f.f_code, cs.cates_name, f.f_content, f.f_sum, f.f_num, f.f_date, f.f_redate, f.f_ck, f.cates_code
+		FROM flea f, cate_sub cs, cate_mid cm, cate_main c
+		where f.cates_code = cs.cates_code and cs.catemm_code = cm.catemm_code and cm.catem_code = c.catem_code
+			and f.s_id = #{s_id}
+		ORDER BY
+		    f_date DESC
+	</select>
+	
+	<!-- flea 상품 상세 리스트 조회 -->
+	<select id="getFleaInfo" parameterType="fleaGoodsSU" resultType="fleaGoodsSU">
+	
+		SELECT
+		    f.s_id, f.f_code, f.f_date, f.f_redate, f.f_sum, f.f_pname, f.f_spname, f.f_content, f.f_ck, f.f_num, f.s_id, cs.cates_code, cs.cates_name,
+		    cm.catemm_code, cm.catemm_name, c.catem_code, c.catem_name
+		FROM
+		    flea f
+		    JOIN cate_sub cs ON f.cates_code = cs.cates_code
+		    JOIN cate_mid cm ON cs.catemm_code = cm.catemm_code
+		    JOIN cate_main c ON cm.catem_code = c.catem_code
+		WHERE
+		    f.f_code = #{f_code}
+		ORDER BY
+		    f_date DESC
+	</select> 
+	
+	<!-- flea_sub 상품 서브이미지 조회-->
+	<select id="getFleaSubImgInfo" parameterType="fleaGoodsSU" resultType="fleaGoodsSU">
+	   select fs_spname
+	    from flea_sub
+	    where f_code = #{f_code} 
+	</select>
+	
+	<!-- 리스트 수정 -->
+	<update id="modifyGoodsSU" parameterType="fleaGoodsSU">
+	 UPDATE flea
+		SET 
+		    f_redate = sysdate,
+		    cates_code = #{cates_code},
+		    f_sum = #{f_sum},
+		    f_content = #{f_content},
+		    f_num = #{f_num}
+		WHERE f_code = #{f_code}
+		
+		   
+		
+	</update>
+	
+	<delete id="deleteGoodsSU" parameterType="fleaGoodsSU">
+	
+		 DELETE FROM flea WHERE f_code = #{f_code} 
+	
+	</delete>
+	
+
+
+
+
+</mapper>

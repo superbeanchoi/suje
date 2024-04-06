@@ -1,0 +1,144 @@
+@charset  "UTF-8";
+
+.storeMoreInfoModalLogo {
+	width: 100px;
+	height: 20px;
+	display: block;
+	margin-right: 20px;
+	float: left;
+}
+.modalMainTitle {
+	width: 240px;
+	height: 20px;
+	font-size: 15px;
+	font-weight: bold;
+	line-height: 20px;
+	float: left;
+}
+.modalStoreIdTitle {
+	width: 100px;
+	height: 30px;
+	display: block;
+	float: left;
+	line-height: 30px;
+	font-size: 12px;
+}
+.modalStoreIdInfo {
+	width: 180px;
+	height: 30px;
+	font-size: 12px;
+	text-align: center;
+	border: 2px solid #ADEFD1;
+	border-radius: 5px;
+	background-color: #eee;
+	color: #999999;
+}
+
+
+.modalSubTitle {
+	display: block;
+	width: 300px;
+	height: 20px;
+	font-size: 15px;
+	font-weight: bold;
+	line-height: 20px;
+	margin-top: 30px;
+}
+.adminLine {
+	border: none; /* 기본 테두리 제거 */
+	width: 100%; /* 수평선의 너비 설정 */
+	height: 5px; /* 수평선의 높이 설정 */
+	background-color: #eee; /* 수평선의 배경색 설정 */
+	margin: 10px 0;
+}
+.modalContentsBox {
+	width: 600px;
+	height: 30px;
+	margin-top: 10px;
+}
+.modalContentsTitle {
+	width: 100px;
+	height: 30px;
+	display: block;
+	float: left;
+	line-height: 30px;
+	font-size: 12px;
+}
+.marginModalContentsTitle {
+	margin-left: 40px;
+}
+.modalContentsInfo, .modalCategory {
+	width: 180px;
+	height: 30px;
+	font-size: 12px;
+	text-align: center;
+	border: 2px solid #ADEFD1;
+	border-radius: 5px;
+	background-color: #eee;
+	color: #999999;
+	float: left;
+}
+.modalContentsInfoLong {
+	width: 500px;
+	height: 30px;
+	font-size: 12px;
+	text-align: center;
+	border: 2px solid #ADEFD1;
+	border-radius: 5px;
+	background-color: #eee;
+	color: #999999;
+}
+
+.modalApprovalStatusInfo {
+	width: 180px;
+	height: 30px;
+	font-size: 12px;
+	text-align: center;
+	border: 2px solid #ADEFD1;
+	border-radius: 5px;
+	background-color: #fff;
+	float: left;
+	cursor: pointer;
+}
+.modalReasonInfo {
+	width: 500px;
+	height: 30px;
+	font-size: 12px;
+	text-align: center;
+	border: 2px solid #ADEFD1;
+	border-radius: 5px;
+	background-color: #fff;
+}
+.modalApprovalStatusInfo:focus, .modalReasonInfo:focus {
+	outline: 1px solid #ADEFD1;
+}
+
+.modalBtnBox {
+	width: 410px;
+	height: 30px;
+	margin: 40px auto 0;	
+}
+.modalSubmitBtn {
+	width: 200px;
+	height: 30px;
+	font-size: 15px;
+	border-radius: 5px;
+	background-color: #ADEFD1;
+	float: left;
+	cursor: pointer;
+	transition: box-shadow 0.2s ease;
+}
+.modalCloseBtn {
+	width: 200px;
+	height: 30px;
+	font-size: 15px;
+	border: 2px solid #ADEFD1;
+	border-radius: 5px;
+	background-color: #fff;
+	float: right;
+	cursor: pointer;
+	transition: box-shadow 0.2s ease;
+}
+.modalSubmitBtn:hover, .modalCloseBtn:hover {
+	box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.25);
+}

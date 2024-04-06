@@ -1,0 +1,70 @@
+@charset "UTF-8";
+
+/* 계정 정보 제목 스타일 */
+.account-title {
+	display: block;
+	width: 500px;
+	height: 50px;
+	font-size: 30px;
+	font-weight: bold;
+	line-height: 50px;
+	margin: 30px 0 20px 30px;
+}
+/* 수평선 스타일 */
+hr {
+	border: none; /* 기본 테두리 제거 */
+	width: 100%; /* 수평선의 너비 설정 */
+	height: 5px; /* 수평선의 높이 설정 */
+	background-color: #eee; /* 수평선의 배경색 설정 */
+	margin: 0;
+}
+
+/* 각 폼 그룹(라벨과 입력 창) 사이의 간격 설정 */
+.form-group {
+	margin-top: 40px;
+	margin-left: 30px;
+}
+
+/* 라벨 스타일 */
+.form-title {
+	display: inline-block; /* 라벨을 블록 요소로 변환하여 각각의 라벨이 새로운 줄에서 시작하도록 함 */
+	width: 200px; /* 라벨의 고정된 너비 지정 */
+	height: 50px; /* 라벨의 높이를 50px로 설정 */
+	line-height: 50px;
+}
+
+/* 입력 창 스타일 */
+.form-group input {
+	border: 1px solid #ADEFD1; /* 테두리 설정 */
+	border-radius: 10px; width : 300px; /* 입력창의 너비를 300px로 설정 */
+	height: 50px;
+	width: 300px; /* 입력창의 높이를 50px로 설정 */
+}
+
+.form-group input:focus {
+	outline: 2px solid #ADEFD1;
+	border: 1px solid #ADEFD1;
+}
+
+/* 계정 정보 입력창 스타일 */
+#username {
+	background-color: #eee; /* 회색 배경색 적용 */
+	pointer-events: none; /* 입력 창 비활성화 */
+}
+
+/* 수정하기 버튼 스타일 */
+.account-form button {
+	width: 300px; /* 버튼의 너비를 300px로 설정 */
+	height: 50px; /* 버튼의 높이를 50px로 설정 */
+	background-color: #ADEFD1; /* 민트색 배경색 적용 */
+	border-radius: 10px;
+	font-size: 20px; /* 글자 크기 설정 */
+	margin-top: 40px;
+	margin-left: 30px;
+	transition: background-color 0.2s ease, border 0.2s ease;
+}
+.account-form button:hover {
+	background-color: #fff; /* 민트색 배경색 적용 */
+	border: 1px solid #ADEFD1;
+	font-weight: bold;
+}

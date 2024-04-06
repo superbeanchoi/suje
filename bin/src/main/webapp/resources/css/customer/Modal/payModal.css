@@ -1,0 +1,495 @@
+@charset "UTF-8";
+
+/*페이징 css*/
+.pageing {
+	width: auto; margin-top : 40px;
+	text-align: center;
+	margin-top: 40px;
+}
+
+.subtitle2 {
+	margin-top: 70px;
+}
+
+/* Modal css */
+/* Modal Order Join css*/
+/* .payMent {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.4);
+	display: none;
+	text-align: center;
+}
+
+.payMent.show {
+	display: block;
+}
+
+.payMentListModalBody {
+	margin-top: 70px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 700px;
+	height: 915px;
+	padding: 40px 20px 40px 40px;
+	text-align: center;
+	background-color: rgb(255, 255, 255);
+	border-radius: 10px;
+	box-shadow: 0 2px 3px 0 rgba(34, 36, 38, 0.15);
+	transform: translateX(-50%) translateY(-50%);
+	position: absolute;
+} */
+
+.payMentOrderListTitle {
+	display: flex;
+	height: 20px;
+	align-items: baseline;
+}
+
+/*Modal Main Title CSS*/
+/* SUJE 로고 CSS*/
+.payMentOrderListTitle div:nth-child(1) {
+	margin-right: 40px;
+	font-weight: bold;
+	font-size: 30px;
+}
+
+/* 주문제작후기 타이틀 CSS*/
+.payMentOrderListTitle div:nth-child(2) {
+	height: auto;
+	margin-right: 90px;
+	font-size: 15px;
+	font-weight: bold;
+}
+
+/* 제작주문번호 입력부분*/
+.payMentOrderListTitle div:nth-child(3) {
+	margin-left: 100px;
+	font-size: 12px;
+}
+
+.payMentOrderListTitle div:nth-child(3) input {
+	text-align: center;
+}
+
+.payMentOrderListTitle input {
+	border: 2px solid #ADEFD1;
+	width: 100px;
+	height: 30px;
+	margin-left: 30px;
+	border-radius: 5px;
+}
+
+/*Modal Main Content CSS* (1)/
+/* contetntLeft*/
+.payMentmodalMainContent {
+	margin-top: 30px;
+	display: flex;
+}
+
+.payMentContentLefit {
+	width: 100px;
+	display: flex;
+	align-items: flex-start;
+	justify-content: flex-start;
+	flex-direction: column;
+	display: flex;
+}
+
+.payMentContentLefit>div:nth-child(1), .payMentContentLefit>div:nth-child(2),
+	.payMentContentLefit>div:nth-child(3), .payMentContentLefit>div:nth-child(4) {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	font-size: 12px;
+}
+
+.payMentContentLefit div {
+	margin-bottom: 10px;
+	height: 30px;
+	font-size: 12px;
+}
+
+/* contetntRight*/
+.payMentContentRight {
+	margin-left: 20px;
+}
+
+.payMentContentRight>div {
+	margin-bottom: 10px;
+}
+
+.payMentContentRight input {
+	border: 2px solid #ADEFD1;
+	border-radius: 5px;
+}
+
+/* 1번째 라인*/
+.payMentContentRight>div:nth-child(1) {
+	width : 150px;
+	height : 30px;
+	display: flex;
+}
+
+/* 2번째 라인*/
+.payMentContentRight>div:nth-child(2) {
+	display: flex;
+}
+
+.payMentContentRight>div:nth-child(2)>div:nth-child(1) {
+	margin-right: 40px;
+	width: 150px;
+	height: 30px;
+}
+
+.payMentContentRight>div:nth-child(2)>div:nth-child(1) select {
+	margin-right: 40px;
+	width: 150px;
+	height: 30px;
+	text-align: center;
+	border: 2px solid #ADEFD1;
+	border-radius: 5px;
+}
+
+.payMentContentRight>div:nth-child(2)>div:nth-child(2) {
+	width: 150px;
+	height: 30px;
+}
+
+.payMentContentRight>div:nth-child(2)>div:nth-child(2) select {
+	margin-right: 40px;
+	width: 150px;
+	height: 30px;
+	text-align: center;
+	border: 2px solid #ADEFD1;
+	border-radius: 5px;
+}
+
+/* 3번째 라인*/
+.payMentContentRight>div:nth-child(3) {
+	display: flex;
+	font-size: 12px;
+	margin-left: 0;
+	vertical-align: middle;
+	align-items: center;
+}
+
+.payMentContentRight>div:nth-child(3)>div:nth-child(1) input {
+	width: 100px;
+	height: 30px;
+}
+
+.payMentContentRight>div:nth-child(3)>div:nth-child(2) {
+	margin-left: 10px;
+}
+
+.payMentContentRight>div:nth-child(3)>div:nth-child(3) {
+	margin-left: 120px;
+}
+
+.payMentContentRight>div:nth-child(3)>div:nth-child(4) input {
+	margin-left: 30px;
+	width: 100px;
+	height: 30px;
+}
+
+/* 4번째 라인*/
+.payMentContentRight>div:nth-child(4) {
+	display: flex;
+	font-size: 12px;
+	align-items: center;
+}
+
+.payMentContentRight>div:nth-child(4)>div:nth-child(1) input {
+	width: 100px;
+	height: 30px;
+}
+
+.payMentContentRight>div:nth-child(4)>div:nth-child(2) {
+	margin-left: 10px;
+}
+
+.payMentContentRight>div:nth-child(4)>div:nth-child(3) {
+	margin-left: 120px;
+}
+
+.payMentContentRight>div:nth-child(4)>div:nth-child(4) select {
+	margin-left: 45px;
+	width: 100px;
+	height: 30px;
+	border: 2px solid #ADEFD1;
+	border-radius: 5px;
+}
+
+.payMentContentRight>div:nth-child(4)>input {
+	width: 500px;
+	height: 70px;
+}
+
+.payMentContentRight>div:nth-child(5)>input {
+	display : flex;
+	width: 500px;
+	height: 70px;
+}
+
+
+
+/*Modal Main Content CSS* (2)/
+/* contetntLeft*/
+.payMentmodalMainContent2 {
+	margin-top: 30px;
+	display: flex;
+}
+
+.payMentContentLefit2 {
+	width: 100px;
+	display: flex;
+	align-items: flex-start;
+	justify-content: flex-start;
+	flex-direction: column;
+	display: flex;
+}
+
+.payMentContentLefit2>div:nth-child(1), .payMentContentLefit2>div:nth-child(2),
+	.payMentContentLefit2>div:nth-child(3), .payMentContentLefit2>div:nth-child(4) {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	font-size: 12px;
+}
+
+.payMentContentLefit2 div {
+	margin-bottom: 10px;
+	height: 30px;
+	font-size: 12px;
+}
+
+/* contetntRight*/
+.payMentContentRight2 {
+	margin-left: 20px;
+}
+
+.payMentContentRight2>div {
+	margin-bottom: 10px;
+}
+
+.payMentContentRight2>div:nth-child(2){
+	align-items: center;
+}
+
+.payMentContentRight2>div:nth-child(2)>div:first-child input {
+	border: 2px solid #ADEFD1;
+	border-radius: 5px;
+	width: 100px;
+	height: 30px;
+}
+
+.payMentContentRight2>div:nth-child(2)>div:nth-child(2) {
+	margin-left: 10px;
+	}
+	
+.payMentContentRight2>div:nth-child(2)>div:nth-child(3) {
+	margin-left: 124px;
+	}
+	
+.payMentContentRight2>div:nth-child(2)>div:nth-child(4) input {
+	border: 2px solid #ADEFD1;
+	border-radius: 5px;
+	width: 150px;
+	height: 30px;
+	margin-left: 50px;
+}
+
+.payMentContentRight2 select {
+	border: 2px solid #ADEFD1;
+	border-radius: 5px;
+}
+
+/* 1번째 라인*/
+.payMentContentRight2>div:nth-child(1) {
+    /* width: 100px; */
+    height: 30px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.payMentContentRight2>div:nth-child(1) input:nth-child(2) {
+	border: 2px solid #ADEFD1;
+    border-radius: 5px; 
+    width: 100px;
+}
+
+.payMentContentRight2>div:nth-child(1) input:nth-child(3){
+	border: 2px solid #ADEFD1;
+    border-radius: 5px;
+    width: 270px;
+}
+
+/* 2번째 라인*/
+.payMentContentRight2>div:nth-child(2) {
+	display: flex;
+	font-size: 12px;
+}
+
+
+
+/*Modal Main Content CSS* (3)/
+/* contetntLeft*/
+.payMentmodalMainContent3 {
+	margin-top: 30px;
+	display: flex;
+}
+
+.payMentContentLefit3 {
+	width: 100px;
+	display: flex;
+	align-items: flex-start;
+	justify-content: flex-start;
+	flex-direction: column;
+	display: flex;
+}
+
+.payMentContentLefit3>div:nth-child(1), .payMentContentLefit3>div:nth-child(2),
+	.payMentContentLefit3>div:nth-child(3), .payMentContentLefit3>div:nth-child(4) {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	font-size: 12px;
+}
+
+.payMentContentLefit3 div {
+	margin-bottom: 10px;
+	height: 30px;
+	font-size: 12px;
+}
+
+/* contetntRight*/
+.payMentContentRight3 {
+	margin-left: 20px;
+}
+
+.payMentContentRight3>div {
+	margin-bottom: 10px;
+}
+
+.payMentContentRight3 input {
+	border: 2px solid #ADEFD1;
+	border-radius: 5px;
+}
+
+/* 1번째 라인*/
+.payMentContentRight3>div:nth-child(1) input {
+	width : 100px;
+	height : 30px;
+	display: flex;
+}
+
+/* 2번째 라인*/
+.payMentContentRight3>div:nth-child(2) input {
+	width : 200px;
+	height : 30px;
+	display: flex;
+}
+
+/* 3번째 라인*/
+.payMentContentRight3>div:nth-child(3) input {
+	width : 500px;
+	height : 30px;
+	display: flex;
+}
+
+/* 4번째 라인*/
+.payMentContentRight3>div:nth-child(4) input {
+	width : 500px;
+	height : 30px;
+	display: flex;
+}
+
+
+/* 등록하기 버튼 CSS */
+.payMentinsertbtn {
+	margin-top: 20px; 
+	display : flex;
+	justify-content: center;
+	display: flex;
+}
+
+.payMentinsertbtn div:nth-child(1)>input {
+	width: 200px;
+	height: 30px;
+	background-color: #ADEFD1;
+	border: 2px solid #ADEFD1;
+	border-radius: 5px;
+	cursor: pointer;
+	transition: box-shadow 0.2s ease;
+}
+.payMentinsertbtn div:nth-child(1)>input:hover {
+	box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.25) !important;
+}
+
+.payMentinsertbtn div:nth-child(2)>input {
+	width: 200px;
+	height: 30px;
+	background-color: white;
+	border: 2px solid #ADEFD1;
+	border-radius: 5px;
+	margin-left: 20px;
+	cursor: pointer;
+	transition: box-shadow 0.2s ease;
+}
+.payMentinsertbtn div:nth-child(2)>input:hover {
+	box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.25) !important;
+}
+
+.payMentsubtitle {
+    margin-top: 35px;
+    /* margin-right: 580px; */
+    font-weight: bold;
+    font-size: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.payMentsubtitle input[type='button']{
+    background-color: #00203F;
+    color: white;
+    width: 120px;
+    height: 22px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s ease, border 0.2s ease;
+}
+.payMentsubtitle input[type='button']:hover {
+	background-color: #fff;
+	border: 1px solid #00203F;
+	color: #222;
+}
+
+
+hr {
+	margin: 10px auto 0;
+	width: 640px;
+	height: 5px;
+	background-color : #eee;
+	border: 0px;
+}
+
+select[readonly] {
+  background-color: #ddd;
+  pointer-events: none;
+}
+
+input{
+	text-align: center;
+}
+
+select {
+	text-align: center;
+}
+
+

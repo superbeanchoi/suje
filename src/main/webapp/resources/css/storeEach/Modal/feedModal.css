@@ -1,0 +1,158 @@
+@charset "UTF-8";
+
+.customerFeedListTitle {
+	display: block;
+	margin: 30px 30px 0 30px;
+	height: 20px;
+	align-items: baseline;
+}
+.customerFeedListTitle div {
+	float: left;
+}
+
+/*Modal Main Content CSS*/
+.totalFeedBody{
+	display: flex;
+	align-items: center;
+	margin: 20px 30px 0 30px;
+}
+
+/* ContentLeft */
+.ContentLeft {
+	width: 300px;
+	display: flex;
+	align-items: flex-start;
+	justify-content: flex-start;
+	flex-direction: column;
+}
+
+.itemImage{
+	width: 900px;
+	height: 300px;
+}
+
+.itemImage div {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 300px;
+	height: 300px;
+	float: left;
+	overflow: hidden;
+}
+.itemImage div img {
+	max-height: 100%;
+	width: auto;
+	height: 100%;
+	display: block;
+	margin: 0 auto;
+}
+
+.itemImageArea {
+	margin-top: 20px;
+	border-radius: 10px;
+	width: 300px;
+	height: 300px;
+	overflow: hidden;
+	position: relative;
+}
+.back {
+	position: absolute;
+    top: 45%;
+	left: 41px;
+}
+.next {
+	position: absolute;
+    top: 45%;
+    left: 312px;
+}
+
+/* contetntRight*/
+.ContentFeedRight {
+	margin-left: 20px;
+}
+
+.firstFeedContent {
+	display: flex;
+	align-items : center;
+	margin-top : 20px;
+}
+
+.firstFeedContent div:nth-child(1) {
+	font-size: 12px;
+	width: 100px;
+	margin-right: 20px;
+}
+
+.firstFeedContent select {
+	border: 2px solid #ADEFD1;
+	margin-right: 10px;
+	border-radius: 5px;
+	width : 150px;
+	height : 30px;
+	text-align: center;
+	background-color: #fff;
+}
+
+.secondContent {
+	display: flex;
+	align-items: center;
+	margin-top : 20px;
+}
+
+.secondContent div:nth-child(1) {
+	font-size: 12px;
+	width: 100px;
+	margin-right : 20px;
+}
+
+.secondContent input {
+	border: 2px solid #ADEFD1;
+	border-radius: 5px;
+	width : 150px;
+	height : 30px;
+	background-color: #fff;
+	text-align: center;
+}
+
+.thirdContent {
+	display: flex;
+	align-items: center;
+	margin-top : 20px;
+}
+
+.thirdContent div:nth-child(1) {
+	font-size: 12px;
+	margin-left : 10px;
+	margin-right : 10px;
+}
+
+.thirdContent textarea {
+	border: 2px solid #ADEFD1;
+	border-radius: 5px;
+	width : 580px;
+	height : 200px;
+	resize: none;
+	background-color: #fff;
+	padding: 10px;
+}
+
+/* 등록하기 버튼 CSS */
+.insertFeedbtn {
+	margin-top: 35px; display : flex;
+	justify-content: center;
+	display: flex;
+}
+
+.insertFeedbtn div:nth-child(1)>input {
+	width: 200px;
+	height: 30px;
+	background-color: #ADEFD1;
+	border: 2px solid #ADEFD1;
+	border-radius: 5px;
+	cursor: pointer;
+	transition: box-shadow 0.2s ease;
+}
+.insertFeedbtn input:hover {
+	box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.25);
+}

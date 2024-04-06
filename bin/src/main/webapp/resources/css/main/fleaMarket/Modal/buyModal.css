@@ -1,0 +1,369 @@
+@charset "UTF-8";
+
+/* Modal css */
+
+.customerOrderListTitle {
+	display: block;
+	margin: 30px 30px 0 30px;
+	height: 20px;
+	align-items: baseline;
+}
+
+/*Modal Main Title CSS*/
+/* SUJE 로고 CSS*/
+.customerOrderListTitle div:nth-child(1) {
+	margin-right: 58px;
+	float: left;
+}
+
+/* 주문제작후기 타이틀 CSS*/
+.customerOrderListTitle div:nth-child(2) {
+	line-height: 25px;
+	height: 20px;
+	font-size: 15px;
+	font-weight: bold;
+	float: left;
+}
+.customerOrderListTitle div:nth-child(2) {
+    line-height: 25px;
+    height: 20px;
+    font-size: 15px;
+    font-weight: bold;
+    float: left;
+}
+.subtitle {
+	margin: 40px 50px 0 50px;
+	font-weight: bold;
+	font-size: 15px;
+	text-align: left;
+}
+hr {
+	margin: 10px 50px 0 50px;
+	width: 600px;
+	height: 5px;
+	background-color : #eee;
+	border: 0px;
+}
+
+
+/* 제작주문번호 입력부분*/
+.customerOrderListTitle div:nth-child(3) {
+	margin-left: 100px;
+	font-size: 12px;
+}
+
+.customerOrderListTitle div:nth-child(3) input {
+	text-align: center;
+}
+
+.customerOrderListTitle input {
+	border: 2px solid #ADEFD1;
+	width: 100px;
+	height: 30px;
+	margin-left: 30px;
+	border-radius: 5px;
+	text-align: center;
+}
+
+/*Modal Main Content CSS* (1)/
+/* contetntLeft*/
+.modalMainContent {
+	margin: 20px 50px;
+	display: flex;
+}
+
+.ContentLefit {
+	width: 120px;
+	display: flex;
+	align-items: flex-start;
+	justify-content: flex-start;
+	flex-direction: column;
+	display: flex;
+}
+
+.ContentLefit>div:nth-child(1), .ContentLefit>div:nth-child(2),
+	.ContentLefit>div:nth-child(3), .ContentLefit>div:nth-child(4) {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	font-size: 12px;
+}
+
+.ContentLefit div {
+	margin-bottom: 10px;
+	height: 30px;
+	font-size: 12px;
+}
+
+/* contetntRight*/
+.ContentRight {
+	margin-left: 20px;
+}
+
+.ContentRight>div {
+	margin-bottom: 10px;
+}
+
+.ContentRight input {
+	border: 2px solid #ADEFD1;
+	border-radius: 5px;
+	text-align: center;
+}
+
+/* 1번째 라인*/
+.ContentRight>div:nth-child(1) input {
+	width : 150px;
+	height : 30px;
+	display: flex;
+}
+
+/* 2번째 라인*/
+.ContentRight>div:nth-child(2) input {
+	width : 500px;
+	height : 30px;
+	display: flex;
+}
+
+/* 3번째 라인*/
+.ContentRight>div:nth-child(3) {
+	display: flex;
+	font-size: 12px;
+	margin-left: 0;
+	vertical-align: middle;
+	align-items: center;
+}
+
+.ContentRight>div:nth-child(3)>div:nth-child(1) input {
+	width: 100px;
+	height: 30px;
+	display: flex;
+}
+
+.ContentRight>div:nth-child(3)>div:nth-child(2) {
+	margin-left: 10px;
+}
+
+.ContentRight>div:nth-child(3)>div:nth-child(3) {
+	margin-left: 120px;
+}
+
+/*Modal Main Content CSS* (2)/
+/* contetntLeft*/
+.modalMainContent2 {
+	margin: 20px 50px;
+	display: flex;
+}
+
+.ContentLefit2 {
+	width: 100px;
+	display: flex;
+	align-items: flex-start;
+	justify-content: flex-start;
+	flex-direction: column;
+	display: flex;
+}
+
+.ContentLefit2>div:nth-child(1), .ContentLefit2>div:nth-child(2),
+	.ContentLefit2>div:nth-child(3), .ContentLefit2>div:nth-child(4) {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	font-size: 12px;
+}
+
+.ContentLefit2 div {
+	margin-bottom: 10px;
+	height: 30px;
+	font-size: 12px;
+}
+
+/* contetntRight*/
+.ContentRight2 {
+	margin-left: 20px;
+}
+.ContentRight2 select {
+	cursor: pointer;
+	margin-right: 20px;
+}
+
+.ContentRight2>div {
+	margin-bottom: 10px;
+}
+
+.ContentRight2>div>div:nth-child(2) input {
+	border: 2px solid #ADEFD1;
+	border-radius: 5px;
+	width: 120px;
+	height: 30px;
+	text-align: center;
+	margin-right: 22px;
+}
+.ContentRight2>div>div:nth-child(3) input {
+	border: 2px solid #ADEFD1;
+	border-radius: 5px;
+	width: 230px;
+	height: 30px;
+	text-align: center;
+}
+.ContentRight2>div:nth-child(2){
+	align-items: center;
+}
+
+.ContentRight2>div:nth-child(2)>div:first-child input {
+	border: 2px solid #ADEFD1;
+	border-radius: 5px;
+	width: 100px;
+	height: 30px;
+	text-align: center;
+}
+
+.ContentRight2>div:nth-child(2)>div:nth-child(2) {
+	margin-left: 10px;
+	}
+	
+.ContentRight2>div:nth-child(2)>div:nth-child(3) {
+	margin-left: 100px;
+	}
+	
+.ContentRight2>div:nth-child(2)>div:nth-child(4) input {
+	border: 2px solid #ADEFD1;
+	border-radius: 5px;
+	width: 150px;
+	height: 30px;
+	margin-left: 50px;
+	text-align: center;
+}
+
+.ContentRight2 select {
+	border: 2px solid #ADEFD1;
+	border-radius: 5px;
+}
+
+/* 1번째 라인*/
+.ContentRight2>div:nth-child(1) {
+	width : 100px;
+	height : 30px;
+	display: flex;
+}
+
+/* 2번째 라인*/
+.ContentRight2>div:nth-child(2) {
+	display: flex;
+	font-size: 12px;
+}
+
+/*Modal Main Content CSS* (3)/
+/* contetntLeft*/
+.modalMainContent3 {
+	margin: 20px 50px;
+	display: flex;
+}
+
+.ContentLefit3 {
+	width: 100px;
+	display: flex;
+	align-items: flex-start;
+	justify-content: flex-start;
+	flex-direction: column;
+}
+
+.ContentLefit3>div:nth-child(1), .ContentLefit3>div:nth-child(2),
+	.ContentLefit3>div:nth-child(3), .ContentLefit3>div:nth-child(4) {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	font-size: 12px;
+}
+
+.ContentLefit3 div {
+	margin-bottom: 10px;
+	height: 30px;
+	font-size: 12px;
+}
+
+/* contetntRight*/
+.ContentRight3 {
+	margin-left: 20px;
+}
+
+.ContentRight3>div {
+	margin-bottom: 10px;
+}
+
+.ContentRight3 input {
+	border: 2px solid #ADEFD1;
+	border-radius: 5px;
+	text-align: center;
+}
+
+/* 1번째 라인*/
+.ContentRight3>div:nth-child(1) input {
+	width : 100px;
+	height : 30px;
+	display: flex;
+	text-align: center;
+}
+
+/* 2번째 라인*/
+.ContentRight3>div:nth-child(2) input {
+	width : 200px;
+	height : 30px;
+	display: flex;
+	text-align: center;
+}
+
+/* 3번째 라인*/
+.ContentRight3>div:nth-child(3) input {
+	width : 500px;
+	height : 30px;
+	display: flex;
+	text-align: center;
+}
+
+/* 4번째 라인*/
+.ContentRight3>div:nth-child(4) input {
+	width : 500px;
+	height : 30px;
+	display: flex;
+	text-align: center;
+}
+
+
+/* 등록하기 버튼 CSS */
+.insertbtn {
+	margin-top: 30px; display : flex;
+	justify-content: center;
+	display: flex;
+}
+
+.insertbtn div:nth-child(1)>input {
+	width: 200px;
+	height: 30px;
+	background-color: #ADEFD1;
+	border: 2px solid #ADEFD1;
+	border-radius: 5px;
+	cursor: pointer;
+	transition: box-shadow 0.2s ease;
+	text-align: center;
+}
+
+.insertbtn div:nth-child(2)>input {
+	width: 200px;
+	height: 30px;
+	background-color: white;
+	border: 2px solid #ADEFD1;
+	border-radius: 5px;
+	margin-left: 20px;
+	cursor: pointer;
+	transition: box-shadow 0.2s ease;
+	text-align: center;
+}
+.insertbtn input:hover {
+	box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.25);
+}
+input:focus, .ContentRight2>div>select:focus {
+	outline: 1px solid #ADEFD1;
+}
+input[readonly] {
+    background-color: #eee;
+}
