@@ -28,7 +28,7 @@
 				</div>
 				<div>결제 취소 요청</div>
 				<div>
-					결제번호 <input class="orderPayCancelNO1" type="text" name="p_code"/>
+					결제번호 <input class="payCancelNo" type="text" name="p_code"/>
 				</div>
 			</div>
 

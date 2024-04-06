@@ -21,56 +21,66 @@ public class CustomerPayDAOImpl implements CustomerPayDAO {
 	SqlSessionTemplate mybatis;
 	
 	@Override
-	public int getCountPageTotal(String id) {
+	public Map<String,Integer> getCountPageTotal(String memberID) {
 		logger.info("getCountPageTotal // Repository");
-		return mybatis.selectOne("CustomerOrderListDAO.getCountPageTotal", id);
-	}
-	
-	@Override
-	public int getFleaCountPageTotal(String id) {
-		logger.info("getFleaCountPageTotal // Repository");
-		return mybatis.selectOne("CustomerOrderListDAO.getFleaCountPageTotal", id);
+		return mybatis.selectOne("CustomerOrderListDAO.getCountPageTotal", memberID);
 	}
 	
 	@Override
 	public Map<String,Object> getPayList(Map<String,Object> resultMap) {
 		logger.info("getPayList // Repository");
 //		return mybatis.selectList("CustomerOrderListDAO.getPayList", vo);
+		
 		Map<String,Object> finalResultMap = new HashMap<String, Object>();
-		// 1. 
+		
+		// 1. 주문제작 결재내역 
 		List<PayVO> orderList = mybatis.selectList("CustomerOrderListDAO.getPayList", resultMap);
-		// 2.
+		// 2. 플리마켓 결재내역
 		List<PayVO> fleaList = mybatis.selectList("CustomerOrderListDAO.getFleaPayList", resultMap);
-		// 3.
-		// 4.
+		// 3. 결제취소 내역
+		List<PayVO> cancleList = mybatis.selectList("CustomerOrderListDAO.getCancelPayList", resultMap);
+		// 4. 반품 내역
+		List<PayVO> returnList = mybatis.selectList("CustomerOrderListDAO.getReturnList", resultMap);
 		
 		// 5. 맵에 저장 하여 return
 		finalResultMap.put("orderList",orderList);
 		finalResultMap.put("fleaList",fleaList);
+		finalResultMap.put("cancleList",cancleList);
+		finalResultMap.put("returnList",returnList);
 		
 		return finalResultMap;
 	}
 	
 	@Override
 	public void insertFleaPayCancel(PayVO vo) {
-		logger.info("flea 결제취소요청 Repository = {}",vo.getFp_code());
-		mybatis.insert("CustomerOrderListDAO.insertFleaPayCancel", vo);
-		logger.info("insertFleaPayCancel Repository 성공");
+		System.out.println("=> flea결제취소요청 Repository");
+		mybatis.insert("CustomerOrderListDAO", vo);
+		System.out.println("insertFleaPayCancel vo : " + vo);
+	}
+
+	
+	// 구매 확정 입력
+	@Override
+	public int insertPurchConfirm(String id, int payNo) {
+		logger.info("insertPurchConfirm Repository = {}", id);
+		logger.info("insertPurchConfirm Repository = {}", payNo);
+		
+		Map<String,Object> responseValue = new HashMap<String, Object>();
+		
+		responseValue.put("id", id);
+		responseValue.put("payNo", payNo);
+		
+		return mybatis.update("CustomerOrderListDAO.insertPurchConfirm", responseValue);
 	}
 
 	@Override
-	public void insertOrderPayReturn(PayVO vo) {
-		logger.info("order 반품요청 Repository = {}",vo.getP_code());
-		mybatis.insert("CustomerOrderListDAO.insertOrderPayReturn", vo);
-		logger.info("insertOrderPayReturn Repository 성공");
+	public int insertOrderPayReturn(PayVO vo) {
+		return mybatis.insert("CustomerOrderListDAO.insertOrderPayReturn", vo);
 	}
-	
+
 	@Override
-	public void insertOrderPayCancel(PayVO vo) {
-		logger.info("order 결제취소요청 Repository = {}",vo.getP_code());
-		mybatis.insert("CustomerOrderListDAO.insertOrderPayCancel", vo);
-		logger.info("insertOrderPayCancel Repository 성공");
+	public int insertOrderPayCancel(PayVO vo) {
+		return mybatis.update("CustomerOrderListDAO.insertOrderPayCancel", vo);
 	}
-	
 	
 }

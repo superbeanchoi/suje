@@ -22,10 +22,10 @@ public class PayVO {
 	
 	// 주문제작 결제내역 반품 VO
 	int rt_code;
-	String rt_date, rt_why;
+	String rt_date, rt_why,rt_state;
 	
 	// 주문제작 결제내역 결제취소 VO
 	int can_code;
-	String can_date, can_why;
+	String can_date, can_why,can_state;
 	
 }
