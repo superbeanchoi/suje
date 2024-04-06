@@ -14,7 +14,7 @@
 	<select id="getCancelOrderCheck" parameterType="String" resultType="cancelOrder">
 
 		select c.can_code, c.can_date, c.can_why, o.s_id, f.fo_code
-		from cancel_test c, orderinfo o, final_order f, pay p
+		from cancel c, orderinfo o, final_order f, pay p
 		where o.s_id=#{s_id}
 		and o.o_code=f.o_code
 		and f.fo_code=p.fo_code
@@ -22,7 +22,7 @@
 	</select>
 	<select id="getReturnOrderCheck" parameterType="String" resultType="returnOrder">
 		select r.rt_code, r.p_code, r.rt_date, r.rt_why,o.s_id, o.o_code
-		from return_test r, orderinfo o, final_order f, pay p
+		from return r, orderinfo o, final_order f, pay p
 		where o.s_id=#{s_id}
 		and o.o_code=f.o_code
 		and f.fo_code=p.fo_code

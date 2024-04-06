@@ -472,11 +472,14 @@
 
 
 hr {
-	margin: 10px auto 0;
-	width: 640px;
+	margin: 10px 0;
+	width: 100%;
 	height: 5px;
 	background-color : #eee;
 	border: 0px;
+}
+.payMentListModalBody {
+	height: 800px;
 }
 
 select[readonly] {

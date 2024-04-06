@@ -3,14 +3,14 @@
 /* Modal Order Join css*/
 
 /* Modal payCancleModal css*/
-.payCancleModal {
+/* .payCancleModal {
 	position: absolute;
 	top: 0;
 	left: 0;
 	width: 100%;
 	height: 100%;
 	background-color: rgba(0, 0, 0, 0.4);
-/* 	display: none; */
+	display: none;
 	text-align: center;
 }
 
@@ -32,7 +32,7 @@
 	box-shadow: 0 2px 3px 0 rgba(34, 36, 38, 0.15);
 	transform: translateX(-50%) translateY(-50%);
 	position: absolute;
-}
+} */
 
 .payCancleTitle {
 	display: flex;
@@ -59,7 +59,7 @@
 
 /* 제작주문번호 입력부분*/
 .payCancleTitle div:nth-child(3) {
-	margin-left: 100px;
+	margin-left: 140px;
 	font-size: 12px;
 }
 
@@ -131,8 +131,7 @@
 }
 
 .payCancleContentRight>div:nth-child(1)>div:nth-child(1) input {
-	margin-right: 40px;
-	width: 450px;
+	width: 490px;
 	height: 200px;
 	text-align: center;
 	border: 2px solid #ADEFD1;

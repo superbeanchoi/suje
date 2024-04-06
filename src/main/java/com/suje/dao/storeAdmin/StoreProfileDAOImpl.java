@@ -19,6 +19,8 @@ public class StoreProfileDAOImpl implements StoreProfileDAO {
 
 	@Override
 	public void updateStoreProfile(StoreProfileVO updatedStoreProfile) {
+		System.out.println("mmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm");
+		System.out.println(updatedStoreProfile.getS_spname());
 		mybatis.update("storeProfileDAO.updateStoreProfile", updatedStoreProfile);
 	}
 	

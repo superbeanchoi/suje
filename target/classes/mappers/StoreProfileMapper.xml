@@ -17,7 +17,7 @@
 
 	<update id="updateStoreProfile" parameterType="storeProfile">
 		UPDATE store
-		SET s_name=#{s_name},s_text = #{s_text}, catem_code = #{catem_code}, s_spname = #{s_spname}, s_back_spname = #{s_back_spname}
+		SET s_name = #{s_name}, s_text = #{s_text}, catem_code = #{catem_code}, s_spname = #{s_spname}, s_back_spname = #{s_back_spname}
 		WHERE s_id = #{s_id}
 	</update>
 

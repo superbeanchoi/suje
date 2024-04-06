@@ -120,8 +120,8 @@ $(function() {
 			dataType : "json",
 			contentType:'application/x-www-form-urlencoded; charset=UTF-8',
 			success : function(memberInfo){
-				$('.ContentRight2>div>div:nth-child(2) input').val(cardBank);  //은행명
-				$('.ContentRight2>div>div:nth-child(3) input').val(cardNum);  //은행번호
+				//$('.ContentRight2>div>div:nth-child(2) input').val(cardBank);  //은행명
+				//$('.ContentRight2>div>div:nth-child(3) input').val(cardNum);  //은행번호
 				$('.ContentRight3>div:nth-child(1) input').val(memberInfo.m_name);  //수령자명
 				$('.ContentRight3>div:nth-child(2) input').val(memberInfo.m_tel);  //전화번호
 				$(".customerOrderListModal").fadeIn(200);

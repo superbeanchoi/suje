@@ -18,9 +18,9 @@
 
 </head>
 <body>
-	<div class="payCancleModal">
+	<div class="storepayCancleModal">
 	<form id="formSubmit" action="insertOrderPayCancel.do" method="post">
-		<div class="payCancleBody">
+		<div class="storepayCancleBody">
 			<!-- 상단 제목 부분 -->
 			<div class="payCancleTitle">
 				<div>

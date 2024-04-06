@@ -25,6 +25,15 @@ $(function() {
 <% String mmCate = (String)request.getAttribute("mmCate"); %>
 <% String orderBy = (String)request.getAttribute("orderBy"); %>
 	
+	//콘텐츠 텍스트 미리보기
+	$('.itemNameTr td').each(function() {
+	    var text = $(this).text();
+	    if (text.length > 23) {
+	        text = text.substring(0, 23) + '...';
+	        $(this).text(text);
+	    }
+	});
+	
 	//카테고리 선택 초기화
 	$('.mainNavi').removeClass('selectedMainNavi');
 	$('.subNaviWrap a').removeClass('selectedSubNavi');

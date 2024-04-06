@@ -67,12 +67,24 @@ body {
 .memberLoginBtn:hover {
 	box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.25);
 }
-.storeLoginBtn, .adminLoginBtn {
+.storeLoginBtn {
 	width: 340px;
 	height: 50px;
 	border: 2px solid #ADEFD1;
 	border-radius: 10px;
 	background-color: #fff;
+	font-weight: bold;
+	font-size: 15px;
+	margin: 0 50px 10px;
+	transition: box-shadow 0.2s ease;
+	cursor: pointer;
+}
+.adminLoginBtn {
+	width: 340px;
+	height: 50px;
+	border-radius: 10px;
+	background-color: #00203F;
+	color: #fff;
 	font-weight: bold;
 	font-size: 15px;
 	margin: 0 50px 10px;

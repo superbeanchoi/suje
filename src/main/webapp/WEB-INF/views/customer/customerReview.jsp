@@ -36,7 +36,10 @@
 <script type="text/javascript">
 
 $(function(){
-    
+<% if (request.getAttribute("complete") != null) { %>
+	var complete = "<%= request.getAttribute("complete") %>";
+	alert(complete);
+<% } %>
     
     $('.reviews').addClass('selectMenu');
     
