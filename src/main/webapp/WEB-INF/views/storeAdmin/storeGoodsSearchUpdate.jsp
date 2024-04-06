@@ -32,64 +32,6 @@ $(function() {
     $(".storeCategoryArea>li:nth-child(1)>a").addClass("checkedStateFirstCategory");
     $(".storeCategoryArea>li:nth-child(1) .storeSecondCategoryArea li:nth-child(4)").addClass("checkedStateSecondCategory");
 
-    // 중분류 처리
-    $(".goodsInfo_selectBox_First").change(function() {
-        let cateMidCode = $(this).val();
-
-        $.ajax({
-            type: "post",
-            url: "getCateMidList.do",
-            data: {
-                cateMidCode: cateMidCode
-            },
-            dataType: "json",
-            contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
-            beforeSend: function() {
-                $(".goodsInfo_selectBox_Secound").empty();
-            },
-            success: function(data) {
-                console.log(data);
-                for (var i = 0; i < data.length; i++) {
-                    $(".goodsInfo_selectBox_Secound").append(
-                        "<option value=" + data[i].catemm_code + ">" + data[i].catemm_name + "</option>"
-                    );
-                }
-            },
-            error: function(request, status, error) {
-                alert("통신 에러가 발생했습니다 : " + request + "/" + status + "/" + error);
-            }
-        });
-    });  //중분류 end
-
-    //소분류
-    $(".goodsInfo_selectBox_Secound").change(function() {
-        let cateMidCode = $(this).val();
-
-        $.ajax({
-            type: "post",
-            url: "cateSubCode.do",
-            data: {
-                cateMidCode: cateMidCode
-            },
-            dataType: "json",
-            contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
-            beforeSend: function() {
-                $(".goodsInfo_selectBox_Third").empty();
-            },
-            success: function(data) {
-                for (var i = 0; i < data.length; i++) {
-                    $(".goodsInfo_selectBox_Third").append(
-                        "<option value=" + data[i].cates_code + ">" + data[i].cates_name + "</option>"
-                    );
-                }
-            },
-            error: function(request, status, error) {
-                alert("통신 에러가 발생했습니다 : " + request + "/" + status + "/" + error);
-            }
-        });
-
-    }); //소분류 end
-
 
         $('.imgColumn-container img').click(function() {
         	
