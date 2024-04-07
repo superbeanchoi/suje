@@ -103,10 +103,10 @@
 								
 									<td><!-- 구매 미확정 일 때 결제취소 -->
 									
-										<c:if test="${vo.can_code eq null }">
+										<c:if test="${vo.can_code eq 0 }">
 											<input class="payCancelBtn" type="button" value="요청">
 										</c:if>
-										<c:if test="${vo.can_code ne null }">
+										<c:if test="${vo.can_code ne 0 }">
 											<c:if test="${vo.can_state eq null }">
 												요청중
 											</c:if>
@@ -122,10 +122,10 @@
 									
 									<td><!-- 구매 미 확정 일 때 반품요청 -->
 									
-										<c:if test="${vo.rt_code eq null }">
+										<c:if test="${vo.rt_code eq 0 }">
 											<input class="returnCall" type="button" value="요청">
 										</c:if>
-										<c:if test="${vo.rt_code ne null }">
+										<c:if test="${vo.rt_code ne 0 }">
 											<c:if test="${vo.rt_state eq null }">
 												요청중
 											</c:if>
@@ -150,8 +150,8 @@
 				</table>
 				
 				<div class="pageing">				
-							<c:forEach var="i" begin="0" end="${countResultMap.orderPurchCount }" step="1">
-								[<a href="getPayList.do?id=${id }&orderPage=${i+1}&fleaPage=1&cancelPage=1&returnPage=1">${i+1}</a>]
+							<c:forEach var="i" begin="1" end="${countResultMap.orderPurchCount }" step="1">
+								[<a href="getPayList.do?id=${id }&orderPage=${i}&fleaPage=1&cancelPage=1&returnPage=1">${i}</a>]
 							</c:forEach>				
 				</div>
 				
@@ -211,8 +211,8 @@
 			</table>
 			
 				<div class="pageing">				
-							<c:forEach var="i" begin="0" end="${countResultMap.fleaPurchCount }" step="1">
-								[<a href="getPayList.do?id=${id }&orderPage=1&fleaPage=${i+1}&cancelPage=1&returnPage=1">${i+1}</a>]
+							<c:forEach var="i" begin="1" end="${countResultMap.fleaPurchCount }" step="1">
+								[<a href="getPayList.do?id=${id }&orderPage=1&fleaPage=${i}&cancelPage=1&returnPage=1">${i}</a>]
 							</c:forEach>				
 				</div>
 
@@ -250,8 +250,8 @@
 				
 			</table>
 			<div class="pageing">
-					<c:forEach var="i" begin="0" end="${countResultMap.cancelCount }" step="1">
-						[<a href="getPayList.do?id=${id }&orderPage=1&fleaPage=1&cancelPage=${i+1}&returnPage=1">${i+1}</a>]
+					<c:forEach var="i" begin="1" end="${countResultMap.cancelCount }" step="1">
+						[<a href="getPayList.do?id=${id }&orderPage=1&fleaPage=1&cancelPage=${i}&returnPage=1">${i}</a>]
 					</c:forEach>	
 			</div>
 
@@ -288,8 +288,8 @@
 				</c:if>
 			</table>
 			<div class="pageing">
-				<c:forEach var="i" begin="0" end="${countResultMap.returnCount }" step="1">
-					[<a href="getPayList.do?id=${id }&orderPage=1&fleaPage=1&cancelPage=1&returnPage=${i+1}">${i+1}</a>]
+				<c:forEach var="i" begin="1" end="${countResultMap.returnCount }" step="1">
+					[<a href="getPayList.do?id=${id }&orderPage=1&fleaPage=1&cancelPage=1&returnPage=${i}">${i}</a>]
 				</c:forEach>	
 			</div>
 		</div>
