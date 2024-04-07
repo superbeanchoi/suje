@@ -1,3 +1,4 @@
+<%@page import="org.apache.ibatis.reflection.SystemMetaObject"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
@@ -5,7 +6,6 @@
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
-
 
 <!DOCTYPE html>
 <html>
@@ -26,6 +26,7 @@
 
 <!-- 자바스크립트 연결 -->
 <script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
+<script src="https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 <script type="text/javascript" src="./resources/js/customer/customerSujeTalk.js"></script>
 <script type="text/javascript">
 
@@ -33,8 +34,14 @@ $(function(){
     
     $('.sujeTalk').addClass('selectMenu');
     
+    var insertState = "${insertState}";
     
-});
+    if(insertState == "1"){
+        alert("주문번호 ${orderCode} 결제가 완료 되었습니다.");
+        location.href = "getPayList.do?id=${id}&orderPage=1&fleaPage=1&cancelPage=1&returnPage=1"
+    }
+
+})
 
 
 </script>
@@ -71,7 +78,12 @@ $(function(){
 							<c:forEach var="orderList" items="${orderListTotal}">
 								<div class="eachstore">
 									<div class="storeSimpleInfo">
-										<img alt="" src="./resources/img/sujetalkstoreimg.png">
+										<c:if test="${orderList.s_spname eq null}">
+											<img alt="" src="./resources/img/faviconLogoIcon.png">
+										</c:if>
+										<c:if test="${orderList.s_spname ne null}">
+										 	<img alt="" src="./resources/img/DBServer/${ orderList.s_spname}">
+										</c:if>
 										<div>${orderList. s_name}</div>
 									</div>
 									<div>${orderList. o_date}</div>

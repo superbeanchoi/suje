@@ -23,7 +23,8 @@
 	oi.m_id,
 	to_char(oi.o_date,'yyyy-mm-dd') as o_date,
 	oi.s_id,
-	st.s_name  
+	st.s_name,
+	st.s_spname  
 	from orderinfo oi, store st
 	where o_code in ( select o_code
  		from (select rownum as r_num, o_code from (select rownum,o_code from orderinfo where m_id = #{m_id} order by o_code desc))

@@ -173,7 +173,7 @@
 				<!-- Content 2번째 라인 -->
 				<div><input id="deliTel" name="d_tel" type="text" required /><!-- 수령자 전화번호 --></div>
 				<!-- Content 3번째 라인 -->
-				<div><input id="deliAddr" name="d_addr" type="text" required /><!-- 배송주소 --></div>
+				<div><input id="deliAddr" name="d_addr" type="text" required readonly="readonly"/><!-- 배송주소 --></div>
 				<!-- Content 4번째 라인 -->
 				<div><input id="deliMamo" name="d_memo" type="text" /><!-- 배송메모 --></div>
 				<!-- 버튼-->

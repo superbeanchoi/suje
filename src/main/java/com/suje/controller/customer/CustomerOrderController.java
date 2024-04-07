@@ -1,11 +1,13 @@
 package com.suje.controller.customer;
 
-import java.io.File;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.UUID;
+
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServletResponse;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -17,7 +19,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.multipart.MultipartFile;
 
 import com.suje.domain.customer.EtcVO;
 import com.suje.domain.customer.FinalOrderVO;
@@ -104,12 +105,15 @@ public class CustomerOrderController {
 	
 	// pay 정보 , 배송정보 insert
 	@RequestMapping(value = "payDeliveryInsert", method = RequestMethod.POST)
-	public String insertPurchaseInfo(@ModelAttribute PurchaseVO purchaseVO) {
+	public String insertPurchaseInfo(@ModelAttribute PurchaseVO purchaseVO, Model model) {
 
 		logger.info("insertBuyinfo");
 		Map<String, Integer> state = orderService.insertPurchaseInfo(purchaseVO);
-
-		return "redirect:customerSujeTalk.do?id=" + purchaseVO.getM_id() + "&page=1";
+		
+		model.addAttribute("insertState",state.get("deliveryState"));
+		model.addAttribute("orderCode",purchaseVO.getFo_code());
+		
+		return "forward:customerSujeTalk.do?id=" + purchaseVO.getM_id() + "&page=1";
 	}
 	
 	//상세 요청 사항 등록
