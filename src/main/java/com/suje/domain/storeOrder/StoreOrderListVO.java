@@ -14,7 +14,7 @@ public class StoreOrderListVO {
 	private int totalPageCount,firstNum,endNum;
 	
 	//요청사항 내용 관련 메소드
-	private String content;
+	private String content,s_spname;
 	
 //	// Final_Order 테이블 관련
 //	private int fo_code, fo_sum, fo_num, cates_code, deli_code;

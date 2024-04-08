@@ -24,9 +24,16 @@
 <script type="text/javascript" src="./resources/js/storeOrder/storeSujeTalk.js"></script>
 <script type="text/javascript">
 $(function() {
+    
 	// 서브 메뉴바 클래스명 추가 // CSS 적용
 	$(".storeCategoryArea>li:nth-child(3)>a").addClass("checkedStateFirstCategory");	
 	$(".storeCategoryArea>li:nth-child(3) .storeSecondCategoryArea li:nth-child(1)").addClass("checkedStateSecondCategory");
+	
+	var updateState = ${updateState};
+	
+	if(updateState == 1){alert("주문서 수정이 완료 되었습니다.")}
+
+
 })
 </script>
 <title>SUJE</title>
@@ -166,6 +173,7 @@ $(function() {
 </body>
 
 <script type="text/javascript">
+
     $(function() {
 	// 최종 주문서 조회 취소 버튼 이벤트
 	$('.viewCancel').click(function() {
@@ -178,9 +186,6 @@ $(function() {
 	});
 
    });
-    
-    
-		
 
 </script>
 </html>

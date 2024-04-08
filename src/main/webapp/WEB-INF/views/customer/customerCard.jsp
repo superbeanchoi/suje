@@ -32,6 +32,7 @@ $(function(){
 	var complete = "<%= request.getAttribute("complete") %>";
 	alert(complete);
 <% } %>
+
     // 버튼 이벤트
     $('.cardInsert').addClass('selectMenu');
     

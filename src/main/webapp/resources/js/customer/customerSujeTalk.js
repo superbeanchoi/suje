@@ -17,7 +17,6 @@ $(function () {
     // 최종 주문서 Modal 안에 있는 결제하기 버튼 클릭 이벤트
     $('.insertBtnRes').click(insertPayClickEvent);
 
-
     // 결제정보 결제 방식 선택 시 호출 되는 이벤트
     $('.paySelect').change(paySelectEvent);
     

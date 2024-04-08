@@ -36,7 +36,7 @@ public class CustomerCardController {
 	@RequestMapping(value = "updateCard", method = RequestMethod.POST)
 	public String updateCard(@ModelAttribute CardVO updateCard, Model model) {
 		logger.info("updateCard Controller 실행");
-		
+		logger.info(updateCard.getM_id());
 		  if (updateCard.getCard_code() == 0) {
 			  service.insertCard(updateCard);
 		  }else {
@@ -47,15 +47,15 @@ public class CustomerCardController {
 		return "forward:/customerCard.do?id=" + updateCard.getM_id();	  
 	  }
 	  
-	  // 회원 카드 정보 등록하기	  
-	  @RequestMapping(value = "insertCard", method=RequestMethod.POST) 
-	  public String insertCard(@ModelAttribute CardVO insertCard, Model model) {
-		  logger.info("insertCard Controller 실행");
-		  logger.info(insertCard.getM_id());
-		  service.insertCard(insertCard);
-		  model.addAttribute("complete", "카드 정보가 등록되었습니다.");
-		  return "forward:/customerCard.do?id=" + insertCard.getM_id();		  
-	  }
+//	  // 회원 카드 정보 등록하기	  
+//	  @RequestMapping(value = "insertCard", method=RequestMethod.POST) 
+//	  public String insertCard(@ModelAttribute CardVO insertCard, Model model) {
+//		  logger.info("insertCard Controller 실행");
+//		  logger.info(insertCard.getM_id());
+//		  service.insertCard(insertCard);
+//		  model.addAttribute("complete", "카드 정보가 등록되었습니다.");
+//		  return "forward:/customerCard.do?id=" + insertCard.getM_id();		  
+//	  }
 
 	
 }

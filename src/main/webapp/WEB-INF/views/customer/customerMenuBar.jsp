@@ -43,7 +43,7 @@
 				<a href="customerAccount.do?id=<%=user %>">계좌 등록/수정</a>
 			</div><!-- 계좌 등록/ 수정 -->
 			
-			<div class="subTitle orderListMenubar">
+			<div class="subTitle orderListMenubar2">
 				<a href="getPayList.do?id=<%=user %>&orderPage=1&fleaPage=1&cancelPage=1&returnPage=1">주문 내역 조회</a>
 			</div><!-- 주문 내역 조회-->
 			

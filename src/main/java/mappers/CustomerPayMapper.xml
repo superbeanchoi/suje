@@ -58,7 +58,7 @@
 <select id="getPayList" parameterType="hashmap" resultType="customerPay">
 
 <![CDATA[	  
-select p_code, fo_code, fo_date, p_date, p_sum, p_ck, p_ck_date, can_code, can_state, rt_code, rt_state
+select p_code, fo_code, to_date(to_char(fo_date,'YYYY-MM-DD HH24:MI:SS'),'YYYY-MM-DD HH24:MI:SS') as fo_date, p_date, p_sum, p_ck, p_ck_date, can_code, can_state, rt_code, rt_state
 from
 	(select rownum as r_num, p_code, fo_code, fo_date, p_date, p_sum, p_ck, p_ck_date, can_code, can_state, rt_code, rt_state
 	from 
@@ -68,7 +68,7 @@ from
 			oi.o_code = fo.o_code
 			and fo.fo_code = p.fo_code
 			and p.p_code = can.p_code(+)
-			and p.p_code = rt.rt_code(+)
+			and p.p_code = rt.p_code(+)
 			and oi.m_id = #{id}
 			order by p_date desc))
 where r_num >= #{orderFirstNum} and r_num <= #{orderEndNum}
