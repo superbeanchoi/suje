@@ -16,6 +16,9 @@
 <div class="adminSubMenuBox">
 	<ul class="adminCategoryArea">
 		<li class="adminFirstCategoryArea">
+			<a href="adminStatics.do" class="storeFirstCategoryBtn">&nbsp;&nbsp;&nbsp;SUJE 통계</a>
+		</li>
+		<li class="adminFirstCategoryArea">
 			<a href="adminmanage.do?page=1" class="adminFirstCategoryBtn">&nbsp;&nbsp;&nbsp;스토어 입점 관리</a>
 		</li>
 		<li class="storeFirstCategoryArea">
@@ -24,11 +27,6 @@
 		<li class="adminFirstCategoryArea">
 			<a href="adminQnA.do?page=1" class="storeFirstCategoryBtn">&nbsp;&nbsp;&nbsp;Q&A 관리</a>
 		</li>
-		<!-- 
-		<li class="adminFirstCategoryArea">
-			<a href="#" class="storeFirstCategoryBtn">&nbsp;&nbsp;&nbsp;통계</a>
-		</li>
-		 -->
 	</ul>
 </div> <!-- adminSubMenuBox -->
 </body>

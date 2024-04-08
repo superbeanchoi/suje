@@ -83,7 +83,7 @@ String mainId = (String)session.getAttribute("mainId");
 	<div class="secondHeaderNavi">
 		<button class="headerCategoryBtn"><img src="./resources/img/headeHambergerMenu.png"/><span>전체 카테고리</span></button>
 		<a href="viewPopularRank.do" class="headerRankingPageBtn">인기랭킹</a>
-		<a href="viewRealTimeReview.do?page=1" class="headerReviewPageBtn">실시간 후기</a>
+		<a href="viewRealTimeReview.do" class="headerReviewPageBtn">실시간 후기</a>
 		<a href="viewMainComm.do" class="headerCommunityPageBtn">커뮤니티</a>
 		<a href="viewFleaMarket.do" class="headerFleaMarketPageBtn">플리마켓</a>
 	</div>

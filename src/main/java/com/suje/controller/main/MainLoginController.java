@@ -71,7 +71,7 @@ public class MainLoginController {
 			return "main/mainLogin";
 		}else {   
 			session.setAttribute("mainId", login.getMa_id()); 
-			return "forward:/adminmanage.do?page=1";
+			return "forward:/adminStatics.do";
 		}
 	}
 	

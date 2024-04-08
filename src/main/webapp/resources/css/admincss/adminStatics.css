@@ -1,0 +1,73 @@
+@charset "UTF-8";
+
+.adminTitle {
+	display: block;
+	width: 500px;
+	height: 50px;
+	font-size: 30px;
+	font-weight: bold;
+	line-height: 50px;
+	margin: 30px 0 20px 30px;
+}
+.adminHr {
+	border: none; /* 기본 테두리 제거 */
+	width: 100%; /* 수평선의 너비 설정 */
+	height: 5px; /* 수평선의 높이 설정 */
+	background-color: #eee; /* 수평선의 배경색 설정 */
+	margin: 0;
+}
+.statisticBox {
+	margin-top: 50px;
+	width: 1190px;
+	height: 360px;
+}
+.statisticHalfBox {
+	float: left;
+	margin-left: 30px;
+	width: 565px;
+	height: 360px;
+}
+.statisticTitle {
+	width: 565px;
+	height: 50px;
+	line-height: 50px;
+}
+.statisticAreaTitle {
+	margin-right: 20px;
+	font-size: 30px;
+	height: 50px;
+	line-height: 50px;
+	font-weight: bold;
+	float: left;
+}
+.statisticAreaTitleDate {
+	height: 50px;
+	float: left;
+	line-height: 60px;
+	font-size: 18px;
+}
+.statisticAreaHalf {
+	width: 565px;
+	height: 300px;
+	display: block;
+	border: 2px solid #ADEFD1;
+	border-radius: 10px;
+	margin-top: 10px;
+	padding: 10px;
+}
+.statisticArea {
+	width: 1160px;
+	height: 300px;
+	display: block;
+	border: 2px solid #ADEFD1;
+	border-radius: 10px;
+	margin: 10px 0 0 30px;
+	padding: 10px;
+}
+.statisticBox:nth-of-type(2)>.statisticTitle, .statisticBox:nth-of-type(3)>.statisticTitle {
+	margin-left: 30px;
+}
+
+/* 그래프 */
+
+

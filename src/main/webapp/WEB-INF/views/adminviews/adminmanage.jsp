@@ -26,7 +26,7 @@ $(function() {
 	alert(storeAvail);
 <% } %>
 
-	$('.adminCategoryArea li:first-child a').addClass('checkedStateFirstCategory');
+	$('.adminCategoryArea li:nth-child(2) a').addClass('checkedStateFirstCategory');
 	
 	var storeId;
 	var adminId = "<%= adminId %>";

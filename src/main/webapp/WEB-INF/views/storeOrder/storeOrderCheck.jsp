@@ -356,26 +356,31 @@ $(document).ready(function() {
     
     
 	$(".cancel-state").on("click", function() {
+		
 		var cCode =  $("#cancel_code").val();
 		var storeId =  $("#storeId").val();
 		var stateVal =  $(this).val();
 		var state = (stateVal == "승인") ? "Y":"N" 
 		
-        $.ajax({
-	         type : "post",
-	         url : "updateCancelState.do",
-	         data : {
-	        	 cCode:cCode,
-	        	 state:state,
-	        	 id:storeId
-	         },
-	         success : function(data){
-	        	location.reload();
-	         },
-	         error: function(request, status, error) {
-                alert("통신 에러가 발생했습니다 : "+request+"/"+status+"/"+error);
-	         }
-	      });
+		if (confirm("결제취소요청을 "+stateVal+"하시겠습니까?")) {
+	        $.ajax({
+		         type : "post",
+		         url : "updateCancelState.do",
+		         data : {
+		        	 cCode:cCode,
+		        	 state:state,
+		        	 id:storeId
+		         },
+		         success : function(data){
+		        	alert(stateVal+"되었습니다.");
+		        	location.reload();
+		         },
+		         error: function(request, status, error) {
+	                alert("통신 에러가 발생했습니다 : "+request+"/"+status+"/"+error);
+		         }
+		      });
+		} else {}
+				
 	});
     
 </script>
