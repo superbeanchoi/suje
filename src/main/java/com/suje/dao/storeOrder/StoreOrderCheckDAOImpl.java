@@ -1,6 +1,8 @@
 package com.suje.dao.storeOrder;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -43,4 +45,20 @@ public class StoreOrderCheckDAOImpl implements StoreOrderCheckDAO {
 	public void deliverycomplete(int pCode) {
 		mybatis.update("StoreOrderCheckDAO.deliverycomplete", pCode);
 	}
+
+	@Override
+	public void updateCancelState(int cCode, String state) {
+		StoreOrderCheckVO vo = new StoreOrderCheckVO();
+		vo.setCan_code(cCode);
+		vo.setCan_state(state);
+		
+		System.out.println("//////////////////status :" + state);
+		mybatis.update("StoreOrderCheckDAO.updateCancelState", vo);
+	}
+	
+	@Override
+	public StoreOrderCheckVO getCancel(int cCode) {
+		return mybatis.selectOne("StoreOrderCheckDAO.getCancel",cCode);
+	}
+	
 }

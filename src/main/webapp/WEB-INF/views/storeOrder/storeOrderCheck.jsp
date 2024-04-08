@@ -92,14 +92,15 @@ $(function() {
 			<br /> <br />
 			<hr class="hr">
 			<h2 class="title">결제취소정보</h2>
-			<div class="table-wrapper">
+			<div class="table-wrapper" id="cancelList">
 				<table>
 					<thead>
 						<tr>
 							<th>결제취소번호</th>
 							<th>최종주문번호</th>
-							<th>취소일자</th>
+							<th>취소요청일자</th>
 							<th>취소사유</th>
+							<th>처리여부</th>
 						</tr>
 					</thead>
 					<tbody>
@@ -112,6 +113,18 @@ $(function() {
 								<fmt:formatDate value="${parsedDate}" pattern="yyyy/MM/dd" />
 							</td>
 							<td>${cancel.can_why}</td>
+							<td> 
+							<input type="hidden" id="cancel_code" value="${cancel.can_code}">
+							<input type="hidden" id="storeId" value="${cancel.s_id}">
+								<c:set var = "state" value = "${cancel.can_state}"/>
+								<c:if test="${empty state}">
+									<input class="cancel-state" type="button" id="csYes" value="승인">
+									<input class="cancel-state" type="button" id="csNo" value="거절">
+								</c:if>
+								<c:if test="${not empty state}">
+									${cancel.can_state}
+								</c:if>
+							</td>
 						</tr>
 
 						</c:forEach>
@@ -340,5 +353,30 @@ $(document).ready(function() {
     	    return (num < 10 ? "0" : "") + num;
     	}
     });
+    
+    
+	$(".cancel-state").on("click", function() {
+		var cCode =  $("#cancel_code").val();
+		var storeId =  $("#storeId").val();
+		var stateVal =  $(this).val();
+		var state = (stateVal == "승인") ? "Y":"N" 
+		
+        $.ajax({
+	         type : "post",
+	         url : "updateCancelState.do",
+	         data : {
+	        	 cCode:cCode,
+	        	 state:state,
+	        	 id:storeId
+	         },
+	         success : function(data){
+	        	location.reload();
+	         },
+	         error: function(request, status, error) {
+                alert("통신 에러가 발생했습니다 : "+request+"/"+status+"/"+error);
+	         }
+	      });
+	});
+    
 </script>
 </html>

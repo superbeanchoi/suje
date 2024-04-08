@@ -12,4 +12,6 @@ public interface StoreOrderCheckDAO {
 	public StoreOrderCheckVO getStoreFinalOrder(int foCode); // 최종 주문서 정보 조회
 	public StoreOrderCheckVO getStoreDelivery(int foCode);
 	public void deliverycomplete(int pCode);
+	public void updateCancelState(int cCode, String state);
+	public StoreOrderCheckVO getCancel(int cCode);
 }

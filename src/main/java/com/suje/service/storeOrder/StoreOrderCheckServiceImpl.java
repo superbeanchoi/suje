@@ -48,4 +48,16 @@ public class StoreOrderCheckServiceImpl implements StoreOrderCheckService {
 	public void deliverycomplete(int pCode) {
 		dao.deliverycomplete(pCode);
 	}
+
+	@Override
+	public void updateCancelState(int cCode, String state) {
+		dao.updateCancelState(cCode, state);
+	}
+	
+	@Override
+	public StoreOrderCheckVO getCancel(int cCode) { 
+		return dao.getCancel(cCode);
+	}
+	
+	
 }
