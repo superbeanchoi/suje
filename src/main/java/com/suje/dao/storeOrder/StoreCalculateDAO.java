@@ -2,8 +2,8 @@ package com.suje.dao.storeOrder;
 
 import java.util.List;
 
-import com.suje.domain.storeOrder.StoreOrderCheckVO;
+import com.suje.domain.storeOrder.StoreCalculateVO;
 
 public interface StoreCalculateDAO {
-	public List<StoreOrderCheckVO> getStoreCalculate(String id);
+	public List<StoreCalculateVO> getStoreCalculate(String id, int month);
 }

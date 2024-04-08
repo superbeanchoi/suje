@@ -6,18 +6,18 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.suje.dao.storeOrder.StoreCalculateDAO;
-import com.suje.domain.storeOrder.StoreOrderCheckVO;
+import com.suje.domain.storeOrder.StoreCalculateVO;
 
 @Service
-public class StoreCalculateServiceImpl implements StoreCalculateService{
+public class StoreCalculateServiceImpl implements StoreCalculateService {
 	@Autowired
 	StoreCalculateDAO dao;
-	
+
 	@Override
-	public  List<StoreOrderCheckVO> getStoreCalculate(String id) { 
-		
-		 List<StoreOrderCheckVO> orderCheck = dao.getStoreCalculate(id); // 단일 객체 대신 리스트로 받기
-	        
-	        return orderCheck;
+	public List<StoreCalculateVO> getStoreCalculate(String id, int month) {
+
+		List<StoreCalculateVO> calculate = dao.getStoreCalculate(id, month); // 단일 객체 대신 리스트로 받기
+
+		return calculate;
 	}
 }

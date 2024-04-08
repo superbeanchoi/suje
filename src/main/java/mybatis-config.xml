@@ -41,8 +41,10 @@
 		<typeAlias alias="returnOrder" type="com.suje.domain.storeOrder.StoreOrderCheckVO"/>
 		<typeAlias alias="storeFinalOrder" type="com.suje.domain.storeOrder.StoreOrderCheckVO"/>
 		<typeAlias alias="storeDelivery" type="com.suje.domain.storeOrder.StoreOrderCheckVO"/>
+		<typeAlias alias="storeCalculate" type="com.suje.domain.storeOrder.StoreCalculateVO"/>
 		<typeAlias alias="fleaOrderCheck" type="com.suje.domain.storeOrder.FleaOrderCheckVO"/>
 		<typeAlias alias="fleaDelivery" type="com.suje.domain.storeOrder.FleaOrderCheckVO"/>
+		
 		
 		<!-- 최수빈 설정 부분 -->
 		<typeAlias alias="mainLoginVO" type="com.suje.domain.main.MainLoginVO"/>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="StoreCalculateDAO">
+
+	<select id="getStoreCalculate" parameterType="hashmap" resultType="storeCalculate">
+SELECT title, 
+       code, 
+       pdate, 
+       ckdate, 
+       sum, 
+       ROUND(sum * 0.1) AS commission, 
+       sum - ROUND(sum * 0.1) AS commission_sum,
+       sum(sum - ROUND(sum * 0.1)) OVER () AS total_commission_sum
+FROM 
+    (SELECT rownum AS r_num, 
+            title, 
+            code, 
+            pdate, 
+            ckdate, 
+            sum
+     FROM 
+         (SELECT '주문제작' AS title,
+                 p.p_code AS code, 
+                 p.p_date AS pdate, 
+                 p.p_ck_date AS ckdate,
+                 p.p_sum AS sum
+          FROM pay p, store s, orderinfo o, final_order fo
+          WHERE s.s_id = o.s_id
+            AND o.o_code = fo.o_code 
+            AND fo.fo_code = p.fo_code 
+            AND s.s_id = #{id}
+            and to_char(p.p_ck_date,'mm') = #{month}
+          UNION ALL 
+          SELECT '플리마켓' AS title,
+                 fp.fp_code AS code,
+                 fp.fp_date AS pdate, 
+                 fp.fp_ckdate AS ckdate,
+                 fp.fp_sum AS sum
+          FROM flea_pay fp, flea f, store s   
+          WHERE s.s_id = f.s_id 
+            AND f.f_code = fp.f_code 
+            AND s.s_id = #{id}
+            and to_char(fp.fp_ckdate,'mm') = #{month}
+          ORDER BY pdate DESC
+         )
+    )
+	</select>
+
+
+</mapper>
