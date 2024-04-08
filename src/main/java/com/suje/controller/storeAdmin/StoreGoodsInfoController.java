@@ -13,13 +13,16 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.suje.domain.category.CategoryVO;
 import com.suje.domain.fleaMarket.FleaGoodsVO;
 import com.suje.domain.storeAdmin.StoreGoodsSUVO;
+import com.suje.domain.storeAdmin.StoreProfileVO;
 import com.suje.service.category.CategoryMainService;
 import com.suje.service.storeAdmin.StoreGoodsInfoService;
+import com.suje.service.storeAdmin.StoreProfileService;
 @Controller
 public class StoreGoodsInfoController {
 	private static final Logger logger = LoggerFactory.getLogger(StoreGoodsSUController.class);
@@ -30,13 +33,24 @@ public class StoreGoodsInfoController {
 	@Autowired
 	CategoryMainService categoryService;
 	
+    @Autowired
+    StoreProfileService storeService;
+	
 
 	// 스토어 작품 등록 메인 페이지
 		@RequestMapping(value = "storeGoodsInfo")
-		public String storeGoodsInfoMain(Model model) {
+		public String storeGoodsInfoMain(Model model,@RequestParam("id") String id) {
 
-			List<CategoryVO> cateMainList = categoryService.getCateMain();
-			model.addAttribute("cateMainList", cateMainList);
+			// List<CategoryVO> cateMainList = categoryService.getCateMain();
+			
+			// 스토어 카테고리 코드
+			StoreProfileVO store = storeService.getStoreById(id);
+			// 해당 코드로 중분류 리스트
+			List<CategoryVO> cateMidList = categoryService.getCateMid(store.getCatem_code());
+			
+			// 대분류, 중분류 리스트 페이지로 전달
+			model.addAttribute("store",store);
+			model.addAttribute("cateMidList",cateMidList);
 
 			System.out.println("///////////////////////////////스토어 작품 등록 메인 페이지");
 
@@ -101,7 +115,7 @@ public class StoreGoodsInfoController {
 
 			logger.info(vo.getS_id());
 
-			return "forward:/storeGoodsInfo.do?id=" + vo.getS_id();
+			return "forward:/storeGoodsMainPage.do?id=" + vo.getS_id();
 			
 		}
 	

@@ -16,6 +16,7 @@
 
 
 $(function() {
+	
 <% if (request.getAttribute("notiComplete") != null) { %>
 	var notiComplete = "<%= request.getAttribute("notiComplete") %>";
 	alert(notiComplete);

@@ -21,7 +21,7 @@
 		and p.p_code=c.p_code
 	</select>
 	<select id="getReturnOrderCheck" parameterType="String" resultType="returnOrder">
-		select r.rt_code, r.p_code, r.rt_date, r.rt_why,o.s_id, o.o_code
+		select r.rt_code, r.p_code, r.rt_date, r.rt_why,o.s_id, o.o_code, r.rt_state 
 		from return r, orderinfo o, final_order f, pay p
 		where o.s_id=#{s_id}
 		and o.o_code=f.o_code
@@ -68,17 +68,29 @@
 	where p_code=#{p_code}
 </update>
 
+<!-- 결제취소요청 승인/거절 업데이트--> 
 <update id="updateCancelState" parameterType="cancelOrder">
 	update cancel
 	set can_state=#{can_state}
 	where can_code=#{can_code}
 </update>
 
+<!-- 결제취소요청 승인/거절을 위한 리스트 조회--> 
 <select id="getCancel" parameterType="Integer" resultType="cancelOrder"> 
-
 	select * from cancel where can_code= #{can_code}  
-	
 </select>
 
+<!-- 반품취소요청 승인/거절 업데이트--> 
+<update id="updateReturnState" parameterType="returnOrder">
+	update return
+	set rt_state=#{rt_state}
+	where rt_code=#{rt_code}
+</update>
+
+
+<!-- 반품취소요청 승인/거절을 위한 리스트 조회--> 
+<select id="getReturn" parameterType="Integer" resultType="returnOrder"> 
+	select * from return where rt_code= #{rt_code}  
+</select>
 
 </mapper>

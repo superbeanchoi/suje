@@ -49,7 +49,6 @@ public class StoreGoodsSUController {
 		model.addAttribute("cateMainList",cateMainList);
 		model.addAttribute("goodsListAllVO", goodsListAllVO);
 		
-		model.addAttribute("insertGoodsInfoSuccess", "스토어 작품이 등록되었습니다.");
 		return "/storeAdmin/storeGoodsSearchUpdate";
 	}
 	

@@ -24,12 +24,18 @@
 <script type="text/javascript">
 
 	$(function() {
+	
+		//등록되었습니다. alert
+		<% if (request.getAttribute("insertFleaInfoSuccess") != null) { %>
+			var insertFleaInfoSuccess = "<%= request.getAttribute("insertFleaInfoSuccess") %>";
+			alert(insertFleaInfoSuccess);
+		<% } %>
 		
-		
-	<% if (request.getAttribute("fleaInfoSuccess") != null) { %>
-		var fleaInfoSuccess = "<%= request.getAttribute("fleaInfoSuccess") %>";
-		alert(fleaInfoSuccess);
-	<% } %>
+		//삭제되었습니다. alert
+		<% if (request.getAttribute("fleaInfoSuccess") != null) { %>
+			var fleaInfoSuccess = "<%= request.getAttribute("fleaInfoSuccess") %>";
+			alert(fleaInfoSuccess);
+		<% } %>
 	
 		// 서브 메뉴바 클래스명 추가 // CSS 적용
 		$(".storeCategoryArea>li:nth-child(2)>a").addClass("checkedStateFirstCategory");	

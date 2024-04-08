@@ -21,12 +21,17 @@ $(function() {
     String storeId = (String)session.getAttribute("mainId");
     %>
 
-    
-    <% if (request.getAttribute("StoreInfoSuccess") != null) { %>
-	var StoreInfoSuccess = "<%= request.getAttribute("StoreInfoSuccess") %>";
-	alert(StoreInfoSuccess);
-<% } %>
+    //등록되었습니다 alert
+    <% if (request.getAttribute("insertStoreInfoSuccess") != null) { %>
+		var insertStoreInfoSuccess = "<%= request.getAttribute("insertStoreInfoSuccess") %>";
+		alert(insertStoreInfoSuccess);
+	<% } %>
 
+	//삭제되었습니다 alert
+    <% if (request.getAttribute("StoreInfoSuccess") != null) { %>
+		var StoreInfoSuccess = "<%= request.getAttribute("StoreInfoSuccess") %>";
+		alert(StoreInfoSuccess);
+	<% } %>
 
     // 서브 메뉴바 CSS 관련 JS
     $(".storeCategoryArea>li:nth-child(1)>a").addClass("checkedStateFirstCategory");
