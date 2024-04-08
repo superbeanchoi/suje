@@ -99,7 +99,7 @@ $(function() {
 							<th>결제취소번호</th>
 							<th>최종주문번호</th>
 							<th>취소요청일자</th>
-							<th>취소사유</th>
+							<th>취소요청사유</th>
 							<th>처리여부</th>
 						</tr>
 					</thead>
@@ -108,7 +108,7 @@ $(function() {
 						<tr data-s_id="${cancel.s_id}">
 							<td>${cancel.can_code}</td>
 							<td>${cancel.fo_code}</td>
-							<td>${cancel.can_date}
+							<td>
 								<fmt:parseDate value="${cancel.can_date}" pattern="yyyy-MM-dd HH:mm:ss" var="parsedDate" />
 								<fmt:formatDate value="${parsedDate}" pattern="yyyy/MM/dd" />
 							</td>
@@ -140,8 +140,9 @@ $(function() {
 						<tr>
 							<th>반품요청번호</th>
 							<th>최종주문번호</th>
-							<th>반품일자</th>
-							<th>반품사유</th>
+							<th>반품요청일자</th>
+							<th>반품요청사유</th>
+							<th>처리여부</th>
 						</tr>
 					</thead>
 					<tbody>
@@ -149,11 +150,23 @@ $(function() {
 						<tr data-s_id="${returnOrder.s_id}">
 							<td>${returnOrder.rt_code}</td>
 							<td>${returnOrder.p_code}</td>
-							<td>${returnOrder.rt_date}
+							<td>
 								<fmt:parseDate value="${returnOrder.rt_date}" pattern="yyyy-MM-dd HH:mm:ss" var="parsedDate" />
 								<fmt:formatDate value="${parsedDate}" pattern="yyyy/MM/dd" />
 							</td>
 							<td>${returnOrder.rt_why}</td>
+							<td> 
+							<input type="hidden" id="return_code" value="${returnOrder.rt_code}">
+							<input type="hidden" id="storeId" value="${returnOrder.s_id}">
+								<c:set var = "state" value = "${returnOrder.rt_state}"/>
+								<c:if test="${empty state}">
+									<input class="return-state" type="button" id="rtYes" value="승인">
+									<input class="return-state" type="button" id="rtNo" value="거절">
+								</c:if>
+								<c:if test="${not empty state}">
+									${returnOrder.rt_state}
+								</c:if>
+							</td>
 						</tr>
 						</c:forEach>
 					</tbody>
@@ -356,27 +369,60 @@ $(document).ready(function() {
     
     
 	$(".cancel-state").on("click", function() {
-		var cCode =  $("#cancel_code").val();
-		var storeId =  $("#storeId").val();
-		var stateVal =  $(this).val();
-		var state = (stateVal == "승인") ? "Y":"N" 
-		
-        $.ajax({
-	         type : "post",
-	         url : "updateCancelState.do",
-	         data : {
-	        	 cCode:cCode,
-	        	 state:state,
-	        	 id:storeId
-	         },
-	         success : function(data){
-	        	location.reload();
-	         },
-	         error: function(request, status, error) {
-                alert("통신 에러가 발생했습니다 : "+request+"/"+status+"/"+error);
-	         }
-	      });
-	});
+	    var cCode =  $("#cancel_code").val();
+	    var storeId =  $("#storeId").val();
+	    var stateVal =  $(this).val();
+	    var state = (stateVal == "승인") ? "Y":"N" 
+	    
+	    if (confirm("결제취소요청을 "+stateVal+"하시겠습니까?")) {
+	         $.ajax({
+	             type : "post",
+	             url : "updateCancelState.do",
+	             data : {
+	                cCode:cCode,
+	                state:state,
+	                id:storeId
+	             },
+	             success : function(data){
+	               alert(stateVal+"되었습니다.");
+	               location.reload();
+	             },
+	             error: function(request, status, error) {
+	                 alert("통신 에러가 발생했습니다 : "+request+"/"+status+"/"+error);
+	             }
+	          });
+	    } else {}
+	          
+	 });
+	
+	
+	$(".return-state").on("click", function() {
+	      
+	      var rtCode =  $("#return_code").val();
+	      var storeId =  $("#storeId").val();
+	      var stateVal =  $(this).val();
+	      var state = (stateVal == "승인") ? "Y":"N" 
+	      
+	      if (confirm("반품취소요청을 "+stateVal+"하시겠습니까?")) {
+	           $.ajax({
+	               type : "post",
+	               url : "updateReturnState.do",
+	               data : {
+	            	  rtCode:rtCode,
+	                  state:state,
+	                  id:storeId
+	               },
+	               success : function(data){
+	                 alert(stateVal+"되었습니다.");
+	                 location.reload();
+	               },
+	               error: function(request, status, error) {
+	                   alert("통신 에러가 발생했습니다 : "+request+"/"+status+"/"+error);
+	               }
+	            });
+	      } else {}
+	            
+	   });
     
 </script>
 </html>

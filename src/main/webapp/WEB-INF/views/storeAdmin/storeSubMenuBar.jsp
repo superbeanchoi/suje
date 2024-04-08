@@ -101,7 +101,7 @@ String accountProfileImg = (String)session.getAttribute("accountProfileImg");
 				
 					<li class="storeSecondCategoryBtn">
 						<a href="storeSujeTalk.do?id=<%=user%>&page=1">
-							<span>스토어 주문요청 관리</span>
+							<span>SUJE Talk-Talk</span>
 						</a>
 					</li>
 					

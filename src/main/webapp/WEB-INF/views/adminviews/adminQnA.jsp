@@ -14,7 +14,7 @@
     <script type="text/javascript">
     $(function() {
         // 마지막 항목에 'checkedStateFirstCategory' 클래스 추가
-        $('.adminCategoryArea li:last-child a').addClass('checkedStateFirstCategory');
+        $('.adminCategoryArea li:nth-child(4) a').addClass('checkedStateFirstCategory');
 
         // qnaTableRow 전체를 클릭 시 getQnAinfo 실행
         $(".qnaTableRow").click(function(event) {

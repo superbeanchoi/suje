@@ -27,7 +27,7 @@ $(function() {
 
 	var storename;
 	
-	$('.adminCategoryArea li:nth-child(2) a').addClass('checkedStateFirstCategory');
+	$('.adminCategoryArea li:nth-child(3) a').addClass('checkedStateFirstCategory');
 	
 	// 스토어명으로 스토어 아이디 검색
 	$('#storeId').keyup(function() {

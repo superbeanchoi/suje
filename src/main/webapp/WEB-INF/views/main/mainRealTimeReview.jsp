@@ -11,7 +11,7 @@
 <link href="./resources/css/resetStyle.css" rel="stylesheet" type="text/css">
 <link href="./resources/css/main/mainRealTimeReviewStyle.css" rel="stylesheet" type="text/css">
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script src="./resources/js/main/mainRealTimeReviewModalJs.js"></script>
+<!-- <script src="./resources/js/main/mainRealTimeReviewModalJs.js"></script> -->
 <title>SUJE</title>
 <script type="text/javascript">
 $(document).ready(function() {
@@ -54,6 +54,56 @@ $(document).ready(function() {
             alert("본인의 후기는 추천할 수 없습니다.");
         }
     });
+	//콘텐츠 텍스트 미리보기
+	$('.eachReviewContentsTd').each(function() {
+	    var text = $(this).text();
+	    if (text.length > 50) {
+	        text = text.substring(0, 50) + '...';
+	        $(this).text(text);
+	    }
+	});
+	
+	//파이널 오더 확인
+	var orderNum;
+	
+	// 모달창 오픈/클로즈
+	$('.eachReviewPayNumTd button').click(function() {
+		//선택 주문 정보 삽입
+		orderNum = $(this).text();
+		
+		$.ajax({
+            url: "finalOrderInfo.do",
+            type: "get", 
+            data: { foCode: orderNum }, 
+            dataType: "json", 
+            contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
+            success: function(result) { 
+		        $('.finalOrderCode').val(orderNum);
+		        $('.modalFirstCategory option').remove();
+		        $('.modalSecondCategory option').remove();
+		        $('.modalFirstCategory').append("<option>"+result.catemm_name+"</option>");
+		        $('.modalSecondCategory').append("<option>"+result.cates_name+"</option>");
+		        $('.foNum').val(result.fo_num);
+		        $('.foSize').val(result.fo_size);
+		        $('.foSum').val(result.fo_sum);
+		        $('.foEtc').val(result.fo_etc);
+		        $('.deliSelect option').remove();
+		        if(result.deli_code == 7001) $('.deliSelect').append("<option>픽업</option>");
+		        if(result.deli_code == 7003) $('.deliSelect').append("<option>배송</option>");
+		        
+				$(".finalOrderModalWrap").fadeIn(200);
+				$(".finalOrderModal").slideDown(200);
+            },
+            error: function(request, status, error) { 
+                alert("통신 에러가 발생했습니다: " + request.responseText); 
+            }
+        });
+		
+	});
+	$('.modalCloseBtn').click(function() {
+		$(".finalOrderModal").slideUp(200);
+		$(".finalOrderModalWrap").fadeOut(200);
+	});
 });
 </script>
 
@@ -78,16 +128,16 @@ $(document).ready(function() {
                </c:if>
                <span>${review.s_name}</span>
             </td>
-            <td class="eachReviewStoreBtnTd"><a href="">스토어 바로가기</a></td>
+            <td class="eachReviewStoreBtnTd"><a href="viewStoreEach.do?sId=${review.s_id}">스토어 바로가기</a></td>
          </tr>
          <tr>
             <td colspan="2" class="eachReviewPayNumTd">
                <span>주문번호</span>
-               <button>${review.fo_code}</button>
+               <button class="foModalBtn">${review.fo_code}</button>
             </td>
          </tr>
          <tr>
-            <td colspan="2" class="eachReviewMemberIdTd">STORE123</td>
+            <td colspan="2" class="eachReviewMemberIdTd">${review.m_id}</td>
             <td class="eachReviewScoreTd">
                <img src="././resources/img/mainReviewStarImg.png" /> 
                <span>${review.rv_star}</span>

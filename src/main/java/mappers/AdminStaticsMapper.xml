@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="AdminStaticsDao">
+
+<!-- 오늘의 수제 -->
+<select id="getTodaySuje" resultType="adminStaticsVO">
+	select 
+		(select TO_CHAR(SYSDATE, 'YYYY/MM/DD') from dual) as today, 
+		(select count(m_id) from member where TO_CHAR(m_date, 'YYYY/MM/DD') = '2024/04/03') as midcount,
+		(select count(s.s_id) from store s, store_avail sa where s.s_id=sa.s_id and sa.sa_ck='승인' and TO_CHAR(sa.sa_date, 'YYYY/MM/DD') = '2024/04/03') as sidcount,
+		(select count(*) from pay where p_ck='Y'and TO_CHAR(p_ck_date, 'YYYY/MM/DD') = '2024/04/05') as psumcount,
+		(select sum(p_sum) from pay where p_ck='Y'and TO_CHAR(p_ck_date, 'YYYY/MM/DD') = '2024/04/05') as psumtotal
+	from dual
+		<!-- TO_CHAR(SYSDATE, 'YYYY/MM/DD') -->
+</select> 
+
+<!-- 통계 주간 -->
+<select id="getWeekPeriod" resultType="adminStaticsVO">
+	select TO_CHAR((trunc(sysdate, 'iw') - interval '7' day), 'YYYY/MM/DD') 
+			|| '-' || 
+			TO_CHAR((trunc(sysdate, 'iw') - interval '1' day), 'YYYY/MM/DD') as weekperiod
+	from dual
+</select>
+
+<!-- 스토어 카테고리별 총결제 비율 -->
+<select id="getCatePay" resultType="adminStaticsVO">
+	select cm.catem_name, sum(p_sum) as psumtotal, 
+		   TO_CHAR((trunc(sysdate, 'iw') - interval '7' day), 'YYYY/MM/DD') || '-' || TO_CHAR((trunc(sysdate, 'iw') - interval '1' day), 'YYYY/MM/DD') as weekperiod
+	from pay p, final_order fo, cate_sub cs, cate_mid cmm, cate_main cm
+	where p.fo_code=fo.fo_code and fo.cates_code=cs.cates_code and cs.catemm_code=cmm.catemm_code and cmm.catem_code=cm.catem_code
+		<![CDATA[
+		and p_ck_date >= trunc(sysdate, 'iw') - interval '7' day
+		and p_ck_date <= trunc(sysdate, 'iw') - interval '1' day
+		]]>
+	group by cm.catem_name
+	order by 2 desc
+</select> 
+
+<!-- 가입회원 통계 - 성별  -->
+<select id="getMemberSex" resultType="adminStaticsVO">
+	select 
+		   count(case m_sex when '남' then m_sex else null end) as mancount,
+		   count(case m_sex when '여' then m_sex else null end) as womancount
+	from member
+	where
+		<![CDATA[
+		m_date >= trunc(sysdate, 'iw') - interval '7' day
+		and m_date <= trunc(sysdate, 'iw') - interval '1' day
+		]]>
+</select> 
+
+<!-- 가입회원 통계 - 나이  -->
+<select id="getMemberAge" resultType="adminStaticsVO">
+	select 
+		<![CDATA[
+		   sum(case when age >= 10 and age < 20 then 1 else 0 end) as agearound10,
+		   sum(case when age >= 20 and age < 30 then 1 else 0 end) as agearound20,
+		   sum(case when age >= 30 and age < 40 then 1 else 0 end) as agearound30,
+		   sum(case when age >= 40 and age < 50 then 1 else 0 end) as agearound40,
+		   sum(case when age >= 50 then 1 else 0 end) as agearound50
+		]]>
+	from (
+			select 
+				<![CDATA[
+				   case when to_number(to_char(sysdate, 'yyyymmdd')) >= to_number(to_char(m_birth, 'yyyymmdd')) 
+				]]>
+				   then extract(year from sysdate) - extract(year from m_birth)
+				   else extract(year from sysdate) - extract(year from m_birth) - 1
+			       end as age
+			from member
+			where
+			<![CDATA[
+				   m_date >= trunc(sysdate, 'iw') - interval '7' day
+				   and m_date <= trunc(sysdate, 'iw') - interval '1' day
+			]]>
+	)
+</select> 
+
+<!-- 금주 일별 매출 -->
+<select id="getTotalDateSales" resultType="adminStaticsVO">
+	select to_char(p_ck_date, 'YYYY/MM/DD') paydate, sum(p_sum) as psumtotal, sum(p_sum)*0.1 as psumsales
+	from pay
+	where 
+	<![CDATA[
+		p_ck_date >= trunc(sysdate, 'iw') - interval '7' day
+		and p_ck_date <= trunc(sysdate, 'iw') - interval '1' day
+	]]>
+	group by to_char(p_ck_date, 'YYYY/MM/DD')
+	order by paydate
+</select>
+
+<!-- 금주 매출 -->
+<select id="getTotalSales" resultType="adminStaticsVO">
+	select sum(p_sum) as psumtotal, sum(p_sum)*0.1 as psumsales
+	from pay
+	where 
+	<![CDATA[
+		p_ck_date >= trunc(sysdate, 'iw') - interval '7' day
+		and p_ck_date <= trunc(sysdate, 'iw') - interval '1' day
+	]]>
+</select>
+
+</mapper>

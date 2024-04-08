@@ -17,11 +17,27 @@
 <script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script> -->
 <script type="text/javascript" src="./resources/js/paging/paging.js"></script>
 <script type="text/javascript">
+
 $(function() {
 	// 서브 메뉴바 클래스명 추가 // CSS 적용
 	$(".storeCategoryArea>li:nth-child(3)>a").addClass("checkedStateFirstCategory");	
 	$(".storeCategoryArea>li:nth-child(3) .storeSecondCategoryArea li:nth-child(3)").addClass("checkedStateSecondCategory");
 })
+
+
+//공지사항 영역 미리보기
+	   $(function() {
+	    $('.fleaContent').each(function() {
+	        var text = $(this).text();
+	        if (text.length > 40) {
+	            text = text.substring(0, 20) + '...';
+	            $(this).text(text);
+	        }
+	    });
+	  });
+	  
+
+
 </script>
 <title>SUJE</title>
 </head>
@@ -51,7 +67,7 @@ $(function() {
 				<c:forEach items="${FleaOrderCheckList}" var="fleaorderCheck" >
 					<tr data-s_id="${fleaorderCheck.s_id}">
                      <td>${fleaorderCheck.fp_code}</td>
-                     <td>${fleaorderCheck.f_content}</td>
+                     <td class="fleaContent">${fleaorderCheck.f_content}</td>
                      <td>${fleaorderCheck.fp_count}</td>
                      <td>${fleaorderCheck.fp_sum}</td>
                      <td>
