@@ -54,6 +54,7 @@
 		<typeAlias alias="mainStoreCategoryVO" type="com.suje.domain.main.MainStoreCategoryVO"/>
 		<typeAlias alias="storeEachVO" type="com.suje.domain.main.StoreEachVO"/>
 		<typeAlias alias="mainPopularRankVO" type="com.suje.domain.main.MainPopularRankVO"/>
+		<typeAlias alias="adminStaticsVO" type="com.suje.domain.adminviews.AdminStaticsVO"/>
 
 		<!-- 이정석 설정 부분 -->
 		<typeAlias alias="adminVO" type="com.suje.domain.adminviews.AdmininfoVO"/>

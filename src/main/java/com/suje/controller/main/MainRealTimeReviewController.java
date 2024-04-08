@@ -35,7 +35,7 @@ public class MainRealTimeReviewController {
     private HttpSession session;
 
     // 실시간 후기 조회 및 뷰로 전달
-    @RequestMapping(value = "viewRealTimeReview.do")
+    @RequestMapping(value = "realTimeReview.do")
     public String viewRealTimeReview(@RequestParam("page") int page, Model model) {
         logger.info("실시간 후기 view 실행 컨트롤러");
         

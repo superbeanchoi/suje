@@ -369,7 +369,6 @@ $(document).ready(function() {
     
     
 	$(".cancel-state").on("click", function() {
-	    
 	    var cCode =  $("#cancel_code").val();
 	    var storeId =  $("#storeId").val();
 	    var stateVal =  $(this).val();
@@ -424,8 +423,6 @@ $(document).ready(function() {
 	      } else {}
 	            
 	   });
-	
-	
     
 </script>
 </html>

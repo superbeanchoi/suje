@@ -27,13 +27,19 @@ public class HeaderController {
 	//어드민 메인페이지 이동
 	@RequestMapping("adminMain.do")
 	public String viewAdminMain() {
-		return "forward:/adminmanage.do?page=1";
+		return "forward:/adminStatics.do";
 	}
 	
 	//인기 랭킹 페이지 이동
 	@RequestMapping("viewPopularRank.do")
 	public String viewPopularRank() {
 		return "forward:/popularRank.do?cate=0";
+	}
+	
+	//실시간 후기 페이지 이동
+	@RequestMapping("viewRealTimeReview.do")
+	public String viewRealTimeReview() {
+		return "forward:/realTimeReview.do?page=1";
 	}
 	
 	//커뮤니티 페이지 이동

@@ -50,6 +50,7 @@ body {
 }
 .eachReviewImgTd {
    padding-left: 10px;
+   width: 32%;
 }
 .eachReviewImgTd div {
    border-radius: 10px;
@@ -150,7 +151,7 @@ body {
 }
 .eachReviewContentsTd {
    font-size: 18px;
-   padding: 0 0 10px 10px;
+   padding: 0 10px 10px 10px;
    line-height: 1.5;
    height: 50px;
 }
