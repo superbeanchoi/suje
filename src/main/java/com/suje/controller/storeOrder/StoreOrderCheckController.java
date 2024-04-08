@@ -67,4 +67,16 @@ public class StoreOrderCheckController {
 		ordercheckService.deliverycomplete(Integer.parseInt(pCode.get("pCode")));
 		return "발송 처리가 완료되었습니다.";
 	}
+
+	@RequestMapping(value="updateCancelState", method = RequestMethod.POST)
+	@ResponseBody
+	public String updateCancelState(@RequestParam("cCode") int cCode, String state, String id, Model model) {
+		
+		logger.info("updateCancelState");
+		ordercheckService.updateCancelState(cCode, state);
+        return "redirect:/storeOrder.do?id="+id;
+	}
+	
+	
+	
 }
