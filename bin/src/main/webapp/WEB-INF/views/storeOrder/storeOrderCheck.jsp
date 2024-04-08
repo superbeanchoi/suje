@@ -315,7 +315,7 @@
 							}
 							if (data.d_state === "발송완료") {
 								$("#deliafter").prop("disabled", true);
-							}
+							}e
 
 						}
 

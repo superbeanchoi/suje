@@ -120,7 +120,8 @@ String accountProfileImg = (String)session.getAttribute("accountProfileImg");
 			</li>
 			
 			<li class="storeFirstCategoryArea">
-				<a href="#" class="storeFirstCategoryBtn">
+				
+				<a href="storeCalculate.do?id=<%=user%>&month=4" class="storeFirstCategoryBtn">
 					&nbsp;&nbsp;&nbsp;정산 관리
 				</a>
 			</li>

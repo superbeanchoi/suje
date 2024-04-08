@@ -10,7 +10,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.suje.domain.storeOrder.StoreOrderCheckVO;
+import com.suje.domain.storeOrder.StoreCalculateVO;
 import com.suje.service.storeOrder.StoreCalculateService;
 
 @Controller
@@ -21,12 +21,15 @@ public class StoreCalculateController {
 	StoreCalculateService calculateService;
 	
 	@RequestMapping(value="storeCalculate")
-    public String getStoreCalculate(@RequestParam("id") String id, Model model){
+    public String getStoreCalculate(@RequestParam("id") String id, @RequestParam("month") int month, Model model){
         logger.info("getStoreCalculate");
         // id 값을 가지고 service
-        List<StoreOrderCheckVO> calculate = calculateService.getStoreCalculate(id);
-        model.addAttribute("storecalculate", calculate);
+        List<StoreCalculateVO> calculate = calculateService.getStoreCalculate(id,month);
         
-        return "storeOrder/calculate";
+        model.addAttribute("calculateList", calculate);
+        model.addAttribute("month",month);
+        model.addAttribute("id",id);
+        
+        return "storeOrder/storeCalculate";
 	}
 }
