@@ -127,9 +127,11 @@ public class StoreOrderListController {
 	public String updateFinalOrderinfo(@ModelAttribute("vo") FinalOrderVO vo, Model model) {
 		
 		logger.info("updateFinalOrderinfo 실행");
-		storeService.updateFinalOrderinfo(vo);
+		logger.info("updateFinalOrderinfo 실행 = {}",vo.getCates_code());
+		int updateState = storeService.updateFinalOrderinfo(vo);
 		
-		return"redirect: storeSujeTalk.do?id="+ vo.getStoreID() +"&page=1";
+		model.addAttribute("updateState",updateState);
+		return"forward:storeSujeTalk.do?id="+ vo.getStoreID() +"&page=1";
 	}
 	
 	// 스토어 카테고리 대분류 가져오기

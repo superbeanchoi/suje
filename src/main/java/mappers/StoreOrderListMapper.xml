@@ -51,7 +51,8 @@
 	o.O_CONTENT,
 	o.o_date,
 	m.m_name,
-	st.s_name
+	st.s_name,
+	st.s_spname
 	from orderinfo o, etc et, member m, store st 
 	where o.o_code = et.o_code(+) 
 	and o.m_id = m.m_id 
@@ -87,7 +88,7 @@
 		#{o_code},
 		#{cates_code},
 		#{deli_code},
-		to_date(sysdate,'yyyy-mm-dd hh24:mi:ss'),
+		to_date(to_char(sysdate,'YYYY-MM-DD HH24:MI:SS'),'YYYY-MM-DD HH24:MI:SS'),
 		#{fo_sum},
 		#{fo_num},
 		#{fo_size},

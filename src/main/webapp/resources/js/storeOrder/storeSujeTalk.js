@@ -15,8 +15,20 @@ $(function () {
 
     // 최종 주문서 정보 카테고리 정보 수정 버튼 이벤트
     $(".updateBtn").click(modifyCateBtnEvent);
+    
+    // 최종 주문서 수정하기 버튼의 클릭이벤트(submit이 발생하면)
+    $(".formTagClass").submit(updateFinalOrderEvent);
 
 });
+
+// 최종 주문서 수정하기 버튼의 클릭이벤트(submit이 발생하면)
+function updateFinalOrderEvent(){
+	
+	// disable로 될 경우 값이 전달 되지 않으므로 전달을 위한 속성 제거
+	$(".cateFirst").removeAttr("disabled");
+    $(".cateSecond").removeAttr("disabled");
+
+}
 
 // 좌측 고객 주문 요청 리스트 클릭 이벤트
 function OrderEtcClickEvent() {
@@ -37,7 +49,7 @@ function OrderEtcClickEvent() {
             }
         },
         success: function (data) {
-
+			
             // 주문 요청 내역 상단 고객 정보 입력 명령
             $(".storeTopInfo>div:nth-child(1)>div:nth-child(2)").text(data['etcList'][0].m_name); // 고객명
             $(".storeTopInfo>div:nth-child(2)").text(data['etcList'][0].o_date); // 주문 요청일
@@ -55,12 +67,12 @@ function OrderEtcClickEvent() {
             });
 
             // 등록된 최종 주문서가 있다면 실행되는 버튼 생성 함수 호출
-            if (data['finalOrder'] != null) {
-                $(".orderInsertBtn").css("display", "none");
-                finalOrderEtc(data['finalOrder'], data['etcList'][0].s_name);
-            } else {
-                $(".orderInsertBtn").css("display", "block");
-            }
+                if (data['finalOrder'] != null) {
+                    $(".orderInsertBtn").css("display", "none");
+                    finalOrderEtc(data['finalOrder'], data['etcList'][0].s_name, data['etcList'][0].s_spname);
+                } else {
+                    $(".orderInsertBtn").css("display", "block");
+                }
         },
         error: function (request, status, error) {
             alert("통신 에러가 발생했습니다 : " + request + "/" + status + "/" + error);
@@ -72,6 +84,7 @@ var doubleSubmitFlag = false; // 이중 submit 방지를 위한 변수
 
 // 주문 요청 사항 입력(전송) 버튼 클릭시 시행되는 이벤트
 function storeEtcInsertEvent() {
+
     var formData = new FormData(this);
 
     if (doubleSubmitFlag) { // 이중 submit 방지를 위한 명령어
@@ -104,18 +117,20 @@ function storeEtcInsertEvent() {
 
                 // 고객 주문 요청시 입력 되었던 요청 사항 출력 함수
                 orderRegedit(data['etcList']);
-
+					
+				
+				
                 // 고객 추가 주문 요청사항 출력 함수
                 $(data['etcList']).each(function (index, item) {
                     if (item.etc_content != null) {
                         orderEtc(item);
                     }
                 });
-
+				
                 // 등록된 최종 주문서가 있을시 실행되는 버튼 생성 함수
                 if (data['finalOrder'] != null) {
                     $(".orderInsertBtn").css("display", "none");
-                    finalOrderEtc(data['finalOrder'], data['etcList'][0].s_id);
+                    finalOrderEtc(data['finalOrder'], data['etcList'][0].s_name, data['etcList'][0].s_spname);
                 } else {
                     $(".orderInsertBtn").css("display", "block");
                 }
@@ -199,7 +214,7 @@ function orderRegedit(item) {
 
 // 고객 추가 주문 요청사항 출력 함수
 function orderEtc(item) {
-
+	
     var orderDetailMainFram = $(".orderMainContentInner"); // 메인프레임
 
     // 각각 서브 프레임 설정
@@ -210,17 +225,18 @@ function orderEtc(item) {
     mainContent.append(chatContent);
 
     // 대화 사용자 사진
-    if (item.etc_type_code == 77000) {
+    if (item.etc_type_code == 77000) { //개인
         chatContent.append("	<div><img src='./resources/img/custmerLogo.png'></div>");
-    } else {
-        chatContent.append("	<div><img alt='' src='./resources/img/sujetalkstoreimg.png'></div>");
+    } else { // 업체
+        chatContent.append("	<div><img alt='' src='./resources/img/DBServer/" + item.s_spname + "'></div>");
+        storeImg = item.s_spname;
     }
 
     //대화 사용자명
     if (item.etc_type_code == 77000) {
-        chatContent.append("	<div>" + item.m_name + "</div>");
-    } else {
-        chatContent.append("<div>" + item.s_name + "</div>");
+        chatContent.append("	<div>" + item.m_name + "</div>"); // 개인
+    } else { 
+        chatContent.append("<div>" + item.s_name + "</div>"); // 업체
     }
 
     // 요청 사항 Content
@@ -236,10 +252,10 @@ function orderEtc(item) {
 }
 
 // 최종 주문서 출력 부분
-function finalOrderEtc(item, storeID) {
+function finalOrderEtc(item, storeID, storeImg) {
 
     var orderDetailMainFram = $(".orderMainContentInner"); // 메인프레임
-
+	
     // 각각 서브 프레임
     var mainContent = $("<div class=orderMainDetail></div>");
     var chatContent = $("<div class=chatDetail></div>");
@@ -247,7 +263,7 @@ function finalOrderEtc(item, storeID) {
     orderDetailMainFram.append(mainContent);
     mainContent.append(chatContent);
 
-    chatContent.append("<div><img alt='' src='./resources/img/sujetalkstoreimg.png'></div>");// 대화 사용자 사진
+    chatContent.append("<div><img alt='' src='./resources/img/DBServer/" + storeImg + "'></div>");// 대화 사용자 사진
     chatContent.append("<div>" + storeID + "</div>");//대화 사용자명
     mainContent.append("<div><input id='orderCheck' type='button' value='최종 주문서 확인' onclick='getFinalOrder()'/></div>");//최종 주문서 확인 버튼
     mainContent.append("<img src='./resources/img/wordballoon.png'>");//뒷 말풍선 배경

@@ -21,14 +21,31 @@
 <script type="text/javascript">
 $(function() {
 	//datepicker 인풋 태그 클릭시 달력 송출
-	$.datepicker.setDefaults($.datepicker.regional["ko"]);
+	/* $.datepicker.setDefaults($.datepicker.regional["ko"]); */
+	$.datepicker.setDefaults({
+	    dateFormat: 'yy-mm-dd',
+	    prevText: '이전 달',
+	    nextText: '다음 달',
+	    monthNames: ['1월', '2월', '3월', '4월', '5월', '6월', '7월', '8월', '9월', '10월', '11월', '12월'],
+	    monthNamesShort: ['1월', '2월', '3월', '4월', '5월', '6월', '7월', '8월', '9월', '10월', '11월', '12월'],
+	    dayNames: ['일', '월', '화', '수', '목', '금', '토'],
+	    dayNamesShort: ['일', '월', '화', '수', '목', '금', '토'],
+	    dayNamesMin: ['일', '월', '화', '수', '목', '금', '토'],
+	    showMonthAfterYear: true,
+	    yearSuffix: '년'
+	});
+	
 	$("#datepicker").datepicker({
 		showAnim: "slideDown",
 		showOn: "button",
 		buttonImage: "./resources/img/calendar.gif",
 		buttonImageOnly: true,
+		changeYear: true,
+		changeMonth: true,
 		showButtonPanel: true,
-		dateFormat: "yy/mm/dd"
+		dateFormat: "yy/mm/dd",
+		minDate: '-100y', 
+		monthNamesShort: ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월']
 	});
 	
 	$(".idCheckBtn").click(function() {
