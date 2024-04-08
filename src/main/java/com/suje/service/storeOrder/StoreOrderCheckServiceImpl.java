@@ -59,5 +59,15 @@ public class StoreOrderCheckServiceImpl implements StoreOrderCheckService {
 		return dao.getCancel(cCode);
 	}
 	
+	@Override
+	public void updateReturnState(int rtCode, String state){
+		dao.updateReturnState(rtCode, state);
+	}
+	
+	@Override
+	public StoreOrderCheckVO getReturn(int rtCode) { 
+		return dao.getReturn(rtCode);
+	}
+	
 	
 }

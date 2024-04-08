@@ -21,16 +21,14 @@ $(function() {
 	<% 
 	String storeId = (String)session.getAttribute("mainId");
 	%>
-		
-		// 서브 메뉴바 클래스명 추가 // CSS 적용
-		$(".storeCategoryArea>li:nth-child(1)>a").addClass("checkedStateFirstCategory");	
-		$(".storeCategoryArea>li:nth-child(1) .storeSecondCategoryArea li:nth-child(5)").addClass("checkedStateSecondCategory");
-		
-		
 		<% if (request.getAttribute("insertStoreInfoSuccess") != null) { %>
 		var insertStoreInfoSuccess = "<%= request.getAttribute("insertStoreInfoSuccess") %>";
 		alert(insertStoreInfoSuccess);
 	<% } %>
+		
+		// 서브 메뉴바 클래스명 추가 // CSS 적용
+		$(".storeCategoryArea>li:nth-child(1)>a").addClass("checkedStateFirstCategory");	
+		$(".storeCategoryArea>li:nth-child(1) .storeSecondCategoryArea li:nth-child(5)").addClass("checkedStateSecondCategory");
 
 	
 	//파일 이미지 불러오기
@@ -77,7 +75,7 @@ $(function() {
 	});
 	
 	$(".goodsInfo_selectBox_Secound").change(function(){
-	      
+		
 	      let cateMidCode = $(this).val();
 	      
 	      $.ajax({
@@ -126,14 +124,17 @@ $(function() {
 			 <div class="store_subCategory">
 					<label class="store_subTitle">작품 카테고리</label>
 					<!-- 대분류 --> 
-					<select class="goodsInfo_selectBox_First" name="catem_name" id="catemName">
-						<c:forEach items="${cateMainList}" var="vo">
-							<option value="${vo.catem_code}">${vo.catem_name}</option>
-						</c:forEach>
+					<select class="goodsInfo_selectBox_First" name="catem_name" id="catemName" >
+
+							<option value="${store.catem_code}">${store.catem_name}</option>
+
 					</select> 
 					
 					<select class="goodsInfo_selectBox_Secound" name="catemm_name" id="catemmName">
-						<!-- 중분류 -->
+						<option>==== 선택 ====</option>
+						<c:forEach items="${cateMidList}" var="vo">
+							<option value="${vo.catemm_code}">${vo.catemm_name}</option>
+						</c:forEach>
 					</select> 
 					
 					<select class="goodsInfo_selectBox_Third" name="cates_code" id="catesName">

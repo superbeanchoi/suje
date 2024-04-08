@@ -97,7 +97,7 @@ public class FleaGoodsInfoController {
 
 		logger.info(vo.getS_id());
 
-		return "forward:/fleaGoodsInfoMain.do?id=" + vo.getS_id();
+		return "forward:/fleaGoodsListAll.do?id=" + vo.getS_id();
 	}
 
 }

@@ -27,11 +27,6 @@ String storeId = (String)session.getAttribute("mainId");
 	$(".storeCategoryArea>li:nth-child(2) .storeSecondCategoryArea li:nth-child(2)").addClass("checkedStateSecondCategory");
 	
 	
-<% if (request.getAttribute("insertFleaInfoSuccess") != null) { %>
-	var insertFleaInfoSuccess = "<%= request.getAttribute("insertFleaInfoSuccess") %>";
-	alert(insertFleaInfoSuccess);
-<% } %>
-	
 	//파일 이미지 불러오기
 	  $(document).on('change', '.fileInput', function(event) {
 		  var fileInput = $(this);
