@@ -61,4 +61,19 @@ public class StoreOrderCheckDAOImpl implements StoreOrderCheckDAO {
 		return mybatis.selectOne("StoreOrderCheckDAO.getCancel",cCode);
 	}
 	
+	
+	@Override
+	public void updateReturnState(int rtCode, String state) {
+		StoreOrderCheckVO vo = new StoreOrderCheckVO();
+		vo.setRt_code(rtCode);
+		vo.setRt_state(state);
+		
+		System.out.println("//////////////////status :" + state);
+		mybatis.update("StoreOrderCheckDAO.updateReturnState", vo);
+	}
+	
+	@Override
+	public StoreOrderCheckVO getReturn(int rtCode) {
+		return mybatis.selectOne("StoreOrderCheckDAO.getReturn",rtCode);
+	}
 }

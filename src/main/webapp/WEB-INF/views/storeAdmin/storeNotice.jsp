@@ -48,8 +48,8 @@
 	   $(function() {
 	    $('.notiContent').each(function() {
 	        var text = $(this).text();
-	        if (text.length > 60) {
-	            text = text.substring(0, 30) + '...';
+	        if (text.length > 50) {
+	            text = text.substring(0, 25) + '...';
 	            $(this).text(text);
 	        }
 	    });

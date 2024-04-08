@@ -15,6 +15,6 @@ public class StoreOrderCheckVO {
 	int d_code;
 	String d_name,d_tel,d_addr, d_memo,d_date,d_state;
 	int rt_code;
-	String rt_date, rt_why,rt_item_state;
+	String rt_date, rt_why, rt_item_state, rt_state;
 
 }

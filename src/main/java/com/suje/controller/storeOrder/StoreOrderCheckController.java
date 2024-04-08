@@ -67,6 +67,8 @@ public class StoreOrderCheckController {
 		ordercheckService.deliverycomplete(Integer.parseInt(pCode.get("pCode")));
 		return "발송 처리가 완료되었습니다.";
 	}
+	
+	
 
 	@RequestMapping(value="updateCancelState", method = RequestMethod.POST)
 	@ResponseBody
@@ -77,6 +79,15 @@ public class StoreOrderCheckController {
         return "redirect:/storeOrder.do?id="+id;
 	}
 	
+	
+	@RequestMapping(value="updateReturnState", method = RequestMethod.POST)
+	@ResponseBody
+	public String updateReturnState(@RequestParam("rtCode") int rtCode, String state, String id, Model model) {
+		
+		logger.info("updateReturnState");
+		ordercheckService.updateReturnState(rtCode, state);
+		return "redirect:/storeOrder.do?id="+id;
+	}
 	
 	
 }

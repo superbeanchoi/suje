@@ -13,4 +13,6 @@ public interface StoreOrderCheckService {
 	public void deliverycomplete(int pCode);
 	public void updateCancelState(int cCode, String state);
 	public StoreOrderCheckVO getCancel(int cCode);
+	public void updateReturnState(int rtCode, String state);
+	public StoreOrderCheckVO getReturn(int rtCode);
 }

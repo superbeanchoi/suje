@@ -42,8 +42,7 @@ public class StoreNotiInfoController {
 		model.addAttribute("notiInfoVO",vo);
 		model.addAttribute("notiComplete", "스토어 공지가 등록되었습니다.");
 		
-		/* return "redirect:/storeNotiInfo.do?id=" + vo.getS_id(); */ 
-		return "/storeAdmin/storeNotiInfo"; 
+		return "forward:/storeNoticeListAll.do?id=" + vo.getS_id();  
 
 	}
 }
