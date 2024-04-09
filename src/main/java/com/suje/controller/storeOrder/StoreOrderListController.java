@@ -103,10 +103,10 @@ public class StoreOrderListController {
 	@RequestMapping(value="fianlOrderController", method = RequestMethod.POST)
 	public String insertStoreFinalOrder(@ModelAttribute("vo") FinalOrderVO vo, Model model) {
 		
+		logger.info(" = {}",vo.getO_code());
 		logger.info("insertStoreFinalOrder => 연결 성공");
 		storeService.insertFinalOrderInfo(vo);
-		
-		return"redirect: storeSujeTalk.do?id="+ vo.getStoreID() +"&page=1";
+				return"redirect: storeSujeTalk.do?id="+ vo.getStoreID() +"&page=1";
 	}
 	
 	
