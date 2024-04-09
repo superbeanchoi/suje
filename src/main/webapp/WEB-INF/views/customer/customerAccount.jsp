@@ -9,7 +9,7 @@
 <html>
 <head>
 <meta charset="UTF-8" />
-<title>SUJE - 계좌 등록/수정</title>
+<title>SUJE</title>
 
 <!-- 폰트링크 -->
 <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -106,6 +106,6 @@ $(function(){
 			</form>			
 		</div>		
 	</div>
-	
+	<%@ include file="/WEB-INF/views/headerHtml/footer.jsp" %>
 </body>
 </html>

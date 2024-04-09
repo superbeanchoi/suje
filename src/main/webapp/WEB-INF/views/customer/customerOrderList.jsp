@@ -10,7 +10,7 @@
 <html>
 <head>
 <meta charset="UTF-8" />
-<title>SUJE - 주문 내역 조회</title>
+<title>SUJE</title>
 
 <!-- 폰트링크 -->
 <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -304,6 +304,7 @@
 		</div>
 	</div>
 
+	<%@ include file="/WEB-INF/views/headerHtml/footer.jsp" %>
 	<!-- Modal 출력 부분 -->
 	<div class="orderListWrap">
 	

@@ -122,6 +122,6 @@ $(function(){
 			</form>
 		</div> <!-- storeContentsBox -->
 	</div> <!-- storeContentsWrap -->
-	<footer></footer>
+	<%@ include file="/WEB-INF/views/headerHtml/footer.jsp" %>
 </body>
 </html>

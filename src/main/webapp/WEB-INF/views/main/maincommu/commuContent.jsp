@@ -247,6 +247,6 @@ $(function() {
 		<!-- contents -->
 	</div>
 	<!-- contentsWrap -->
-<footer></footer>
+<%@ include file="/WEB-INF/views/headerHtml/footer.jsp" %>
 </body>
 </html>

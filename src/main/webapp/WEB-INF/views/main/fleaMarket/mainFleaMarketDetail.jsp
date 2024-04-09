@@ -243,7 +243,7 @@ $(function() {
 		<button class="buyBtn">구매하기</button>
 	</div> <!-- itemInfoArea -->
 </div> <!-- contentsWrap -->
-<footer></footer>
+<%@ include file="/WEB-INF/views/headerHtml/footer.jsp" %>
 
 <!-- 모달 -->
 <div class="customerOrderListModal">

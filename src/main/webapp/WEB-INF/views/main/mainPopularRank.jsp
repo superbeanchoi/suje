@@ -112,6 +112,6 @@ $(function() {
 	<div class="contentsLine"></div>
 	<a href="mainPopularRank.do" class="moreStoreBtn">스토어 더보기</a>
 </div> <!-- contentsWrap -->
-<footer></footer>
+<%@ include file="/WEB-INF/views/headerHtml/footer.jsp" %>
 </body> 
 </html>

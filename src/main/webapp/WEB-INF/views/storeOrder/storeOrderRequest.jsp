@@ -102,7 +102,7 @@
    <!-- storeContentsBox -->
    </div>
    <!-- storeContentsWrap -->
-   	<footer></footer>
+   	<%@ include file="/WEB-INF/views/headerHtml/footer.jsp" %>
 	      <!-- Modal 출력 부분 -->
 
    		<!-- 배송정보 부분 -->

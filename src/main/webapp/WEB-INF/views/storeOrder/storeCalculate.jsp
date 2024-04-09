@@ -24,6 +24,8 @@
 
 $(function(){
 	
+	$(".storeCategoryArea>li:nth-child(4)>a").addClass("checkedStateFirstCategory");	
+	
 	$(".monthSelect").off('change').change(monthSelectEvent);
 	
 	var selectValue = "${month}";
@@ -119,6 +121,6 @@ function monthSelectEvent(){
 	<!-- storeContentsBox -->
 	</div>
 	<!-- storeContentsWrap -->
-	<footer></footer>
+	<%@ include file="/WEB-INF/views/headerHtml/footer.jsp" %>
 </body>
 </html>

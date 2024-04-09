@@ -181,6 +181,6 @@ $(function() {
 	</c:if>
 </div>
 </div> <!-- contentsWrap -->
-<footer></footer>
+<%@ include file="/WEB-INF/views/headerHtml/footer.jsp" %>
 </body>
 </html>

@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="UTF-8" />
-<title>SUJE - 마이페이지</title>
+<title>SUJE</title>
 
 <!-- 폰트링크 -->
 <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -108,7 +108,6 @@ $(function(){
 		</div>
 		
 	</div>
-	<footer>
-	</footer>
+<%@ include file="/WEB-INF/views/headerHtml/footer.jsp" %>
 </body>
 </html>

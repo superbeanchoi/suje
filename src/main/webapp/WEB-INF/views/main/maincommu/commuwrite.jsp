@@ -156,6 +156,6 @@ $(function() {
 	<hr class="writeHr">
 </div>
 <!-- contentsWrap -->
-<footer></footer>
+<%@ include file="/WEB-INF/views/headerHtml/footer.jsp" %>
 </body>
 </html>

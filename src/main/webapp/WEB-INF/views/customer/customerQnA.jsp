@@ -10,7 +10,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>SUJE - Q&A 작성</title>
+<title>SUJE</title>
 
 <!-- 폰트링크 -->
 <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -106,6 +106,7 @@ $(function(){
 			</div>
 		</div>
 	</div>
+	<%@ include file="/WEB-INF/views/headerHtml/footer.jsp" %>
 
 	<!-- Modal 출력 부분 -->	
 <!-- Modal QnA 작성하기 부분 -->

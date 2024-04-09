@@ -147,6 +147,7 @@ body {
 	height: 80px;
 	border-radius: 40px;
 	float: right;
+	object-fit: cover;
 }
 .storeStarTd {
 	padding: 10px 0;

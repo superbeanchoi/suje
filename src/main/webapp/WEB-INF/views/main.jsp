@@ -104,7 +104,7 @@ $(function() {
 			</c:forEach>
 		</ul> <!-- storeReview -->
 	</div>
-	<a href="mainRealTimeReview.do" class="mainMoreBtn">실시간 후기 더보기</a>
+	<a href="viewRealTimeReview.do" class="mainMoreBtn">실시간 후기 더보기</a>
 	<div class="mainTitle">실시간 스토어 피드</div>
 	<div class="storeFeedViewArea mainSlide">
 		<ul class="storeFeed">
@@ -115,6 +115,6 @@ $(function() {
 	</div>
 	<a href="viewPopularRank.do" class="mainMoreBtn">스토어 더보기</a>
 </div> <!-- contentsWrap -->
-<footer></footer>
+<%@ include file="./headerHtml/footer.jsp" %>
 </body>
 </html>

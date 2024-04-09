@@ -67,6 +67,6 @@ alert(newMemberComple);
 		<input type="button" value="관리자 회원 로그인" class="adminLoginBtn" />
 	</form>
 </div> <!-- contentsWrap -->
-<footer></footer>
+<%@ include file="/WEB-INF/views/headerHtml/footer.jsp" %>
 </body>
 </html>

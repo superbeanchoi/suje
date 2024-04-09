@@ -216,7 +216,7 @@ String memberId = (String)session.getAttribute("mainId");
 	<div class="mainLine"></div>
 	<button class="orderBtn">+</button>	
 </div> <!-- contentsWrap -->
-<footer></footer>
+<%@ include file="/WEB-INF/views/headerHtml/footer.jsp" %>
 
 <!-- 모달 -->
 

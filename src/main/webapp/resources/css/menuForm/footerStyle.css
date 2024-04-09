@@ -1,0 +1,66 @@
+@charset "UTF-8";
+
+/*Footer*/
+footer {
+	width: 100%;
+	height: 255px !important;
+	background-color: #ADEFD1;
+}
+
+.footerBox {
+	width: 1440px;
+	height: 255px;
+	margin: 0 auto;
+}
+.footerSnS {
+	width: 1440px;
+	height: 70px;
+}
+.footerSnS img {
+	width: 30px;
+	height: 30px;
+	margin-top: 40px;
+	margin-left: 20px;
+	transition: transform 0.2s ease;
+}
+.footerSnS img:hover {
+    transform: scale(1.1);
+}
+.footerMenu {
+	width: 1400px;
+	height: 30px;
+	margin: 20px;
+}
+.footerMenu span {
+	margin-right: 40px;
+	font-size: 15px;
+	color: #777;
+}
+.footerMenu span:hover {
+	font-weight: bold;
+}
+.footerInfo {
+	width: 1400px;
+	height: 75px;
+	margin: 20px 20px 40px 20px;
+}
+.footerInfo>div {
+	width: 700px;
+	height: 75px;
+	float: left;
+}
+.footerAddrIn, .footerComIn {
+	width: 700px;
+	height: 20px;
+	margin-bottom: 5px;
+}
+.footerAddrIn span, .footerComIn span {
+	display: block;
+	float: left;
+	line-height: 20px;
+	font-size: 15px;
+	color: #777;
+}
+.footerAddrIn span:first-child, .footerComIn:nth-of-type(2) span:first-child  {
+	width: 100px;
+}

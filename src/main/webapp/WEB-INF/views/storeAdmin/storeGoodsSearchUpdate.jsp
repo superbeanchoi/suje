@@ -11,7 +11,7 @@
 <link href="./resources/css/resetStyle.css" rel="stylesheet" type="text/css">
 <link href="./resources/css/menuForm/subMenuStyle.css" rel="stylesheet" type="text/css">
 <link rel="stylesheet" href="./resources/css/storeAdmin/storeGoodsSearchUpdate.css" />
-<title>SUJE - 스토어 작품 조회/수정</title>
+<title>SUJE</title>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script type="text/javascript" src="./resources/js/storeAdmin/storeGoodsSearchUpdate.js"></script>
@@ -278,6 +278,6 @@ function modifyBtn() {
 		<!-- storeContentsBox -->
 	</div>
 	<!-- storeContentsWrap -->
-	<footer></footer>
+	<%@ include file="/WEB-INF/views/headerHtml/footer.jsp" %>
 </body>
 </html>

@@ -100,7 +100,7 @@ $(function() {
 		<!-- storeContentsBox -->
 	</div>
 	<!-- storeContentsWrap -->
-	<footer></footer>
+	<%@ include file="/WEB-INF/views/headerHtml/footer.jsp" %>
 </body>
 <script type="text/javascript">
 $(function() {
