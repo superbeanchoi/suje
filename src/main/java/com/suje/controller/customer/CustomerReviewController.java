@@ -38,6 +38,8 @@ public class CustomerReviewController {
 		// 전체 페이지 수 계산
 		int reviewPageCount = service.getCountPageTotal(id);
 		reviewPageCount = totalCountPage(reviewPageCount);
+		
+		model.addAttribute("totalCountRow",reviewPageCount);
 
 		// 부분 페이지 수 계산
 		int reviewFirstNum = (reviewPage - 1) * pageCountNum + 1;

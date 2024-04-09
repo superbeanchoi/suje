@@ -13,7 +13,7 @@
 	m.m_id = oi.m_id 
 	and oi.o_code = fo.o_code 
 	and fo.fo_code = p.fo_code 
-	and p.p_code = re.p_code 
+	and p.p_code = re.p_code(+)
 	and m.m_id = #{id}
 
 </select>

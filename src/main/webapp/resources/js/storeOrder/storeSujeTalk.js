@@ -157,7 +157,7 @@ function finalOrderInsertEvent() {
 
     // 주문 번호 가져오는 명령어
     let orderNO = $(".activeTalkTitle>div:nth-child(2) input").val();
-
+	console.log(orderNO);
     // 텍스트 필드 초기화 함수
     resetSujeTalk();
 

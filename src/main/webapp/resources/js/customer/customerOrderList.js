@@ -81,10 +81,13 @@ $(function() {
 	    console.log('구매확정 이벤트 호출');
 	    var customerID = $(".customerID").val();	    // 아이디값
 	    var payNO = $(this).parent().siblings().eq(0).text();  // 결제번호
-	    var cancelState = $(this).parent().siblings().eq(8).text(); 
-	    var returnState = $(this).parent().siblings().eq(9).text(); 
+	    var cancelState = $(this).parent().siblings().eq(7).text(); 
+	    var returnState = $(this).parent().siblings().eq(8).text(); 
 	    
-	    if(cancelState.trim() == '요청중' || returnState.trim() =='승인'){
+	    console.log(cancelState);
+	    console.log(returnState);
+	    
+	    if(cancelState.trim() == '승인'||cancelState.trim() == '요청중' || returnState.trim() =='요청중'||returnState.trim() =='승인' ){
 			alert("결제취소 또는 반품요청 상태가\n'요청중' 또는 '승인' 일 경우\n구매 확정이 불가능 합니다.");
 	    }else{
 		    if(confirm("구매 확정 하시겠습니까?\n구매 확정 이후 취소,반품요청이 불가능 합니다!")){

@@ -4,6 +4,7 @@ import java.io.File;
 import java.io.IOException;
 import java.util.UUID;
 
+import org.apache.commons.io.FilenameUtils;
 import org.springframework.web.multipart.MultipartFile;
 
 import lombok.AccessLevel;
@@ -38,7 +39,9 @@ public class EtcVO {
 			this.etc_psize = String.valueOf(uploadImgFile.getSize()); // 파일의 용량
 			
 			UUID uuid = UUID.randomUUID(); // 무작위 36자리 이름 정하는 메소드 
-			this.etc_spname = uuid.toString() + "_" + etc_pname;
+			String ext = FilenameUtils.getExtension(uploadImgFile.getOriginalFilename()); //파일의 확장자
+			
+			this.etc_spname = uuid.toString() + "." + ext;
 			File fPath = new File(saveDir + etc_spname); // 파일의 경로정보 변경
 			this.etc_ppath = saveDir + etc_spname; // -- 
 			
