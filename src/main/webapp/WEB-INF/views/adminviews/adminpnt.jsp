@@ -145,6 +145,6 @@ $(function() {
 	</div>
 	<!-- adminContentsWrap -->
 </div>
-<footer></footer>
+<%@ include file="../../views/headerHtml/footer.jsp" %>
 </body>
 </html>

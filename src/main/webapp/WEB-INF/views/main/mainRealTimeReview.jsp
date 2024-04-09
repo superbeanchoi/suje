@@ -160,7 +160,7 @@ $(document).ready(function() {
         </div>
     </div>
     <!-- contentsWrap -->
-    <footer></footer>
+    <%@ include file="/WEB-INF/views/headerHtml/footer.jsp" %>
     <!-- 모달 -->
     <div class="finalOrderModalWrap">
         <div class="finalOrderModal">

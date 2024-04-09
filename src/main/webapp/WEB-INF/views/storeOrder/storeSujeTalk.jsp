@@ -24,17 +24,12 @@
 <script type="text/javascript" src="./resources/js/storeOrder/storeSujeTalk.js"></script>
 <script type="text/javascript">
 $(function() {
-    
+	var updateState = "${updateState}";
+	if(updateState == "1"){alert("주문서 수정이 완료 되었습니다.")}
 	// 서브 메뉴바 클래스명 추가 // CSS 적용
 	$(".storeCategoryArea>li:nth-child(3)>a").addClass("checkedStateFirstCategory");	
 	$(".storeCategoryArea>li:nth-child(3) .storeSecondCategoryArea li:nth-child(1)").addClass("checkedStateSecondCategory");
-	
-	var updateState = ${updateState};
-	
-	if(updateState == 1){alert("주문서 수정이 완료 되었습니다.")}
-
-
-})
+});
 </script>
 <title>SUJE</title>
 </head>
@@ -169,7 +164,7 @@ $(function() {
 		</div>
 		<input type="hidden" class="idInfo" value="${id }"/>
 	</div>
-	<footer></footer>
+	<%@ include file="/WEB-INF/views/headerHtml/footer.jsp" %>
 </body>
 
 <script type="text/javascript">

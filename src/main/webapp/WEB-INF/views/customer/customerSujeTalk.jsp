@@ -11,7 +11,7 @@
 <html>
 <head>
 <meta charset="UTF-8" />
-<title>SUJE - TalkTalk</title>
+<title>SUJEk</title>
 
 <!-- 폰트링크 -->
 <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -178,6 +178,7 @@ $(function(){
 		</div>
 
 	</div>
+	<%@ include file="/WEB-INF/views/headerHtml/footer.jsp" %>
 	<!-- Modal -->
 	<div class="modalWrap">
 		<div class="orderCheckModal">

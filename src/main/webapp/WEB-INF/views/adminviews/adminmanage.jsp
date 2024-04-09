@@ -122,7 +122,7 @@ $(function() {
 		</div>
 	</div> <!-- adminContentsBox -->
 </div> <!-- adminContentsWrap -->
-<footer></footer>
+<%@ include file="../../views/headerHtml/footer.jsp" %>
 
 <!-- 모달 -->
 <div class="storeMoreInfoModalWrap">

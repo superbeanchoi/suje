@@ -177,7 +177,7 @@ $(function() {
 	</div>
 	<!-- storeContentsBox -->
 	<!-- storeContentsWrap -->
-	<footer></footer>
+	<%@ include file="/WEB-INF/views/headerHtml/footer.jsp" %>
 
 <div>
 	<div class="storeMoreInfoModalWrap">

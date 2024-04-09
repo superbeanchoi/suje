@@ -91,7 +91,7 @@ $(function() {
    </div>
    <!-- storeContentsBox -->
    <!-- storeContentsWrap -->
-   	<footer></footer>
+   	<%@ include file="/WEB-INF/views/headerHtml/footer.jsp" %>
 	<div class="fleaMoreInfoModalWrap">
 		<!-- 배송정보 부분 -->
 		<div class="fleaDeliveryModal">

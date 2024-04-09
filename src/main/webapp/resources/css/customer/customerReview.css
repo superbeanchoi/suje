@@ -1,11 +1,15 @@
 @charset "UTF-8";
 
 body {
-	width: 100%;
+	background-color: #fff;
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
 }
 
 /* 기본 css 속성 */
 .main {
+	flex-grow: 1;
 	/* width: 1900px; */
 	width: auto;
 	height: auto;

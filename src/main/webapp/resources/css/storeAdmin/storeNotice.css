@@ -12,13 +12,11 @@ body {
 }
 .storeSubMenuBox {
 	width: 250px;
-	height: 2000px;
 	background-color: #00203F;
 	float: left;
 }
 .storeContentsBox {
 	width: 1190px;
-	height: 2000px;
 	float: right;
 	background-color: #fff;
 }
