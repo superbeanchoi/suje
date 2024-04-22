@@ -3,6 +3,7 @@
 <br>
 
 <strong>참여 인원</strong><span>&nbsp;&nbsp;&nbsp;&nbsp;6명</span><br>
+<strong>개발 기간</strong><span>&nbsp;&nbsp;&nbsp;&nbsp;2024.03.18 - 2024.04.12 (4주)</span><br>
 <strong>개발 툴</strong><span>&nbsp;&nbsp;&nbsp;&nbsp;ER-win, Figma, STS</span><br>
 <strong>개발 언어</strong><span>&nbsp;&nbsp;&nbsp;&nbsp;Oracle, HTML5, JSP, CSS3, JavaScript, JQuery, Ajax, JAVA</span><br>
 <strong>개발 서버 / 프레임 워크</strong><span>&nbsp;&nbsp;&nbsp;&nbsp;Apache Tomcat, Spring, MyBatis</span><br>
