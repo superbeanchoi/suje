@@ -1,70 +1,47 @@
-# SUJE // 주문제작 쇼핑몰 개발 프로젝트 2024-03-11 ~
-<h4>MVC 프로젝트 및 JAVA 소스 오류 발생시</h4>
-<ul>
-  <li>GIT 저장소에 있는 "https-content.zip" 압축파일 해제</li>
-  <li>아래의 경로로 진입</li>
-  <li>C:\workspaces\sujeWeb\.metadata\.plugins</li>
-  <li>"org.springsource.ide.eclipse.commons.content.core" 에 압축해제된 폴더에 있는 xml 파일 넣기</li>
-  <li>폴더가 없을 경우 위 폴더 이름대로 생성 후 xml 파일 넣기</li>
-</ul>
+<h1>SUJE 주문 제작 전문 쇼핑몰</h1>
+<br>
+<br>
 
-<h2>반드시 작업 전 다운로드 명령</h2>
-<h4>다운로드 명령</h4>
-<ul>
-  <li>git pull origin main</li>
-</ul>
-<h2>반드시 일일 작업 마무리 후 업로드 명령</h4>
-<h4>업로드 명령</h4>
-<ul>
-  <li>git add .</li>
-  <li>git commit -m "작업날짜 // 작업자명" <br/>
-  예시) git commit -m "2024-03-12 // 유승민"
-  </li>
-  <li>git push origin 브랜치명</li>
-</ul>
-<h2>주요 변경사항</h2>
-<h4>2024-03-12 원본 Spring MVC Project 업로드 - 유승민</h4>
-<h4>2024-03-14 Spring MVC xml 매핑 작업 및 상세파일 수정 - 유승민</h4>
-<h4>2024-03-14 View 작업시작 // 깃허브 파일 공유 - 유승민</h4>
-<h4>2024-03-21 Back-End 작업시작 - 유승민</h4>
+<strong>참여 인원</strong><span>&nbsp;&nbsp;&nbsp;&nbsp;6명</span><br>
+<strong>개발 툴</strong><span>&nbsp;&nbsp;&nbsp;&nbsp;ER-win, Figma, STS</span><br>
+<strong>개발 언어</strong><span>&nbsp;&nbsp;&nbsp;&nbsp;Oracle, HTML5, JSP, CSS3, JavaScript, JQuery, Ajax, JAVA</span><br>
+<strong>개발 서버 / 프레임 워크</strong><span>&nbsp;&nbsp;&nbsp;&nbsp;Apache Tomcat, Spring, MyBatis</span><br>
+<strong>API</strong><span>&nbsp;&nbsp;&nbsp;&nbsp;Daum 우편번호 API, Kakao 지도 API</span><br>
+<br>
+<br>
 
-<h2>담당 업무</h2>
-<h2>최수빈 ,이정석</h2>
-로그인,회원가입<br/>
-관리자페이지 - 스토어 일정 관리<br/>
-관리자페이지 - 스토어 벌점 관리<br/>
-관리자페이지 - Q&A 관리<br/>
-관리자페이지 - 계정관리<br/>
-<br/><br/>
-<h2>이수정,유승민</h2>
-회원(사용자) 관리 페이지<br/>
-마이페이지(정보관리)<br/>
-카드 등록 / 수정<br/>
-계좌 등록 / 수정<br/>
-주문제작 결제 내역 등 각종 결제 내역<br/>
-후기작성<br/>
-주문내역관리(SUJE톡톡)<br/>
-스토어 주문 요청 관리(SUJE톡톡)<br/>
-Q&A 작성<br/>
-<br/><br/>
-<h2>장경희,김동현</h2>
-업체(입점스토어) 관리 페이지<br/>
-스토어 페이지 관리<br/>
-스토어 공지 조회/수정<br/>
-스토어 공지 등록<br/>
-스토어 작품 조회/수정<br/>
-스토어 작품 등록<br/>
-플리마켓 상품 조회/수정<br/>
-플리마켓 상품 등록<br/>
-스토어 최종주문 조회<br/>
-플리마켓 주문 조회<br/>
-정산 관리<br/>
-계정 정보<br/>
-<br/><br/>
-<h2>공통작업</h2>
-플리마켓 페이지<br/>
-랭킹 페이지<br/>
-실시간 후기<br/>
-상세 카테고리 페이지<br/>
-커뮤니티 페이지<br/>
-업체별 개별 페이지<br/>
+<h2>개발동기</h2>
+다양한 정보 속에서 자신에게 맞는 제작 업체의 정보를 찾기 위해서는 시간적 소모가 발생하는 현 주문 제작 시장. <br>
+주문 제작 상품의 특성상 스토어의 교환·환불·반품을 거부하는 이슈에 따라 소비자 불편함 발생. <br>
+플랫폼을 통해 소비자에게 다양한 정보를 제공하여 손쉽게 주문 제작을 진행할 수 있도록 돕고, 교환·환불·반품 등으로 인한 업체 손실 및 고객 불편을 해소하기 위해 제안.
+<br>
+<br>
+<br>
+
+<h2>기능소개</h2>
+테마별 주문 제작 스토어에 대한 비교·검색 및 소비자와 스토어 간 실시간 대화 플랫폼을 제공하여 구매부터 결제까지의 프로세스를 간소화할 수 있는 웹 환경 제공. <br>
+소비자의 교환·환불·반품 요청이 발생할 경우, 재거래 플랫폼(플리마켓)으로 바로 연결하여 소비자와 스토어 모두 윈-윈 할 수 있는 비즈니스 구조 구축.
+<br>
+<br>
+<br>
+
+<h2>담당업무</h2>
+전반적인 시스템 화면에 대한 UX/UI 디자인 담당.<br>
+로그인·회원가입 및 메인 페이지 조회 기능에 대한 Front·Back 기능 구현. <br>
+개인 회원의 플리마켓 구매 전체 프로세스에 대한 Front·Back 기능 구현. <br>
+개인 회원의 개별 스토어 페이지 조회 및 주문제작 요청 기능에 대한 Front·Back 기능 구현. <br>
+커뮤니티 CRUD 기능에 대한 Front·Back 기능 구현. <br>
+홈페이지 관리자의 스토어 입점·벌점 관리 및 전체 통계 조회 기능에 대한 Front·Back 기능 구현. <br>
+<br>
+<br>
+<br>
+
+<h2>디자인 가이드</h2>
+<a href='https://www.figma.com/file/jLuzg0OE9Illk1cpyfFus9/FINAL-PROJECT?type=design&node-id=3%3A2&mode=design&t=Ye7DuTBjwXNlJJGv-1'>SUJE 디자인 가이드 피그마 링크</a>
+<br>
+<br>
+<br>
+
+<h2>시연 영상</h2>
+<a href='https://youtu.be/5IxQR4NmBpQ?si=_aT5LpX0HQryKjxd'>SUJE 주문 제작 전문 쇼핑몰 시연영상</a>
+<br>
